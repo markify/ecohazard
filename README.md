@@ -1,6 +1,14 @@
 # csc648-team07
 
 - add ALL your team members to your team's repo.
+  
+- [Team Lead]
+- [Front End Lead]
+- [Back End Lead]
+- [Front End] Mark Soriano
+- [Front End]
+- [Back End]
+- [Back End]
 
 # To Work on Repo
 
