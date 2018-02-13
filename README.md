@@ -3,7 +3,7 @@
 - add ALL your team members to your team's repo.
   
 - [Team Lead]
-- [Front End Lead]
+- [Front End Lead] Lance Larsen
 - [Back End Lead]
 - [Front End] Mark Soriano
 - [Front End]
