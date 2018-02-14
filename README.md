@@ -8,7 +8,7 @@
 - [Front End] Mark Soriano
 - [Front End]
 - [Back End] Amelie Cameron
-- [Back End]
+- [Back End]  Ali Alavi
 
 # To Work on Repo
 
