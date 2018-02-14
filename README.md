@@ -7,7 +7,7 @@
 - [Back End Lead]
 - [Front End] Mark Soriano
 - [Front End]
-- [Back End]
+- [Back End] Amelie Cameron
 - [Back End]
 
 # To Work on Repo
