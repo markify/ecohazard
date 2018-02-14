@@ -4,7 +4,7 @@
   
 - [Team Lead]
 - [Front End Lead] Lance Larsen
-- [Back End Lead]
+- [Back End Lead] Corey Humeston
 - [Front End] Mark Soriano
 - [Front End]
 - [Back End] Amelie Cameron
