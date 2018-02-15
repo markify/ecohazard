@@ -6,7 +6,7 @@
 - [Front End Lead] Lance Larsen
 - [Back End Lead] Corey Humeston
 - [Front End] Mark Soriano
-- [Front End]
+- [Front End] Girish Tiwale
 - [Back End] Amelie Cameron
 - [Back End]  Ali Alavi
 
