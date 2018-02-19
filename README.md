@@ -2,7 +2,7 @@
 
 - add ALL your team members to your team's repo.
   
-- [Team Lead]
+- [Team Lead] Sean Sutherland
 - [Front End Lead] Lance Larsen
 - [Back End Lead] Corey Humeston
 - [Front End] Mark Soriano
