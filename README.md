@@ -29,16 +29,17 @@
 
 ## Windows Users
 0) add to collaborators
-1) Download Heroku CLI and login from terminal/cmd
+1) Download Heroku CLI and type "heroku login" from terminal/cmd in your desktop directory. 
+   login with your heroku account.
 2) Windows - heroku git:clone -a csc648team07
 3) cd to cloned file
 4) download python 3.6.4 to machine
 5) download git to machine
 6) use command - pip install pipenv 
-7) pipenv —three
+7) pipenv --three
 8) pipenv install
 9) pipenv shell
-10) python mange.py collectstatic (if it asks question, type ‘yes’)
+10) python manage.py collectstatic (if it asks question, type ‘yes’)
 11) heroku local web -f Procfile.windows
 
 
