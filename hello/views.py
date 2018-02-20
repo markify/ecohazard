@@ -10,7 +10,10 @@ def index(request):
     return render(request, 'index.html')
     #r = requests.get('http://httpbin.org/status/418')
     #print(r.text)
-    #return HttpResponse('<pre>' + r.text + '</pre>')	
+    #return HttpResponse('<pre>' + r.text + '</pre>')
+
+def about(request):
+    return render(request, 'about/about-sutherland.html')
 
 def db(request):
 
