@@ -24,3 +24,23 @@ def db(request):
 
     return render(request, 'db.html', {'greetings': greetings})
 
+def about1(request):
+    return render(request, 'about/about-ali.html')
+
+def about2(request):
+    return render(request, 'about/about-cameron.html')
+    
+def about3(request):
+    return render(request, 'about/about-girish.html')
+
+def about4(request):
+    return render(request, 'about/about-humeston.html')
+
+def about5(request):
+    return render(request, 'about/about-larsen.html')
+
+def about6(request):
+    return render(request, 'about/about-mark.html')
+
+def about7(request):
+    return render(request, 'about/about-sutherland.html')    
