@@ -27,6 +27,7 @@
 - give everyone SSH key for repo
 - ask Anthony questions about Heroku
 
+## Windows Users
 0) add to collaborators
 1) Download Heroku CLI and login from terminal/cmd
 2) Windows - heroku git:clone -a csc648team07
@@ -39,5 +40,7 @@
 9) pipenv shell
 10) python mange.py collectstatic (if it asks question, type ‘yes’)
 11) heroku local web -f Procfile.windows
+
+
 
 
