@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="86a5eb69-07e5-4725-ad25-fce580c302e0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/csc648-team07.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hello/static/humeston-about.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hello/templates/about/about-humeston.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/autocomplete.781713f30664.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/autocomplete.781713f30664.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/autocomplete.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/autocomplete.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/base.17fd9d2dcc19.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/base.a419cbad388f.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/base.a419cbad388f.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/base.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/base.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/changelists.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/changelists.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/changelists.f6dc691f8d62.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/changelists.f6dc691f8d62.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/dashboard.7ac78187c567.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/dashboard.7ac78187c567.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/dashboard.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/dashboard.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/fonts.494e4ec545c9.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/fonts.494e4ec545c9.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/fonts.cc6140298ba7.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/fonts.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/fonts.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/forms.2003a066ae02.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/forms.2003a066ae02.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/forms.77b3f8a70811.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/forms.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/forms.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/login.a846c0e2ef65.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/login.a846c0e2ef65.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/login.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/login.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/responsive.25d98d3909ed.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/responsive.25d98d3909ed.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/responsive.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/responsive.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/responsive_rtl.2a6652327ccd.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/responsive_rtl.2a6652327ccd.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/responsive_rtl.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/responsive_rtl.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/rtl.4c867197b256.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/rtl.4c867197b256.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/rtl.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/rtl.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/vendor/select2/LICENSE-SELECT2.7cf1de939f3b.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/vendor/select2/LICENSE-SELECT2.7cf1de939f3b.md.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/vendor/select2/LICENSE-SELECT2.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/vendor/select2/LICENSE-SELECT2.md.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/vendor/select2/select2.3805311d5fc1.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/vendor/select2/select2.3805311d5fc1.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/vendor/select2/select2.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/vendor/select2/select2.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/vendor/select2/select2.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/vendor/select2/select2.min.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/vendor/select2/select2.min.d44571114a90.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/vendor/select2/select2.min.d44571114a90.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/widgets.5e372b41c483.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/widgets.5e372b41c483.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/widgets.a7251c097987.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/widgets.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/css/widgets.css.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/fonts/LICENSE.d273d63619c9.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/fonts/LICENSE.d273d63619c9.txt.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/fonts/LICENSE.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/fonts/LICENSE.txt.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/fonts/README.2c3d0bcdede2.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/fonts/README.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/fonts/Roboto-Bold-webfont.2ad99072841e.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/fonts/Roboto-Bold-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/fonts/Roboto-Light-webfont.b446c2399bb6.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/fonts/Roboto-Light-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/fonts/Roboto-Regular-webfont.ec39515ae8c6.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/fonts/Roboto-Regular-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/LICENSE" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/LICENSE.2c54f4e1ca1c" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/LICENSE.2c54f4e1ca1c.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/LICENSE.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/README.837277fa1908.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/README.837277fa1908.txt.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/README.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/README.txt.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/calendar-icons.39b290681a8b.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/calendar-icons.39b290681a8b.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/calendar-icons.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/calendar-icons.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/gis/move_vertex_off.7a23bf31ef8a.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/gis/move_vertex_off.7a23bf31ef8a.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/gis/move_vertex_off.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/gis/move_vertex_off.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/gis/move_vertex_on.0047eba25b67.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/gis/move_vertex_on.0047eba25b67.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/gis/move_vertex_on.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/gis/move_vertex_on.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-addlink.d519b3bab011.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-addlink.d519b3bab011.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-addlink.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-addlink.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-alert.034cc7d8a67f.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-alert.034cc7d8a67f.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-alert.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-alert.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-calendar.ac7aea671bea.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-calendar.ac7aea671bea.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-calendar.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-calendar.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-changelink.18d2fd706348.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-changelink.18d2fd706348.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-changelink.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-changelink.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-clock.e1d4dfac3f2b.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-clock.e1d4dfac3f2b.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-clock.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-clock.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-deletelink.564ef9dc3854.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-deletelink.564ef9dc3854.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-deletelink.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-deletelink.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-no.439e821418cd.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-no.439e821418cd.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-no.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-no.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-unknown-alt.81536e128bb6.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-unknown-alt.81536e128bb6.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-unknown-alt.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-unknown-alt.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-unknown.a18cb4398978.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-unknown.a18cb4398978.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-unknown.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-unknown.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-yes.d2f9f035226a.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-yes.d2f9f035226a.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-yes.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/icon-yes.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/inline-delete.fec1b761f254.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/inline-delete.fec1b761f254.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/inline-delete.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/inline-delete.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/search.7cf54ff789c6.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/search.7cf54ff789c6.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/search.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/search.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/selector-icons.b4555096cea2.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/selector-icons.b4555096cea2.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/selector-icons.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/selector-icons.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/sorting-icons.3a097b59f104.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/sorting-icons.3a097b59f104.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/sorting-icons.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/sorting-icons.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/tooltag-add.e59d620a9742.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/tooltag-add.e59d620a9742.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/tooltag-add.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/tooltag-add.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/tooltag-arrowright.bbfb788a849e.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/tooltag-arrowright.bbfb788a849e.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/tooltag-arrowright.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/img/tooltag-arrowright.svg.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/SelectBox.b49f008d186b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/SelectBox.b49f008d186b.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/SelectBox.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/SelectBox.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/SelectFilter2.2360f389ca5d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/SelectFilter2.2360f389ca5d.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/SelectFilter2.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/SelectFilter2.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/actions.6bf7f1c0488d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/actions.6bf7f1c0488d.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/actions.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/actions.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/actions.min.741d6cf65b97.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/actions.min.741d6cf65b97.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/actions.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/actions.min.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/admin/DateTimeShortcuts.9328d2bf6579.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/admin/DateTimeShortcuts.9328d2bf6579.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/admin/DateTimeShortcuts.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/admin/DateTimeShortcuts.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/admin/RelatedObjectLookups.ace63ab4b4e2.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/admin/RelatedObjectLookups.ace63ab4b4e2.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/admin/RelatedObjectLookups.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/admin/RelatedObjectLookups.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/autocomplete.cfd2c4dc8981.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/autocomplete.cfd2c4dc8981.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/autocomplete.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/autocomplete.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/calendar.aae57adab5f6.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/calendar.aae57adab5f6.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/calendar.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/calendar.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/cancel.1d69cba4b4bf.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/cancel.1d69cba4b4bf.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/cancel.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/cancel.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/change_form.9e85003a1a38.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/change_form.9e85003a1a38.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/change_form.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/change_form.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/collapse.17d715df2104.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/collapse.17d715df2104.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/collapse.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/collapse.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/collapse.min.e1d03a2acd1e.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/collapse.min.e1d03a2acd1e.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/collapse.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/collapse.min.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/core.953326603873.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/core.953326603873.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/core.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/core.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/inlines.bc34c02c43c8.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/inlines.bc34c02c43c8.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/inlines.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/inlines.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/inlines.min.4b879f616086.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/inlines.min.4b879f616086.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/inlines.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/inlines.min.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/jquery.init.95b62fa19378.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/jquery.init.95b62fa19378.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/jquery.init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/jquery.init.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/popup_response.6ce3197f8fc8.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/popup_response.6ce3197f8fc8.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/popup_response.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/popup_response.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/prepopulate.ff9208865444.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/prepopulate.ff9208865444.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/prepopulate.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/prepopulate.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/prepopulate.min.f4057ebb9b62.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/prepopulate.min.f4057ebb9b62.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/prepopulate.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/prepopulate.min.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/prepopulate_init.0d3b53c37074.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/prepopulate_init.0d3b53c37074.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/prepopulate_init.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/prepopulate_init.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/timeparse.51258861a46a.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/timeparse.51258861a46a.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/timeparse.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/timeparse.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/urlify.3d46df4a0190.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/urlify.3d46df4a0190.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/urlify.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/urlify.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/jquery/LICENSE-JQUERY.a158210a2737.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/jquery/LICENSE-JQUERY.a158210a2737.txt.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/jquery/LICENSE-JQUERY.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/jquery/LICENSE-JQUERY.txt.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/jquery/jquery.aacc43d6f308.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/jquery/jquery.aacc43d6f308.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/jquery/jquery.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/jquery/jquery.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/jquery/jquery.min.33cabfa15c10.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/jquery/jquery.min.33cabfa15c10.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/jquery/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/jquery/jquery.min.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/LICENSE-SELECT2.7cf1de939f3b.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/LICENSE-SELECT2.7cf1de939f3b.md.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/LICENSE-SELECT2.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/LICENSE-SELECT2.md.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ar.a8bb27ec698c.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ar.a8bb27ec698c.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ar.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ar.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/az.498dc667b34e.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/az.498dc667b34e.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/az.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/az.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/bg.89cba4df3c86.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/bg.89cba4df3c86.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/bg.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/bg.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ca.2eaad4eb1950.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ca.2eaad4eb1950.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ca.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ca.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/cs.a68bcd293adc.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/cs.a68bcd293adc.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/cs.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/cs.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/da.cbf897a0ae53.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/da.cbf897a0ae53.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/da.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/da.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/de.366d0aacb55f.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/de.366d0aacb55f.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/de.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/de.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/el.5629ce65500f.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/el.5629ce65500f.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/el.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/el.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/en.05649b26c086.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/en.05649b26c086.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/en.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/en.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/es.dc9dbf9d65df.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/es.dc9dbf9d65df.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/es.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/es.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/et.c3953fb90b6b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/et.c3953fb90b6b.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/et.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/et.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/eu.11b925456433.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/eu.11b925456433.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/eu.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/eu.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/fa.98e52839b583.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/fa.98e52839b583.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/fa.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/fa.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/fi.659847deefdc.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/fi.659847deefdc.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/fi.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/fi.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/fr.b06a3340de45.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/fr.b06a3340de45.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/fr.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/fr.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/gl.78a87f7c0a51.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/gl.78a87f7c0a51.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/gl.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/gl.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/he.222d90ee0344.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/he.222d90ee0344.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/he.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/he.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/hi.116a90b7111b.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/hi.116a90b7111b.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/hi.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/hi.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/hr.e1d2c70b4df5.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/hr.e1d2c70b4df5.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/hr.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/hr.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/hu.db45641f10b2.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/hu.db45641f10b2.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/hu.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/hu.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/id.6ee6c9c64b94.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/id.6ee6c9c64b94.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/id.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/id.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/is.808c7d47acb5.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/is.808c7d47acb5.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/is.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/is.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/it.bae1661dbb77.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/it.bae1661dbb77.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/it.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/it.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ja.19cf1ce8a03d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ja.19cf1ce8a03d.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ja.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ja.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/km.6074a9c5575c.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/km.6074a9c5575c.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/km.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/km.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ko.74b17541834f.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ko.74b17541834f.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ko.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ko.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/lt.a0783b1bd159.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/lt.a0783b1bd159.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/lt.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/lt.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/lv.07fe2a580d17.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/lv.07fe2a580d17.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/lv.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/lv.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/mk.4986d7fc3ff3.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/mk.4986d7fc3ff3.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/mk.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/mk.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ms.23e7b4369579.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ms.23e7b4369579.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ms.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ms.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/nb.137e184004aa.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/nb.137e184004aa.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/nb.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/nb.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/nl.c363ace8aa05.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/nl.c363ace8aa05.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/nl.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/nl.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/pl.76465b54a6b0.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/pl.76465b54a6b0.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/pl.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/pl.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/pt-BR.9efbbac4fda8.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/pt-BR.9efbbac4fda8.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/pt-BR.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/pt-BR.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/pt.5d6ccc53b347.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/pt.5d6ccc53b347.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/pt.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/pt.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ro.1ddc2b9980dc.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ro.1ddc2b9980dc.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ro.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ro.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ru.d83609abf2e0.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ru.d83609abf2e0.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ru.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/ru.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sk.a0f1a818d092.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sk.a0f1a818d092.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sk.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sk.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sr-Cyrl.2f3047aad49e.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sr-Cyrl.2f3047aad49e.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sr-Cyrl.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sr-Cyrl.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sr.157bc6eb978e.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sr.157bc6eb978e.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sr.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sr.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sv.2b21bb3f6110.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sv.2b21bb3f6110.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sv.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/sv.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/th.2a4ece4c4355.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/th.2a4ece4c4355.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/th.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/th.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/tr.c1925d8817db.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/tr.c1925d8817db.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/tr.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/tr.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/uk.3d56f311192d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/uk.3d56f311192d.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/uk.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/uk.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/vi.3520aa7bdea8.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/vi.3520aa7bdea8.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/vi.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/vi.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/zh-CN.419002d3c6c1.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/zh-CN.419002d3c6c1.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/zh-CN.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/zh-CN.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/zh-TW.c021537edf2c.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/zh-TW.c021537edf2c.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/zh-TW.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/i18n/zh-TW.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/select2.full.a95323cb4760.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/select2.full.a95323cb4760.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/select2.full.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/select2.full.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/select2.full.min.da607360bcc6.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/select2.full.min.da607360bcc6.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/select2.full.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/select2/select2.full.min.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/xregexp/LICENSE-XREGEXP.d64cecf4f157.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/xregexp/LICENSE-XREGEXP.d64cecf4f157.txt.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/xregexp/xregexp.1865b1cf5085.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/xregexp/xregexp.1865b1cf5085.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/xregexp/xregexp.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/xregexp/xregexp.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/xregexp/xregexp.min.c95393b8ca4d.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/xregexp/xregexp.min.c95393b8ca4d.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/xregexp/xregexp.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/admin/js/vendor/xregexp/xregexp.min.js.gz" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/lang-logo.019c8743b7cf.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/lang-logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/staticfiles/staticfiles.json" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="about-sutherland.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hello/templates/about/about-sutherland.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about-humeston.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hello/templates/about/about-humeston.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/hello/templates/about/about-humeston.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="14" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="csc648-team07" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csc648-team07" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csc648-team07" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csc648-team07" type="462c0819:PsiDirectoryNode" />
+              <item name="gettingstarted" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csc648-team07" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csc648-team07" type="462c0819:PsiDirectoryNode" />
+              <item name="hello" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csc648-team07" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csc648-team07" type="462c0819:PsiDirectoryNode" />
+              <item name="hello" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csc648-team07" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csc648-team07" type="462c0819:PsiDirectoryNode" />
+              <item name="hello" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csc648-team07" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csc648-team07" type="462c0819:PsiDirectoryNode" />
+              <item name="hello" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="about" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csc648-team07" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csc648-team07" type="462c0819:PsiDirectoryNode" />
+              <item name="staticfiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hello/templates/about" />
+      <recent name="$PROJECT_DIR$/hello/static" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="csc648-team07" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="csc648-team07" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="86a5eb69-07e5-4725-ad25-fce580c302e0" name="Default" comment="" />
+      <created>1519101110831</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1519101110831</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/hello/static/lang-logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/static/sutherland-about.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/templates/about/about-humeston.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/templates/about/about-sutherland.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/templates/about/about-humeston.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
