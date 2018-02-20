@@ -13,7 +13,7 @@ def index(request):
     #return HttpResponse('<pre>' + r.text + '</pre>')
 
 def about(request):
-    return render(request, 'about/about-sutherland.html')
+    return render(request, 'about.html')
 
 def db(request):
 
