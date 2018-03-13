@@ -11,9 +11,9 @@ import hello.views
 # url(r'^blog/', include('blog.urls')),
 
 urlpatterns = [
-    #url(r'^$', hello.views.index, name='index'),
+    url(r'^$', hello.views.index, name='index'),
     url(r'^db', hello.views.db, name='db'),
-    url(r'^$', hello.views.about, name='about'), # make this index of the site
+    url(r'^about$', hello.views.about, name='about'),
     url(r'^about-ali/', hello.views.about1, name='about1'),
     url(r'^about-cameron/', hello.views.about2, name='about2'),
     url(r'^about-girish/', hello.views.about3, name='about3'),
