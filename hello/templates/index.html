@@ -1,23 +1,47 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 {% block content %}
 
 <div class="jumbotron text-center">
+  <div class="container">
+    <a href="/" class="logo">
+        <img src="{% static 'tree.jpg'%}">
+    </a>
+  </div>
     <h1>Eco Hazards</h1>
     <p>Eco Hazards is an SFSU startup company that plans to help clean up the environment through our web-based application.</p>
-    <button type="button" class="btn btn-dark btn-lg">Report a Hazard</button>
-</div>
 
     <!-- Search Bar  ###  Change placeholder to change words inside search-->
-
-	<form class="navbar navbar-form, container" role="search">
+	<div class="navbar navbar-form, container" role="search">
+    <h3>Search for Hazard</h3>
+        <div class="container">
+  <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
 					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search">
+						<input type="text" class="form-control" placeholder="Enter Zipcode">
 						<span class="input-group-btn">
-							<button type="submit" class="btn btn-default btn-dark">Go</button>
+							<button type="submit" class="btn btn-dark"><img src="{% static 'search.png'%}"></button>
 						</span>
 					</div>
-				</form>
+  </div>
+            <button type="button" class="btnPost btn-dark btn-lg">Report a Hazard</button>
+            <button type="button" class="btn btn-dark btn-lg">Twitter Space Holder</button>
+  </div>
+    </div>
+    <div style="padding-bottom: 50px"></div>
+<div class="dropdown">
+    <button type="button" class="btn btn btn-dark">Refresh</button>
+  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Recent Activity
+  </button>
+    <button type="button" class="btn btn-dark">Map Viewer</button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Your Posts</a>
+    <a class="dropdown-item" href="#">Most Viewed</a>
+  </div>
+</div>
+    <div style="padding-bottom: 50px"></div>
 <html>
   <head>
     <style>
@@ -84,3 +108,4 @@
   </div>
 </html>
 {% endblock %}
+</div>

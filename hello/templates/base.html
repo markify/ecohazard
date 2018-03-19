@@ -5,11 +5,14 @@
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
   <style type="text/css">
     .jumbotron {
         background: white;                      /* Color on top of page */
         color: black;                           /* First words on screen */
-        padding-bottom: 10px                    /* Bottom of screen beneath two buttons */
+        padding-bottom: 10px
     }
     /*
     .jumbotron .btn-primary {
@@ -26,26 +29,28 @@
         color: black;                           /* Words under title */
         margin: 1em auto 2em                    /* Centered */
     }
+    .btnPost {
+        background-color: red;
+    }
     .navbar+.jumbotron {
         margin-top: -25px                       /* Nav bar on top */
     }
-}
-
-    /*
-    .jumbotron .lang-logo {
+    .jumbotron .logo {
         display: block;
-        background: #b01302;
-        border-radius: 50%;                    All of this is used for picture above Title if needed
+        background: black;
+        border-radius: 50%;
         overflow: hidden;
         width: 100px;
         height: 100px;
         margin: auto;
         border: 2px solid white
     }
-    .jumbotron .lang-logo img {
+    .navbarMine {
+        max-width: 100%;
+    }
+    .jumbotron .logo img {
         max-width: 100%
     }
-*/
   </style>
 </head>
 <body>
@@ -62,8 +67,18 @@
         <a class="nav-link" href="about">About Page</a>
       </li>
     </ul>
+      <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Login</a>
+      </li>
+          <li class="nav-item">
+        <a class="nav-link" href="#">Signup</a>
+      </li>
+      </ul>
   </div>
 </nav>
+</div>
+
 
 
         <!--                    DROPDOWN BAR WE CAN IMPLEMENT
