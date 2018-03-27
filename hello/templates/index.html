@@ -11,37 +11,6 @@
     <h1>Eco Hazards</h1>
     <p>Eco Hazards is an SFSU startup company that plans to help clean up the environment through our web-based application.</p>
 
-    <!-- Search Bar  ###  Change placeholder to change words inside search-->
-	<div class="navbar navbar-form, container" role="search">
-    <h3>Search for Hazard</h3>
-        <div class="container">
-  <div class="row">
-      <div class="col"></div>
-      <div class="col"></div>
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Enter Zipcode">
-						<span class="input-group-btn">
-							<button type="submit" class="btn btn-dark"><img src="{% static 'search.png'%}"></button>
-						</span>
-					</div>
-  </div>
-            <button type="button" class="btnPost btn-dark btn-lg">Report a Hazard</button>
-            <a class="twitter-timeline" data-width="271" data-height="466" href="https://twitter.com/SFEnvironment?ref_src=twsrc%5Etfw">Tweets by SFEnvironment</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-    </div>
-    <div style="padding-bottom: 50px"></div>
-<div class="dropdown">
-    <button type="button" class="btn btn btn-dark">Refresh</button>
-  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Recent Activity
-  </button>
-    <button type="button" class="btn btn-dark">Map Viewer</button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Your Posts</a>
-    <a class="dropdown-item" href="#">Most Viewed</a>
-  </div>
-</div>
-    <div style="padding-bottom: 50px"></div>
 <html>
   <head>
     <style>
@@ -51,7 +20,10 @@
        }
     </style>
   </head>
-  <body>
+
+    <!-- Page Content -->
+    <div class="container">
+      <body>
         <div id="map"></div>
     <script>
         var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -86,26 +58,127 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZXrZ9XmAIYt4rCRY7k2a0-k3Ko8chRxc&callback=initMap">
     </script>
-  <div style="padding-bottom: 150px"></div>
+
   </body>
+      <div class="row">
+        <!-- Hazard Post Entries -->
+        <div class="col-md-8">
 
-
-<div class="row">
-    <div class="col-md-6">
+          <h1 class="my-4">Search for Hazard
+               <!-- Search Bar  ###  Change placeholder to change words inside search-->
+	<div class="navbar navbar-form, container" role="search">
+ 
         <div class="container">
-           <h3>Postings by Me</h3>
-    <textarea class="form-control" rows="3" ></textarea>
-            <div style="padding-bottom: 150px"></div>
-</div>
-    </div>
- <div class="col-md-6">
-     <div class="container">
-           <h3>Recent Postings</h3>
-    <textarea class="form-control" rows="3" ></textarea>
-         <div style="padding-bottom: 150px"></div>
-    </div>
-  </div> <!-- row -->
+  <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Enter Zipcode">
+						<span class="input-group-btn">
+              <button type="submit" class="btn btn-dark"><img src="{% static 'search.png'%}"></button>
+              <button type="button" class="btnPost btn-dark btn-lg">Report a Hazard</button>
+						</span>
+					</div>
   </div>
+          </h1>
+
+          <!-- Placeholder Hazard Post -->
+          <div class="card mb-4">
+            <div class="card-body">
+                <div class="d-flex flex-row-reverse">
+                    <div class="p-2">   <a href="#" class="btn btn-danger">Resolved</a></div>
+                    
+                  </div>
+              <h2 class="card-title">Marina District Fire</h2>
+              <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore verit</p>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on January 1, 2016 by
+              <a href="#">User Bill</a>
+              <footer class="blockquote-footer">
+                <small>
+                 <cite title=""> Zipcode : [ 94123 ] </cite>
+                </small>
+              </footer>
+            </div>
+          </div>
+
+          <!-- Placeholder Hazard Post -->
+          <div class="card mb-4">
+
+            <div class="card-body">
+                <div class="d-flex flex-row-reverse">
+                    <div class="p-2">   <a href="#" class="btn btn-success">Resolved</a></div>
+                    
+                  </div>
+              <h2 class="card-title">San Francisco Landslide</h2>
+              <p class="card-text">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto </p>
+           
+            </div>
+            <div class="card-footer text-muted">
+              Posted on January 2, 2016 by
+              <a href="#">User Bob</a>
+              <footer class="blockquote-footer">
+                <small>
+                 <cite title=""> Zipcode : [ 94123 ] </cite>
+                </small>
+              </footer>
+            </div>
+          
+          </div>
+
+          <!-- Placeholder Hazard Post -->
+          <div class="card mb-4">
+            <div class="card-body">
+                <div class="d-flex flex-row-reverse">
+                    <div class="p-2">   <a href="#" class="btn btn-danger">Resolved</a></div>
+                    
+                  </div>
+              <h2 class="card-title">Presidio Contamination</h2>
+              <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore verit</p> </p>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on January 3, 2016 by
+              <a href="#">User Bob</a>
+              <footer class="blockquote-footer">
+                  <small>
+                   <cite title=""> Zipcode : [ 94123 ] </cite>
+                  </small>
+                </footer>
+            </div>
+          </div>
+
+          <!-- Pagination Go to other section -->
+          <ul class="pagination justify-content-center mb-4">
+            <li class="page-item">
+              <a class="page-link" href="#">Recent Post</a>
+            </li>
+            <li class="page-item disabled">
+              <a class="page-link" href="#">Next Post</a>
+            </li>
+          </ul>
+
+        </div>
+
+          <!-- Twitter Widget -->
+          <a class="twitter-timeline" data-width="371" data-height="466" href="https://twitter.com/SFEnvironment?ref_src=twsrc%5Etfw">Tweets by SFEnvironment</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-2 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Terms | Contact</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
 </html>
 {% endblock %}
 </div>
