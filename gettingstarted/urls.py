@@ -10,6 +10,7 @@ import hello.views
 # url(r'^$', 'gettingstarted.views.home', name='home'),
 # url(r'^blog/', include('blog.urls')),
 
+
 urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
     url(r'^db', hello.views.db, name='db'),
@@ -23,3 +24,4 @@ urlpatterns = [
     url(r'^about-sutherland/', hello.views.about7, name='about7'),
     path('admin/', admin.site.urls),
 ]
+
