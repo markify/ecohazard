@@ -13,6 +13,7 @@ import hello.views
 
 urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
+    url(r'^marker', hello.views.marker, name='marker'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^about$', hello.views.about, name='about'),
     url(r'^about-ali/', hello.views.about1, name='about1'),
