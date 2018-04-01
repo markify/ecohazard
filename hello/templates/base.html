@@ -1,57 +1,17 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
 <title>Eco Hazards</title>
-  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-  <style type="text/css">
-    .jumbotron {
-        background: white;                      /* Color on top of page */
-        color: black;                           /* First words on screen */
-        padding-bottom: 10px
-    }
-    /*
-    .jumbotron .btn-primary {
-        background: white                    /* Second button on main screen *//*
-        border-color: white
-    }
-
-    /*
-    .jumbotron .btn-primary:hover {              Not sure what this does
-        background: #7646c1
-    }
-    */
-    .jumbotron p {
-        color: black;                           /* Words under title */
-        margin: 1em auto 2em                    /* Centered */
-    }
-    .btnPost {
-        background-color: red;
-    }
-    .navbar+.jumbotron {
-        margin-top: -25px                       /* Nav bar on top */
-    }
-    .jumbotron .logo {
-        display: block;
-        background: black;
-        border-radius: 50%;
-        overflow: hidden;
-        width: 100px;
-        height: 100px;
-        margin: auto;
-        border: 2px solid white
-    }
-    .navbarMine {
-        max-width: 100%;
-    }
-    .jumbotron .logo img {
-        max-width: 100%
-    }
-  </style>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+  <!-- Bootstrap 4.0 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- End Bootstrap 4.0 -->
+  <link rel="stylesheet" type="text/css" href="{% static "main.css" %}">
+  {% block head %}{% endblock %}
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -61,7 +21,7 @@
   <div class="collapse navbar-collapse, container" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="about">About Page</a>
@@ -110,5 +70,13 @@
 
 {% block content %}{% endblock %}
 
+
+<!-- Footer -->
+  <footer class="py-2 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Terms | Contact</p>
+    </div>
+    <!-- /.container -->
+  </footer>
 </body>
 </html>

@@ -1,103 +1,73 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+
+{% block head %}
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+{% endblock %}
+
 {% block content %}
-
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="logo">
-        <img src="{% static 'tree.jpg'%}">
-    </a>
-  </div>
+  <div class="jumbotron text-center">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="{% static 'tree.jpg' %}">
+      </a>
+    </div>
     <h1>Eco Hazards</h1>
-    <p>Eco Hazards is an SFSU startup company that plans to help clean up the environment through our web-based application.</p>
-
-<html>
-  <head>
-    <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
-  </head>
+    <p>Eco Hazards is an SFSU startup company that plans to help clean up the environment through our web-based
+      application.</p>
 
     <!-- Page Content -->
     <div class="container">
-      <body>
-        <div id="map"></div>
-    <script>
-        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        var labelIndex = 0;
-      function initMap() {
-          var uluru = {lat: 37.7739, lng: -122.4313};
-          var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 12,
-              center: uluru
-          });
 
-          google.maps.event.addListener(map, 'click', function(event) {
-          addMarker(event.latLng, map);
-        });
-
-        // Add a marker at the center of the map.
-        addMarker(uluru, map);
-
-          function addMarker(location, map) {
-              var marker = new google.maps.Marker({
-                  map: map,
-                  draggable: true,
-                  animation: google.maps.Animation.DROP,
-                  position: location,
-                  label: labels[labelIndex++ % labels.length],
-              });
-              marker.addListener('click', toggleBounce);
-          }
-          google.maps.event.addDomListener(window, 'load', initialize);
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZXrZ9XmAIYt4rCRY7k2a0-k3Ko8chRxc&callback=initMap">
-    </script>
-
-  </body>
       <div class="row">
         <!-- Hazard Post Entries -->
         <div class="col-md-8">
 
-          <h1 class="my-4">Search for Hazard
-               <!-- Search Bar  ###  Change placeholder to change words inside search-->
-	<div class="navbar navbar-form, container" role="search">
- 
-        <div class="container">
-  <div class="row">
-      <div class="col"></div>
-      <div class="col"></div>
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Enter Zipcode">
-						<span class="input-group-btn">
-              <button type="submit" class="btn btn-dark"><img src="{% static 'search.png'%}"></button>
-              <button type="button" class="btnPost btn-dark btn-lg">Report a Hazard</button>
-						</span>
-					</div>
-  </div>
-          </h1>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter Zipcode">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-dark"><img src="{% static 'search.png' %}"></button>
+                  </span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <button type="button" class="btnPost btn-dark btn-lg">Report a Hazard</button>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <div id="map"></div>
+      </div>
+      <!-- /.row -->
+
+
+      <div class="row">
+        <!-- Hazard Post Entries -->
+        <div class="col-md-8">
 
           <!-- Placeholder Hazard Post -->
           <div class="card mb-4">
             <div class="card-body">
-                <div class="d-flex flex-row-reverse">
-                    <div class="p-2">   <a href="#" class="btn btn-danger">Resolved</a></div>
-                    
-                  </div>
+              <div class="d-flex flex-row-reverse">
+                <div class="p-2"><a href="#" class="btn btn-danger">Resolved</a></div>
+
+              </div>
               <h2 class="card-title">Marina District Fire</h2>
-              <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore verit</p>
+              <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore verit</p>
             </div>
             <div class="card-footer text-muted">
               Posted on January 1, 2016 by
               <a href="#">User Bill</a>
               <footer class="blockquote-footer">
                 <small>
-                 <cite title=""> Zipcode : [ 94123 ] </cite>
+                  <cite title=""> Zipcode : [ 94123 ] </cite>
                 </small>
               </footer>
             </div>
@@ -107,44 +77,47 @@
           <div class="card mb-4">
 
             <div class="card-body">
-                <div class="d-flex flex-row-reverse">
-                    <div class="p-2">   <a href="#" class="btn btn-success">Resolved</a></div>
-                    
-                  </div>
+              <div class="d-flex flex-row-reverse">
+                <div class="p-2"><a href="#" class="btn btn-success">Resolved</a></div>
+
+              </div>
               <h2 class="card-title">San Francisco Landslide</h2>
-              <p class="card-text">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto </p>
-           
+              <p class="card-text">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                architecto </p>
+
             </div>
             <div class="card-footer text-muted">
               Posted on January 2, 2016 by
               <a href="#">User Bob</a>
               <footer class="blockquote-footer">
                 <small>
-                 <cite title=""> Zipcode : [ 94123 ] </cite>
+                  <cite title=""> Zipcode : [ 94123 ] </cite>
                 </small>
               </footer>
             </div>
-          
+
           </div>
 
           <!-- Placeholder Hazard Post -->
           <div class="card mb-4">
             <div class="card-body">
-                <div class="d-flex flex-row-reverse">
-                    <div class="p-2">   <a href="#" class="btn btn-danger">Resolved</a></div>
-                    
-                  </div>
+              <div class="d-flex flex-row-reverse">
+                <div class="p-2"><a href="#" class="btn btn-danger">Resolved</a></div>
+
+              </div>
               <h2 class="card-title">Presidio Contamination</h2>
-              <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore verit</p> </p>
+              <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore verit</p> </p>
             </div>
             <div class="card-footer text-muted">
               Posted on January 3, 2016 by
               <a href="#">User Bob</a>
               <footer class="blockquote-footer">
-                  <small>
-                   <cite title=""> Zipcode : [ 94123 ] </cite>
-                  </small>
-                </footer>
+                <small>
+                  <cite title=""> Zipcode : [ 94123 ] </cite>
+                </small>
+              </footer>
             </div>
           </div>
 
@@ -160,25 +133,57 @@
 
         </div>
 
+        <div>
           <!-- Twitter Widget -->
-          <a class="twitter-timeline" data-width="371" data-height="466" href="https://twitter.com/SFEnvironment?ref_src=twsrc%5Etfw">Tweets by SFEnvironment</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+          <a class="twitter-timeline" data-width="371" data-height="466"
+             href="https://twitter.com/SFEnvironment?ref_src=twsrc%5Etfw">Tweets by SFEnvironment</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
 
       </div>
-      <!-- /.row -->
 
     </div>
-    <!-- /.container -->
+    <!-- /.row -->
 
-    <!-- Footer -->
-    <footer class="py-2 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Terms | Contact</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+  </div>
+  <!-- /.container -->
 
-</html>
+
+
+  <script>
+      var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      var labelIndex = 0;
+
+      function initMap() {
+          var uluru = {lat: 37.7739, lng: -122.4313};
+          var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 12,
+              center: uluru
+          });
+
+          google.maps.event.addListener(map, 'click', function (event) {
+              addMarker(event.latLng, map);
+          });
+
+          // Add a marker at the center of the map.
+          addMarker(uluru, map);
+
+          function addMarker(location, map) {
+              var marker = new google.maps.Marker({
+                  map: map,
+                  draggable: true,
+                  animation: google.maps.Animation.DROP,
+                  position: location,
+                  label: labels[labelIndex++ % labels.length],
+              });
+              marker.addListener('click', toggleBounce);
+          }
+
+          google.maps.event.addDomListener(window, 'load', initialize);
+      }
+  </script>
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZXrZ9XmAIYt4rCRY7k2a0-k3Ko8chRxc&callback=initMap">
+  </script>
 {% endblock %}
 </div>
