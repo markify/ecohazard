@@ -12,6 +12,9 @@ def index(request):
     #print(r.text)
     #return HttpResponse('<pre>' + r.text + '</pre>')
 
+def marker(request):
+    return render(request, 'marker.html')
+
 def about(request):
     return render(request, 'about.html')
 
