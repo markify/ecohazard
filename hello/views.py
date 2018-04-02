@@ -4,19 +4,32 @@ from django.http import HttpResponse
 from .models import Greeting
 import requests
 
+
 # Create your views here.
 def index(request):
-    #return HttpResponse('Hello from Python!')
+    # return HttpResponse('Hello from Python!')
     return render(request, 'index.html')
-    #r = requests.get('http://httpbin.org/status/418')
-    #print(r.text)
-    #return HttpResponse('<pre>' + r.text + '</pre>')
+    # r = requests.get('http://httpbin.org/status/418')
+    # print(r.text)
+    # return HttpResponse('<pre>' + r.text + '</pre>')
 
-def about(request):
+
+def about(request, extra=None):
+    switcher = {
+        '-ali': 'about/about-ali.html',
+        '-cameron': 'about/about-cameron.html',
+        '-girish': 'about/about-girish.html',
+        '-humeston': 'about/about-humeston.html',
+        '-larsen': 'about/about-larsen.html',
+        '-mark': 'about/about-mark.html',
+        '-sutherland': 'about/about-sutherland.html'
+    }
+    if extra:
+        return render(request, switcher.get(extra, 'about.html'))
     return render(request, 'about.html')
 
-def db(request):
 
+def db(request):
     greeting = Greeting()
     greeting.save()
 
@@ -24,23 +37,10 @@ def db(request):
 
     return render(request, 'db.html', {'greetings': greetings})
 
-def about1(request):
-    return render(request, 'about/about-ali.html')
 
-def about2(request):
-    return render(request, 'about/about-cameron.html')
-    
-def about3(request):
-    return render(request, 'about/about-girish.html')
+def map(request):
+    return render(request, 'map.html')
 
-def about4(request):
-    return render(request, 'about/about-humeston.html')
 
-def about5(request):
-    return render(request, 'about/about-larsen.html')
-
-def about6(request):
-    return render(request, 'about/about-mark.html')
-
-def about7(request):
-    return render(request, 'about/about-sutherland.html')    
+def search(request):
+    return render(request, 'search.html')
