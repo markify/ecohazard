@@ -38,6 +38,10 @@ def db(request):
     return render(request, 'db.html', {'greetings': greetings})
 
 
+def marker(request):
+    return render(request, 'marker.html')
+
+
 def map(request):
     return render(request, 'map.html')
 

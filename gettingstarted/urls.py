@@ -10,11 +10,14 @@ import hello.views
 # url(r'^$', 'gettingstarted.views.home', name='home'),
 # url(r'^blog/', include('blog.urls')),
 
+
 urlpatterns = [
     url(r'^$', hello.views.index, name='index'),
+    url(r'^marker', hello.views.marker, name='marker'),
     url(r'^db', hello.views.db, name='db'),
     url(r'^about(-\w*)?/?$', hello.views.about, name='about'),
     url(r'^map(?:\.html?)?/?$', hello.views.map, name='map'),
     url(r'^search', hello.views.search, name='search'),
     path('admin/', admin.site.urls),
 ]
+
