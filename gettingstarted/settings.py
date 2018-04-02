@@ -78,12 +78,13 @@ WSGI_APPLICATION = 'gettingstarted.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        #'USER':,
-        #'PASSWORD':,
-        #'HOST':,
-        #'PORT':,
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'heroku_6989457c62cc0b1',
+        #'NAME': os.path.join(BASE_DIR, 'heroku_6989457c62cc0b1'),
+        'USER': 'b71b408bbd3edd',
+        'PASSWORD': '4eb0204e',
+        'HOST': 'us-cdbr-iron-east-05.cleardb.net',
+        'PORT': '3306',
     }
 }
 
