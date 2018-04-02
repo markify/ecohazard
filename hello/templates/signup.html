@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+  
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<!--  This is place holder signup due to change -->
+
+<div class="container">
+<form action="/action_page.php">
+    <div class="form-group">
+      <label for="email">Email address:</label>
+      <input type="email" class="form-control" id="email">
+    </div>
+    <div class="form-group">
+      <label for="email">Username</label>
+      <input type="email" class="form-control" id="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd">
+      </div>
+
+  </form>
+
+  <script type="text/javascript">
+    var RecaptchaOptions = {
+       theme : 'custom',
+       custom_theme_widget: 'recaptcha_widget'
+    };
+</script>               
+<!--  This is place holder  due to change -->
+
+<!--  This is place holder to test captcha, due to change will be removed -->
+<form method="post" action="<?php echo $base_url; ?>user/register/check" method="post" class="form-horizontal well" accept-charset="UTF-8">
+
+                   <script type="text/javascript">
+                        var RecaptchaOptions = {
+                           theme : 'custom',
+                           custom_theme_widget: 'recaptcha_widget'
+                        };
+                   </script>
+                   <div id="recaptcha_widget" style="display:none">
+
+                       <div class="control-group">
+                           <label class="control-label"></label>
+                           <div class="controls">
+                               <a id="recaptcha_image" href="#" class="thumbnail"></a>
+                               <div class="recaptcha_only_if_incorrect_sol" style="color:red">Incorrect please try again</div>
+                           </div>
+                       </div>
+
+                          <div class="control-group">
+                              <label class="recaptcha_only_if_image control-label">Enter the words above:</label>
+                             <label class="recaptcha_only_if_audio control-label">Enter the numbers you hear:</label>
+                              <div class="row"></div>
+                             <div class="controls">
+                                 <div class="input-append">
+                                    <button type="submit" class="btn btn-success">Submit</button>
+                                     <input type="text" id="recaptcha_response_field" name="recaptcha_response_field" class="input-recaptcha" />
+                                     <a class="btn" href="javascript:Recaptcha.reload()"><i class="icon-refresh"></i></a>
+                                     <a class="btn recaptcha_only_if_image" href="javascript:Recaptcha.switch_type('audio')"><i title="Get an audio CAPTCHA" class="icon-headphones"></i></a>
+                                     <a class="btn recaptcha_only_if_audio" href="javascript:Recaptcha.switch_type('image')"><i title="Get an image CAPTCHA" class="icon-picture"></i></a>
+                                   <a class="btn" href="javascript:Recaptcha.showhelp()"><i class="icon-question-sign"></i></a>
+                                 </div>
+                             </div>
+                       </div>
+                       
+
+                   </div>
+
+                   <script type="text/javascript"
+                      src="<?php echo $recaptcha_url; ?>">
+                   </script>
+
+                   <noscript>
+                       <iframe src="<?php echo $recaptcha_noscript_url; ?>"
+                          height="300" width="500" frameborder="0"></iframe><br>
+                       <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+                       </textarea>
+                       <input type="hidden" name="recaptcha_response_field"
+                          value="manual_challenge">
+                     </noscript>
+</form>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LcrK9cSAAAAALEcjG9gTRPbeA0yAVsKd8sBpFpR"></script>
+
+<noscript>
+   <iframe src="<?php echo $recaptcha_noscript_url; ?>"
+      height="300" width="500" frameborder="0"></iframe><br>
+   <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+   </textarea>
+   <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+</noscript>
+
+
+<!--  This is place holder captcha due to change -->
+
+</div>
+  {% endblock %}

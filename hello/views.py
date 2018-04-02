@@ -46,5 +46,15 @@ def map(request):
     return render(request, 'map.html')
 
 
+def signup(request):
+    return render(request, 'signup.html')
+
+def login(request):
+    return render(request, 'login.html')
+    
+def report(request):
+    return render(request, 'report.html')
+
+
 def search(request):
     return render(request, 'search.html')

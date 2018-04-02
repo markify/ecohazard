@@ -17,6 +17,9 @@ urlpatterns = [
     url(r'^db', hello.views.db, name='db'),
     url(r'^about(-\w*)?/?$', hello.views.about, name='about'),
     url(r'^map(?:\.html?)?/?$', hello.views.map, name='map'),
+    url(r'^signup', hello.views.signup, name='signup'),
+    url(r'^login', hello.views.login, name='login'),
+    url(r'^report', hello.views.report, name='report'),
     url(r'^search', hello.views.search, name='search'),
     path('admin/', admin.site.urls),
 ]
