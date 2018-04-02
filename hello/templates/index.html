@@ -51,13 +51,17 @@
         <!-- Hazard Post Entries -->
         <div class="col-md-8">
 
+          <!-- trying out search with css and js due to change will remove -->
+          <section class="list-wrap">
+            <label for="search-text">Search hazard reports</label>
+           <input type="text" id="search-text" placeholder="Enter Zipcode" class="search-box">  
+         <ul id="list">
+          <!-- li -->
+          <li class="in">
+
           <!-- Placeholder Hazard Post -->
           <div class="card mb-4">
             <div class="card-body">
-                <div class="d-flex flex-row-reverse">
-                    <div class="p-2">   <a href="#" class="btn btn-danger">Resolved</a></div>
-
-                  </div>
               <div class="d-flex flex-row-reverse">
                 <div class="p-2"><a href="#" class="btn btn-danger">Resolved</a></div>
 
@@ -71,11 +75,14 @@
               <a href="#">User Bill</a>
               <footer class="blockquote-footer">
                 <small>
-                  <cite title=""> Zipcode : [ 94123 ] </cite>
+                  <cite title=""> Zipcode : [ 94115 ] </cite>
                 </small>
               </footer>
             </div>
           </div>
+
+        </li><!-- li -->
+        <li class="in">
 
           <!-- Placeholder Hazard Post -->
           <div class="card mb-4">
@@ -96,12 +103,15 @@
               <a href="#">User Bob</a>
               <footer class="blockquote-footer">
                 <small>
-                  <cite title=""> Zipcode : [ 94123 ] </cite>
+                  <cite title=""> Zipcode : [ 94112 ] </cite>
                 </small>
               </footer>
             </div>
 
           </div>
+
+        </li><!-- li -->
+        <li class="in">
 
           <!-- Placeholder Hazard Post -->
           <div class="card mb-4">
@@ -119,12 +129,14 @@
               <a href="#">User Bob</a>
               <footer class="blockquote-footer">
                 <small>
-                  <cite title=""> Zipcode : [ 94123 ] </cite>
+                  <cite title=""> Zipcode : [ 94114 ] </cite>
                 </small>
               </footer>
             </div>
           </div>
 
+        </li>    <!-- li -->
+      </ul>
           <!-- Pagination Go to other section -->
           <ul class="pagination justify-content-center mb-4">
             <li class="page-item">
@@ -151,8 +163,99 @@
 
   </div>
   <!-- /.container -->
+  <!-- /.container -->
+ <!-- Search CSS Testing search function due to change will remove -->
+<style>
+.list-wrap label {
+}
+.search-box {
+}
+.list-count {
+}
+li {
+}
+.empty-item {
+}
+.empty .empty-item {
+}
+.hiding { /* hiding item*/
+  opacity:0.5;
+}
+.hidden {
+  display:none;
+}
+ul {  /* NAV BAR PLACEMENT */
+  list-style-type: none; /* removes bullet points on list */
+}
+ul:before {
+}
+li {
+}
+li:hover {
+}
+.empty-item {
+}
+.empty .empty-item {
+}
 
+</style>
 
+ <!-- Search JS Testing search function due to change will remove -->
+<script>
+  $(document).ready(function() {
+
+    var jobCount = $('#list .in').length;
+    $('.list-count').text(jobCount + ' items');
+      
+    
+    $("#search-text").keyup(function () {
+       //$(this).addClass('hidden');
+    
+      var searchTerm = $("#search-text").val();
+      var listItem = $('#list').children('li');
+    
+      
+      var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
+      
+        //extends :contains to be case insensitive
+    $.extend($.expr[':'], {
+    'containsi': function(elem, i, match, array)
+    {
+      return (elem.textContent || elem.innerText || '').toLowerCase()
+      .indexOf((match[3] || "").toLowerCase()) >= 0;
+    }
+  });
+      
+      
+      $("#list li").not(":containsi('" + searchSplit + "')").each(function(e)   {
+        $(this).addClass('hiding out').removeClass('in');
+        setTimeout(function() {
+            $('.out').addClass('hidden');
+          }, 300);
+      });
+      
+      $("#list li:containsi('" + searchSplit + "')").each(function(e) {
+        $(this).removeClass('hidden out').addClass('in');
+        setTimeout(function() {
+            $('.in').removeClass('hiding');
+          }, 1);
+      });
+      
+    
+        var jobCount = $('#list .in').length;
+      $('.list-count').text(jobCount + ' items');
+      
+      //shows empty state text when no jobs found
+      if(jobCount == '0') {
+        $('#list').addClass('empty');
+      }
+      else {
+        $('#list').removeClass('empty');
+      }
+      
+    });                      
+  });
+</script>
 
   <script>
       var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -189,14 +292,11 @@
   <script async defer
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZXrZ9XmAIYt4rCRY7k2a0-k3Ko8chRxc&callback=initMap">
   </script>
-
+<!-- Footer -->
+<footer class="py-2 bg-dark">
+  <div class="container">
+    <p class="m-0 text-center text-white">Terms | Contact</p>
+  </div>
+  <!-- /.container -->
+</footer>
 {% endblock %}
-
-
-  <!-- Footer -->
-  <footer class="py-2 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Terms | Contact</p>
-    </div>
-    <!-- /.container -->
-  </footer>
