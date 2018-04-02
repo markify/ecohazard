@@ -4,6 +4,4 @@ from django.db import models
 class Greeting(models.Model):
     when = models.DateTimeField('date created', auto_now_add=True)
 
-class Post(models.Model):
-    title = models.CharField(max_length=120)
-    content = models.TextField()
+
