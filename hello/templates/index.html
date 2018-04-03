@@ -56,86 +56,39 @@
             <label for="search-text">Search hazard reports</label>
            <input type="text" id="search-text" placeholder="Enter Zipcode" class="search-box">  
          <ul id="list">
-          <!-- li -->
-          <li class="in">
 
-          <!-- Placeholder Hazard Post -->
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="d-flex flex-row-reverse">
-                <div class="p-2"><a href="#" class="btn btn-danger">Resolved</a></div>
+           {%for hazardReport in hazardReports%}
 
-              </div>
-              <h2 class="card-title">Marina District Fire</h2>
-              <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore verit</p>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on January 1, 2016 by
-              <a href="#">User Bill</a>
-              <footer class="blockquote-footer">
-                <small>
-                  <cite title=""> Zipcode : [ 94115 ] </cite>
-                </small>
-              </footer>
-            </div>
-          </div>
+            <li class="in">
 
-        </li><!-- li -->
-        <li class="in">
+              <!-- Placeholder Hazard Post -->
+              <div class="card mb-4">
 
-          <!-- Placeholder Hazard Post -->
-          <div class="card mb-4">
+                <div class="card-body">
+                  <div class="d-flex flex-row-reverse">
+                    <div class="p-2"><a href="#" class="btn btn-success">Resolved</a></div>
 
-            <div class="card-body">
-              <div class="d-flex flex-row-reverse">
-                <div class="p-2"><a href="#" class="btn btn-success">Resolved</a></div>
+                  </div>
+                  <h2 class="card-title">San Francisco Landslide</h2>
+                  <p class="card-text">{{ hazardReport.description }}</p>
+
+                </div>
+                <div class="card-footer text-muted">
+                  Posted on {{ hazardReport.created_at }} by
+                  <a href="#">User Bob</a>
+                  <footer class="blockquote-footer">
+                    <small>
+                      <cite title=""> Zipcode : [ {{ hazardReport.zip_code }} ] </cite>
+                    </small>
+                  </footer>
+                </div>
 
               </div>
-              <h2 class="card-title">San Francisco Landslide</h2>
-              <p class="card-text">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                architecto </p>
 
-            </div>
-            <div class="card-footer text-muted">
-              Posted on January 2, 2016 by
-              <a href="#">User Bob</a>
-              <footer class="blockquote-footer">
-                <small>
-                  <cite title=""> Zipcode : [ 94112 ] </cite>
-                </small>
-              </footer>
-            </div>
+            </li><!-- li -->
 
-          </div>
+           {%endfor%}
 
-        </li><!-- li -->
-        <li class="in">
-
-          <!-- Placeholder Hazard Post -->
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="d-flex flex-row-reverse">
-                <div class="p-2"><a href="#" class="btn btn-danger">Resolved</a></div>
-
-              </div>
-              <h2 class="card-title">Presidio Contamination</h2>
-              <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore verit</p> </p>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on January 3, 2016 by
-              <a href="#">User Bob</a>
-              <footer class="blockquote-footer">
-                <small>
-                  <cite title=""> Zipcode : [ 94114 ] </cite>
-                </small>
-              </footer>
-            </div>
-          </div>
-
-        </li>    <!-- li -->
       </ul>
           <!-- Pagination Go to other section -->
           <ul class="pagination justify-content-center mb-4">

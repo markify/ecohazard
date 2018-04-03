@@ -176,6 +176,7 @@ class HazardReports(models.Model):
 
 
 class HazardTypes(models.Model):
+    id = models.BigAutoField(primary_key=True)
     type = models.CharField(max_length=100)
     description = models.TextField()
 
