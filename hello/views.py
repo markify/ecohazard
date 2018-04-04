@@ -39,10 +39,21 @@ def db(request):
     return render(request, 'db.html', {'greetings': greetings})
 
 
-def postreport(request):
-    hazardtypes = HazardTypes.objects.all()
+def post_report(request):
+    hazard_types = HazardTypes.objects.all()
 
-    return render(request, 'report.html', {'hazardTypes': hazardtypes})
+    return render(request, 'report.html', {'hazard_types': hazard_types})
+
+
+def process_new_report(request):
+    report_data = request.POST
+
+    for key in report_data:
+        print(key)
+        print(report_data[key])
+
+    hazard_types = HazardTypes.objects.all()
+    return render(request, 'report.html', {'hazard_types': hazard_types})
 
 
 def map(request):
