@@ -57,7 +57,7 @@
            <input type="text" id="search-text" placeholder="Enter Zipcode" class="search-box">  
          <ul id="list">
 
-           {%for hazardReport in hazardReports%}
+           {%for hazard_report in hazard_reports%}
 
             <li class="in">
 
@@ -70,15 +70,16 @@
 
                   </div>
                   <h2 class="card-title">San Francisco Landslide</h2>
-                  <p class="card-text">{{ hazardReport.description }}</p>
+                  <p class="card-text">{{ hazard_report.description }}</p>
 
                 </div>
                 <div class="card-footer text-muted">
-                  Posted on {{ hazardReport.created_at }} by
+                  Posted on {{ hazard_report.created_at }} by
                   <a href="#">User Bob</a>
                   <footer class="blockquote-footer">
                     <small>
-                      <cite title=""> Zipcode : [ {{ hazardReport.zip_code }} ] </cite>
+                      <p>Address: {{ hazard_report.street }} </p>
+                      <cite title=""> Zipcode : [ {{ hazard_report.zip_code }} ] </cite>
                     </small>
                   </footer>
                 </div>

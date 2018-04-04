@@ -74,7 +74,7 @@
   </head>
   <body>
 
-    <form action="/report_problem/" method="post">
+    <form action="/process_new_report/" method="post">
         {% csrf_token %}
         <div id="floating-panel">
           <div id="locationField">
@@ -119,11 +119,16 @@
             <td class="label">Problem Type</td>
             <td class="wideField" colspan="3">
                 <select name="hazard_type" required>
-                  {%for hazard in hazardTypes%}
+                  {%for hazard in hazard_types%}
                     <option value="{{hazard.id}}">{{ hazard.type }}</option>
                   {%endfor%}
                 </select>
             </td>
+          </tr>
+          <tr>
+              <td>
+                  <textarea name="description" placeholder="Please provide details regarding the report"></textarea>
+              </td>
           </tr>
           <tr>
             <td class="wideField" colspan="5">
@@ -131,6 +136,7 @@
             </td>
           </tr>
         </table>
+            <input type="hidden" value="1" name="creator">
     </form>
     </div>
     <div id="map"></div>
