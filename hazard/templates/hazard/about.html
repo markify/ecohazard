@@ -1,0 +1,180 @@
+<!-- extends 'hazard/base.html'  -->
+<!-- commented out because it doesn't show about page properly when extended with navbar -->
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <title>About</title>
+  <style>
+    body {
+      background: #e2e1e0;
+      text-align: center;
+    }
+
+    .gmd-card {
+      background: #fff;
+      border-radius: 2px;
+      display: inline-block;
+      margin: 1rem;
+      padding: 1em;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .nopad {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <section class="container">
+    <div class="row justify-content-center">
+      <div class="col">
+        <h2> SFSU Software Engineering class
+        <h4>Spring 2018 - Section 01 - Team 7</h4>
+        <h1>About the Developers </h1>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col col-md-6">
+        <div class="gmd-card container">
+          <div class="row">
+            <div class="col col-md-4 nopad">
+              <img src="/static/sutherland-about.jpg" class="img-fluid">
+            </div>
+            <div class="col col-md-8 align-text-left">
+              <a href="about-sutherland/">Link to my about page </a>
+              <h2>Sean Sutherland</h2>
+              Sean is a student at San Franciso State University.
+              He loves python like a son, likes <a href="http://dragonfang.tech">javascript</a> enough to be able to
+              list a few dozen of its flaws, and once got paid to program lasers.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-md-6">
+        <div class="gmd-card container">
+          <div class="row">
+
+            <div class="col col-md-4 nopad">
+              <img src="/static/humeston-about.jpg" class="img-fluid">
+            </div>
+            <div class="col col-md-8 align-text-left">
+              <a href="about-humeston/">Link to my about page </a>
+              <h2>Corey Humeston</h2>
+              I am a Computer Science enthusiast and want to continue working in this field.
+              This is my last semester at San Francisco State Universtiy and plan on graduating in May.
+              In my free time I play video games and apply for jobs/internships.
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-md-6">
+        <div class="gmd-card container">
+          <div class="row">
+
+            <div class="col col-md-4 nopad">
+              <img src="/static/ali-about.png" class="img-fluid">
+            </div>
+            <div class="col col-md-8 align-text-left">
+              <a href="about-ali/">Link to my about page </a>
+              <h2>Ali Alavi</h2>
+              <p>Born and raised in Pakistan, migrated to the US in 2014. Have been wprking as a software engineer since
+                March 2015 at a 3D person scanning startup Twindom in Berkeley.
+                In addition to that, currently pursuing a Graduate Degree in Computer Sceince at San Francisco State
+                University.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-md-6">
+        <div class="gmd-card container">
+          <div class="row">
+
+            <div class="col col-md-4 nopad">
+              <img src="http://i67.tinypic.com/ncyrn9.jpg" class="img-fluid">
+            </div>
+            <div class="col col-md-8 align-text-left">
+              <a href="about-cameron/">Link to my about page </a>
+              <h2>Amelie Cameron</h2>
+              <p>I am a senior Computer Science student at San Francisco State University set to graduate this year.
+                Currently I am enrolled in Artificial Intelligence, Biomedical Imaging and Analysis, Software
+                Engineering, and other non-major upper division requirements.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-md-6">
+        <div class="gmd-card container">
+          <div class="row">
+
+            <div class="col col-md-4 nopad">
+              <img src="/static/mark-about.jpg" class="img-fluid">
+            </div>
+            <div class="col col-md-8 align-text-left">
+              <a href="about-mark/">Link to my about page </a>
+              <h2>Mark Soriano</h2>
+              <p>Hello, My name is Mark. I am interested in Mobile and Web Development. I plan to pursue this field in
+                the future. I enjoy
+                going to hackathons every year and like to work with friends on mobile and web projects.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-md-6">
+        <div class="gmd-card container">
+          <div class="row">
+
+            <div class="col col-md-4 nopad">
+              <img src="/static/girish-about.jpg" class="img-fluid">
+            </div>
+            <div class="col col-md-8 align-text-left">
+              <a href="about-girish/">Link to my about page </a>
+              <h2>Girish Tiwale</h2>
+              <p>Originally from Maharashtra, India. Graduate student at San Francisco State University. Persued
+                Bachelors in University of Pune, Maharashtra, India</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-md-6">
+        <div class="gmd-card container">
+          <div class="row">
+
+            <div class="col col-md-4 nopad">
+              <img src="https://puu.sh/znohh/55f8af08b4.jpg" class="img-fluid">
+            </div>
+            <div class="col col-md-8 align-text-left">
+              <a href="about-larsen/">Link to my about page </a>
+              <h2>Lance Larsen</h2>
+              Summary: I am 22 years old. I like to eat good food and breath fresh air.
+              <br>
+              Hobbies: Video Games, Comics, Guitar, Video editing
+              <br>
+              Goals: Make a game, Make $$$$
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+{% endblock %}

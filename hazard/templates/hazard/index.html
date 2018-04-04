@@ -1,0 +1,24 @@
+{% extends 'hazard/base.html' %}
+<!-- Index latest hazard reports -->
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="img-circle text-center">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="http://i66.tinypic.com/eki4w8.jpg">
+      </a>
+    </div>
+    <h1>Eco Hazards</h1>
+    <h5>Eco Hazards is an SFSU startup company that plans to help clean up the environment through our web-based
+      application.</h5>
+</div>
+  <h1> Lastest Hazard reports: </h1>
+  {% if list %}
+    {% include 'hazard/list.html' %}
+  {% else %}
+    <h3>There are no posts yet</h3>
+  {% endif %}
+
+{% endblock %}

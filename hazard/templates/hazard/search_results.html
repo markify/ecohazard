@@ -1,0 +1,16 @@
+{% extends "hazard/base.html" %}
+{% block title %}
+
+<!-- show Search query on index page -->
+  <title>Search results</title>
+{% endblock %}
+
+{% block content %}
+  <h1> Search results: </h1>
+  {% if list %}
+    {% include "hazard/list.html" %}
+  {% else %}
+    <br>
+    <h3>No results found</h3>
+  {% endif %}  
+{% endblock %}

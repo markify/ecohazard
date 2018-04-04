@@ -1,0 +1,32 @@
+{% extends 'hazard/base.html' %}
+{% block title %}
+  <title>{{ hazardreport.title_text }}</title>
+{% endblock %}
+
+{% block content %}
+  <h2>{{ hazardreport.title_text }}</h2>
+  <p>{{ hazardreport.pub_date }}</p>
+  <p>Author: <a href="#">{{ hazardreport.user.username }}</a></p>
+  <span>{{ hazardreport.content_text }}</span>
+  <br /><br /><br />
+  <b>Comments:</b>
+  {% if comments %}
+    {% for item in comments %}
+      <p>{{ item.pub_date }}<a href="{% url 'ecohazards:userposts' item.user.username %}"> {{ item.user.username }} </a> wrote:<p>
+      <p> {{ item.content_text }} </p>
+      <br />
+    {% endfor %}
+  {% else %}
+    <p>There are no comments yet</p>
+  {% endif %}
+    <form class="form-horizontal" action="" method="POST" encrypt="multipart/from-data">
+        {% csrf_token %}
+        {% include "hazard/form-template.html" %}
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-sucess" />Add comment</button>
+            </div>
+        </div>
+    </form>
+    
+{% endblock %}
