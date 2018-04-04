@@ -38,13 +38,29 @@ def about(request, extra=None):
 def map(request):
     return render(request, 'hazard/map.html')
     
+# RENDERS THE POST THAT IS CURRENT AND CREATE PAGINATION 
+def get_paginator(request, list_of_items, count_per_page):
+    """ Takes request, list of items and count of items per page.
 
+    Returns correct list of items for current page, and
+    a number of the page
+    """
+    paginator = Paginator(list_of_items, count_per_page)
+    page = request.GET.get('page')
+    try:
+        current_post_list = paginator.page(page)
+    except PageNotAnInteger:
+        current_post_list = paginator.page(1)
+    except EmptyPage:
+        current_post_list = paginator.page(paginator.num_pages)
+    num_pages = range(1, paginator.num_pages+1)
+    return current_post_list, num_pages
 
 # RENDERS THE INDEX HOME PAGE
 def index(request):
     last_post_list = HazardReport.objects.order_by("-pub_date")[::-1]
     # render number of current post in the index page ie home page <-
-
+    current_post_list, num_pages = get_paginator(request, last_post_list, 5)
     context = {
             'list': current_post_list,
             'num_pages': num_pages
@@ -77,8 +93,8 @@ def search_process(request):
         filter(Q(title_text__icontains=search)
         | Q(content_text__icontains=search)
         | Q(pub_date__contains=search))
-
- 
+    # number of search results 6
+    current_post_list, num_pages = get_paginator(request, search_list, 6)
     context = {
             'list': current_post_list,
             'num_pages': num_pages
@@ -148,7 +164,7 @@ def userPostList(request, user_name):
     post_list = HazardReport.objects.filter(user__id__exact=\
             user_id).order_by('-pub_date')[::-1]
     # render the number of views of my post 5
- 
+    current_post_list, num_pages = get_paginator(request, post_list, 5)
     context = {
             'list': current_post_list,
             'num_pages': num_pages,
