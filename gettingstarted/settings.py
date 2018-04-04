@@ -80,14 +80,14 @@ WSGI_APPLICATION = 'gettingstarted.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# Mark: My own test clear sql database
+# updated to database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_fe27e80f5c08c1a',
+        'NAME': 'heroku_6989457c62cc0b1',
         #'NAME': os.path.join(BASE_DIR, 'heroku_6989457c62cc0b1'),
-        'USER': 'b857e6100a9eff',
-        'PASSWORD': 'bac10b10',
+        'USER': 'b71b408bbd3edd',
+        'PASSWORD': '4eb0204e',
         'HOST': 'us-cdbr-iron-east-05.cleardb.net',
         'PORT': '3306',
     }

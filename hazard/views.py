@@ -60,7 +60,7 @@ def get_paginator(request, list_of_items, count_per_page):
 def index(request):
     last_post_list = HazardReport.objects.order_by("-pub_date")[::-1]
     # render number of current post in the index page ie home page <-
-    current_post_list, num_pages = get_paginator(request, last_post_list, 5)
+    current_post_list, num_pages = get_paginator(request, last_post_list, 6)
     context = {
             'list': current_post_list,
             'num_pages': num_pages
