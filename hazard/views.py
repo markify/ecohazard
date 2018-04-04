@@ -9,7 +9,7 @@ from .forms import UserForm, HazardReportForm, HazardReportCommentForm
 from .models import HazardReport, HazardReportComment
 from django.db.models import Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-# ---- rest import ----
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -17,6 +17,8 @@ from rest_framework.decorators import api_view
 # ---- serializer import ----
 from .serializers import HazardReportSerializer, UserWithPostListSerializer
 
+from django.utils.timezone import now 
+from django.db import models
 
 # ---- ABOUT PAGES ----
 
@@ -37,6 +39,50 @@ def about(request, extra=None):
 # ---- MAP VIEW ----
 def map(request):
     return render(request, 'hazard/map.html')
+
+# --- Separate Map Report --
+def post_report(request):
+    hazard_types = HazardTypes.objects.all()
+
+    return render(request, 'report.html', {'hazard_types': hazard_types})
+
+
+def process_new_report(request):
+    report_data = request.POST
+
+    hazard_report = HazardReports(
+        description=report_data['description'],
+        status=1,
+        priority=1,
+        address_id='NULL',
+        street=report_data['street_number'] + ' ' + report_data['route'],
+        city=report_data['locality'],
+        state=report_data['administrative_area_level_1'],
+        zip_code=report_data['postal_code'],
+        country=report_data['country'])
+
+    hazard_report.creator = User.objects.get(id=report_data['creator'])
+    hazard_report.hazard_type = HazardTypes.objects.get(id=report_data['hazard_type'])
+    hazard_report.assigned_to = User.objects.get(id=report_data['creator'])
+
+    hazard_report.save()
+
+    # hazard_reports = HazardReports.objects.all()
+    return redirect('index')
+    # return render(request, 'index.html', {'hazard_reports': hazard_reports})
+
+
+class HazardTypes(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    type = models.CharField(max_length=100)
+    description = models.TextField()
+
+    class Meta:
+        managed = False
+        db_table = 'hazard_types'
+
+
+#------------------------------------------------
     
 # RENDERS THE POST THAT IS CURRENT AND CREATE PAGINATION 
 def get_paginator(request, list_of_items, count_per_page):
@@ -67,7 +113,7 @@ def index(request):
     }
     return render(request, "hazard/index.html", context)
 
-# USER HAS LOGGIN WITH USER AUTHENTHICATION REDIRECT TO INDEX
+# USER HAS LOGIN WITH USER AUTHENTHICATION REDIRECT TO INDEX
 def login_process(request):
     username = request.POST['username']
     password = request.POST['password']
