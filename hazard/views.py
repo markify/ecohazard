@@ -70,6 +70,20 @@ def logout_process(request):
         logout(request)
     return redirect('ecohazards:index')
 
+# ---- RENDERS ALL THE SEARCH REQUEST , SEARCH QUERY ----
+def search_process(request):
+    search = request.GET['q']
+    search_list = HazardReport.objects. \
+        filter(Q(title_text__icontains=search)
+        | Q(content_text__icontains=search)
+        | Q(pub_date__contains=search))
+
+ 
+    context = {
+            'list': current_post_list,
+            'num_pages': num_pages
+    }
+    return render(request, 'hazard/search_results.html', context)
 
 # ---- RENDERS THE SIGNUP/REGISTRATION FORM ----
 class UserFormView(View):
