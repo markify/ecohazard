@@ -1,0 +1,21 @@
+{% extends 'hazard/base.html' %}
+
+<!-- https://docs.djangoproject.com/en/2.0/ref/csrf/ -->
+<!-- {% csrf_token %} = Cross Site Request Forgery protection -->
+
+<!-- registration form  -->
+{% block title %}
+<title>Create new account</title>
+{% endblock %}
+
+{% block content %}
+    <form class="form-horizontal" action="" method="POST" encrypt="multipart/from-data">
+        {% csrf_token %}
+        {% include "hazard/form-template.html" %}
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-sucess" />Sign up!</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

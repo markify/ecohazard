@@ -1,0 +1,37 @@
+
+{% for item in list %}
+
+ <!-- SHOW THE REPORTS title, date, author, context -->
+ <!-- prevent text overflow on panel <span style="word-wrap: break-word;"> -->
+
+ <div class="row">
+        <!-- Hazard Reports Entries -->
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <div class="panel-title pull-left">
+            <p> <a href="{% url 'ecohazards:post' item.id %}">{{ item.title_text }}</a></p>
+        </div>
+        <div class="panel-title pull-right">
+            <p>{{ item.pub_date }}</p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="panel-body">
+        <p><span style="word-wrap: break-word;" > {{ item.content_text}} </span></p>
+        <div class="panel-title pull-left">
+            <p><a href="{% url 'ecohazards:userposts' item.user.username %}">author : {{ item.user.username }}</a></p>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+
+     <!--   Twitter Widget   -->
+        <div class="text-center">
+      
+        <a class="twitter-timeline" data-width="371" data-height="466"
+           href="https://twitter.com/SFEnvironment?ref_src=twsrc%5Etfw"></a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
