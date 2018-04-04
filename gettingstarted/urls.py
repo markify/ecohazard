@@ -23,18 +23,6 @@ from rest_framework.urlpatterns import format_suffix_patterns
 # import hazard.views as hazard_views    gets hazard -> views.py  make it called hazard_views
 
 urlpatterns = [
-<<<<<<< HEAD
-=======
-    url(r'^$', hello.views.index, name='index'),
-    url(r'^db', hello.views.db, name='db'),
-    url(r'^about(-\w*)?/?$', hello.views.about, name='about'),
-    url(r'^map(?:\.html?)?/?$', hello.views.map, name='map'),
-    url(r'^signup', hello.views.signup, name='signup'),
-    url(r'^login', hello.views.login, name='login'),
-    url(r'^report', hello.views.post_report, name='report'),
-    url(r'^process_new_report', hello.views.process_new_report, name='process_new_report'),
-    url(r'^search', hello.views.search, name='search'),
->>>>>>> master
     path('admin/', admin.site.urls),
     path('', include('hazard.urls')),
     path('captcha/', include('captcha.urls')),
