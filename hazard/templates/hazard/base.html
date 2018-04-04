@@ -72,11 +72,14 @@ $(document).ready(function(){
                <ul class="nav navbar-nav navbar-right">
                    <!-- Show view for authenthicated users  if/else-->
                   {% if request.user.is_authenticated %}
+                  <!-- <li><a href="{% url 'ecohazards:report' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Report</a></li> -->
+
                   <li><a href="{% url 'ecohazards:map' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Map View</a></li>
                     <li><a href="{% url 'ecohazards:userposts' user.username %}"><span class="glyphicon glyphicon-user"></span>&nbsp;{{ request.user.username }}</a></li>
                       <li><a href="{% url 'ecohazards:logout_process' %}"><span class="glyphicon glyphicon-off"></span>&nbsp;Sign Out</a></li>
                    <!-- Show view for users -->  
                   {% else %}
+
                      <li><a href="{% url 'ecohazards:map' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Map View</a></li>
                       <li><a href="{% url 'ecohazards:register' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Sign Up</a></li>
                       <li class="dropdown">
