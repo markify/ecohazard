@@ -1,0 +1,42 @@
+.jumbotron {
+    background: white;                      /* Color on top of page */
+    color: black;                           /* First words on screen */
+    padding-bottom: 10px
+}
+/*
+.jumbotron .btn-primary {
+    background: white                    /* Second button on main screen *//*
+    border-color: white
+}
+
+/*
+.jumbotron .btn-primary:hover {              Not sure what this does
+    background: #7646c1
+}
+*/
+.jumbotron p {
+    color: black;                           /* Words under title */
+    margin: 1em auto 2em                    /* Centered */
+}
+.btnPost {
+    background-color: red;
+}
+.navbar+.jumbotron {
+    margin-top: -25px                       /* Nav bar on top */
+}
+.jumbotron .logo {
+    display: block;
+    background: black;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border: 2px solid white
+}
+.navbarMine {
+    max-width: 100%;
+}
+.jumbotron .logo img {
+    max-width: 100%
+}
