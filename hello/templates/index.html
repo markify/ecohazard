@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block head %}
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div class="jumbotron text-center">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="{% static 'tree.jpg' %}">
+      </a>
+    </div>
+    <h1>Eco Hazards</h1>
+    <p>Eco Hazards is an SFSU startup company that plans to help clean up the environment through our web-based
+      application.</p>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+        <!-- Hazard Post Entries -->
+        <div class="col-md-8">
+
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter Zipcode">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-dark"><img src="{% static 'search.png' %}"></button>
+                  </span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <button type="button" class="btnPost btn-dark btn-lg">Report a Hazard</button>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <div id="map"></div>
+      </div>
+      <!-- /.row -->
+
+
+      <div class="row">
+        <!-- Hazard Post Entries -->
+        <div class="col-md-8">
+
+          <!-- trying out search with css and js due to change will remove -->
+          <section class="list-wrap">
+            <label for="search-text">Search hazard reports</label>
+           <input type="text" id="search-text" placeholder="Enter Zipcode" class="search-box">  
+         <ul id="list">
+
+           {%for hazard_report in hazard_reports%}
+
+            <li class="in">
+
+              <!-- Placeholder Hazard Post -->
+              <div class="card mb-4">
+
+                <div class="card-body">
+                  <div class="d-flex flex-row-reverse">
+                    <div class="p-2"><a href="#" class="btn btn-success">Resolved</a></div>
+
+                  </div>
+                  <h2 class="card-title">San Francisco Landslide</h2>
+                  <p class="card-text">{{ hazard_report.description }}</p>
+
+                </div>
+                <div class="card-footer text-muted">
+                  Posted on {{ hazard_report.created_at }} by
+                  <a href="#">User Bob</a>
+                  <footer class="blockquote-footer">
+                    <small>
+                      <p>Address: {{ hazard_report.street }} </p>
+                      <cite title=""> Zipcode : [ {{ hazard_report.zip_code }} ] </cite>
+                    </small>
+                  </footer>
+                </div>
+
+              </div>
+
+            </li><!-- li -->
+
+           {%endfor%}
+
+      </ul>
+          <!-- Pagination Go to other section -->
+          <ul class="pagination justify-content-center mb-4">
+            <li class="page-item">
+              <a class="page-link" href="#">Recent Post</a>
+            </li>
+            <li class="page-item disabled">
+              <a class="page-link" href="#">Next Post</a>
+            </li>
+          </ul>
+
+        </div>
+
+        <div>
+          <!-- Twitter Widget -->
+          <a class="twitter-timeline" data-width="371" data-height="466"
+             href="https://twitter.com/SFEnvironment?ref_src=twsrc%5Etfw">Tweets by SFEnvironment</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+  <!-- /.container -->
+ <!-- Search CSS Testing search function due to change will remove -->
+<style>
+.list-wrap label {
+}
+.search-box {
+}
+.list-count {
+}
+li {
+}
+.empty-item {
+}
+.empty .empty-item {
+}
+.hiding { /* hiding item*/
+  opacity:0.5;
+}
+.hidden {
+  display:none;
+}
+ul {  /* NAV BAR PLACEMENT */
+  list-style-type: none; /* removes bullet points on list */
+}
+ul:before {
+}
+li {
+}
+li:hover {
+}
+.empty-item {
+}
+.empty .empty-item {
+}
+
+</style>
+
+ <!-- Search JS Testing search function due to change will remove -->
+<script>
+  $(document).ready(function() {
+
+    var jobCount = $('#list .in').length;
+    $('.list-count').text(jobCount + ' items');
+      
+    
+    $("#search-text").keyup(function () {
+       //$(this).addClass('hidden');
+    
+      var searchTerm = $("#search-text").val();
+      var listItem = $('#list').children('li');
+    
+      
+      var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
+      
+        //extends :contains to be case insensitive
+    $.extend($.expr[':'], {
+    'containsi': function(elem, i, match, array)
+    {
+      return (elem.textContent || elem.innerText || '').toLowerCase()
+      .indexOf((match[3] || "").toLowerCase()) >= 0;
+    }
+  });
+      
+      
+      $("#list li").not(":containsi('" + searchSplit + "')").each(function(e)   {
+        $(this).addClass('hiding out').removeClass('in');
+        setTimeout(function() {
+            $('.out').addClass('hidden');
+          }, 300);
+      });
+      
+      $("#list li:containsi('" + searchSplit + "')").each(function(e) {
+        $(this).removeClass('hidden out').addClass('in');
+        setTimeout(function() {
+            $('.in').removeClass('hiding');
+          }, 1);
+      });
+      
+    
+        var jobCount = $('#list .in').length;
+      $('.list-count').text(jobCount + ' items');
+      
+      //shows empty state text when no jobs found
+      if(jobCount == '0') {
+        $('#list').addClass('empty');
+      }
+      else {
+        $('#list').removeClass('empty');
+      }
+      
+    });                      
+  });
+</script>
+
+  <script>
+      var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      var labelIndex = 0;
+
+      function initMap() {
+          var uluru = {lat: 37.7739, lng: -122.4313};
+          var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 12,
+              center: uluru
+          });
+
+          google.maps.event.addListener(map, 'click', function (event) {
+              addMarker(event.latLng, map);
+          });
+
+          // Add a marker at the center of the map.
+          addMarker(uluru, map);
+
+          function addMarker(location, map) {
+              var marker = new google.maps.Marker({
+                  map: map,
+                  draggable: true,
+                  animation: google.maps.Animation.DROP,
+                  position: location,
+                  label: labels[labelIndex++ % labels.length],
+              });
+              marker.addListener('click', toggleBounce);
+          }
+
+          google.maps.event.addDomListener(window, 'load', initialize);
+      }
+  </script>
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZXrZ9XmAIYt4rCRY7k2a0-k3Ko8chRxc&callback=initMap">
+  </script>
+<!-- Footer -->
+<footer class="py-2 bg-dark">
+  <div class="container">
+    <p class="m-0 text-center text-white">Terms | Contact</p>
+  </div>
+  <!-- /.container -->
+</footer>
+{% endblock %}
