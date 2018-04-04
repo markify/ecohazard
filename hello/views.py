@@ -39,10 +39,10 @@ def db(request):
     return render(request, 'db.html', {'greetings': greetings})
 
 
-def marker(request):
+def postreport(request):
     hazardtypes = HazardTypes.objects.all()
 
-    return render(request, 'marker.html', {'hazardTypes': hazardtypes})
+    return render(request, 'report.html', {'hazardTypes': hazardtypes})
 
 
 def map(request):
