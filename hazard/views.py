@@ -178,3 +178,15 @@ class AllHazardReportAPI(APIView):
 
 # ---- GET METHOD FOR ALL HAZARD POST ----
 
+@api_view(['GET'])
+def hazardreportAPI(request, hazardreport_id):
+    hazardreport = get_object_or_404(HazardReport, pk=hazardreport_id)
+    serializer = HazardReportSerializer(hazardreport, many=False)
+    return Response(serializer.data)
+
+
+@api_view(['GET'])
+def userHazardPostListAPI(request, user_id):
+    user = get_object_or_404(User, pk=user_id)
+    serializer = UserWithPostListSerializer(user)
+    return Response(serializer.data)
