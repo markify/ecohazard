@@ -1,9 +1,11 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 # APP NAME AND URL PATHING / ROUTES
 
 #  (path  link/url   ,  (views.py).Class/Definition  ,  name)
+#  use re_path to read regex expression alternative to url regex
+
 app_name = "ecohazards"
 urlpatterns = [
         path("", views.index, name="index"),
@@ -14,8 +16,8 @@ urlpatterns = [
         path("posts/<user_name>", views.userPostList, name='userposts'),
         path("post/<int:hazardreport_id>", views.hazardreport, name="post"),
         path("search/", views.search_process, name="search_results"),
-        path("about/", views.about, name="about"),
         path('map/', views.map, name="map"),
         path('report/', views.post_report, name='report'),
         path('process_new_report/', views.process_new_report, name='process_new_report'),
+        re_path(r"^about(-\w*)?/?$", views.about, name="about"),  
 ]
