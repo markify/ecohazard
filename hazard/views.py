@@ -38,7 +38,8 @@ def about(request, extra=None):
 
 # ---- MAP VIEW ----
 def map(request):
-    return render(request, 'hazard/map.html')
+    data = HazardReport.objects.all()
+    return render(request, 'hazard/map.html', { 'data' : data })
 
 # --- Separate Map Report --
 def post_report(request):
