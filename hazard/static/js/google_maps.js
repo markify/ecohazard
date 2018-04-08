@@ -1,3 +1,4 @@
+// Geocoding for location, turns the hazard report location string then geocode to display map
 $(function() {
 
 	if (!$('#view-review').length) {
@@ -7,7 +8,7 @@ $(function() {
 	var geocoder, location, map;
 	geocoder = new google.maps.Geocoder();
 
-	var latlng = new google.maps.LatLng(37.752619, -122.424100);
+	var latlng = new google.maps.LatLng(37.710263, -122.429691);
 	var options = {
     zoom: 10,
     center: latlng,
