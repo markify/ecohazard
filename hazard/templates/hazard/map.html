@@ -1,58 +1,32 @@
-<!-- extends 'hazard/base.html'  -->
-<!-- commented out because it doesn't show map when extended with navba -->
-{% load staticfiles %}
+{% extends 'hazard/base.html' %} 
 
-{% block head %}
-  <style>
-    #map {
-      height: 100%;
-      width: 100%;
-    }
-  </style>
-{% endblock %}
+{% load static %} 
+{% block title %}
 
-{% block content %}
-  <!-- Page Content -->
-  <div>
+<script src="{% static 'js/google_maps.js' %}"></script>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyCgC7Fs7KvrxE_lcDdC8w-ssIB53a1NL5E"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" type="text/javascript"></script>
 
-    <div id="map"></div>
+<title> Hazard Map </title>
+{% endblock %} 
 
-  </div>
-  <!-- Map View -->
+{% block content %} 
 
-  <script>
-      var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      var labelIndex = 0;
+{% for temp in data %}
+{# loop through database location #}
+<div id='view-review' class='col-lg-12 review-nodule'>
+    <span class='location' style="visibility: hidden; display: none;">{{ temp.location }}</span>
+    <div class='map'></div>
+</div>
+</div>
+{# after all loop load the map #}
+{% if forloop.last %}
+<div id='view-review' class='col-lg-12 review-nodule'>
+    <span class='location' style="visibility: hidden; display: none;">{{ temp.location }}</span>
+    <div class='map' id="map-canvas" style="width: 100%; height: 1080px"></div>
+</div>
+{% endif %}
 
-      function initMap() {
-          var uluru = {lat: 37.7739, lng: -122.4313};
-          var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 12,
-              center: uluru
-          });
+{% endfor %}
 
-          google.maps.event.addListener(map, 'click', function (event) {
-              addMarker(event.latLng, map);
-          });
-
-          // Add a marker at the center of the map.
-          addMarker(uluru, map);
-
-          function addMarker(location, map) {
-              var marker = new google.maps.Marker({
-                  map: map,
-                  draggable: true,
-                  animation: google.maps.Animation.DROP,
-                  position: location,
-                  label: labels[labelIndex++ % labels.length],
-              });
-              marker.addListener('click', toggleBounce);
-          }
-
-          google.maps.event.addDomListener(window, 'load', initialize);
-      }
-  </script>
-  <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZXrZ9XmAIYt4rCRY7k2a0-k3Ko8chRxc&callback=initMap">
-  </script>
 {% endblock %}
