@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +33,7 @@
         <div class="gmd-card container">
           <div class="row">
             <div class="col col-md-4 nopad">
-              <img src="/static/sutherland-about.jpg" class="img-fluid" >
+              <img src="{% static 'sutherland-about.jpg'%}"  class="img-fluid" >
             </div>
             <div class="col col-md-8 align-text-left">
               <b><em>Sean Sutherland</em></b> is a student at San Franciso State University. He loves python like a son, likes <a href="http://dragonfang.tech">javascript</a> enough to be able to list a few dozen of its flaws, and once got paid to program lasers.
