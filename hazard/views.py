@@ -104,7 +104,7 @@ def get_paginator(request, list_of_items, count_per_page):
 
 # RENDERS THE INDEX HOME PAGE
 def index(request):
-    last_post_list = HazardReport.objects.order_by("-pub_date")[::-1]
+    last_post_list = HazardReport.objects.order_by("-pub_date")[::0]
     # render number of current post in the index page ie home page <-
     current_post_list, num_pages = get_paginator(request, last_post_list, 6)
     context = {
@@ -138,7 +138,8 @@ def search_process(request):
     search_list = HazardReport.objects. \
         filter(Q(title_text__icontains=search)
         | Q(content_text__icontains=search)
-        | Q(pub_date__contains=search))
+        | Q(pub_date__contains=search)
+        | Q(zipcode__contains=search))
     # number of search results 6
     current_post_list, num_pages = get_paginator(request, search_list, 6)
     context = {
@@ -208,7 +209,7 @@ def userPostList(request, user_name):
         user_id = user_of_post.id
 
     post_list = HazardReport.objects.filter(user__id__exact=\
-            user_id).order_by('-pub_date')[::-1]
+            user_id).order_by('-pub_date')[::0]
     # render the number of views of my post 5
     current_post_list, num_pages = get_paginator(request, post_list, 5)
     context = {

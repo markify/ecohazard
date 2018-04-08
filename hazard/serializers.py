@@ -31,7 +31,7 @@ class HazardReportSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = HazardReport
-        fields = ('title_text', 'content_text', 'pub_date', 'user', 'comments')
+        fields = ('title_text', 'content_text', 'pub_date',  'user', 'comments', 'zipcode', 'location')
         depth = 2
 
 # USER TO HAZARD REPORT SERIALIZE
