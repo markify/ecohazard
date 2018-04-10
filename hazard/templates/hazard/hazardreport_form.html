@@ -3,8 +3,7 @@
   <title>Add new post</title>
 {% endblock %}
 {% block content %}
-<form class="form-horizontal" action="" method="POST" encrypt="multipart/from-data">
-  {% csrf_token %}
+<form class='form-horizontal' method='POST' action='' enctype='multipart/form-data'> {% csrf_token %}
   {% include "hazard/form-template.html" %}
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">

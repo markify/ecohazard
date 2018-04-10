@@ -19,7 +19,7 @@ class HazardReportForm(forms.ModelForm):
 
     class Meta:
         model = HazardReport
-        fields = ['title_text', 'content_text', 'zipcode', 'location']
+        fields = ['title_text', 'content_text', 'image', 'zipcode', 'location',]
 
 # Hazard report comment form (comment)
 class HazardReportCommentForm(forms.ModelForm):

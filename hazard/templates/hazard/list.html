@@ -5,6 +5,7 @@
  <!-- prevent text overflow on panel <span style="word-wrap: break-word;"> -->
 
  <div class="row">
+
         <!-- Hazard Reports Entries -->
 
 <div class="panel panel-info">
@@ -23,6 +24,9 @@
             <p><a href="{% url 'ecohazards:userposts' item.user.username %}">author : {{ item.user.username }}</a></p>
             <h4>{{ item.zipcode }}</h4>
             <h5>{{ item.location }}</h5>
+            {% if item.image %}
+         <img src="{{ item.image.url }}" class="img-responsive" />
+         {%  endif %}
         </div>
         <div class="panel-title pull-right">
                 <button type="button" class="btn btn-success">Status</button>
