@@ -11,6 +11,7 @@ class HazardReport(models.Model):
     content_text = models.TextField(max_length=240)
     zipcode = models.CharField(max_length=5)
     location = models.CharField(max_length=50)
+    image = models.FileField(null=True, blank=True)
     user = models.ForeignKey(User, related_name="hazardposts",
                              on_delete=models.CASCADE)
 
@@ -25,3 +26,4 @@ class HazardReportComment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     hazardreport = models.ForeignKey(HazardReport, related_name='comments',
                                  on_delete=models.CASCADE)
+

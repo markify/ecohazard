@@ -192,7 +192,7 @@ class HazardReportCreate(CreateView):
         return render(request, self.template_name, {'form': form})
 
     def post(self, request):
-        form = self.form_class(request.POST)
+        form = self.form_class(request.POST or None, request.FILES or None)
 
         if form.is_valid():
             new_post = form.save(commit=False)
@@ -224,7 +224,7 @@ def userPostList(request, user_name):
 def hazardreport(request, hazardreport_id):
     form_class = HazardReportCommentForm
     if request.method == 'POST':
-        form = form_class(request.POST)
+        form = form_class(request.POST or None, request.FILES or None)
         if form.is_valid():
             new_comment = form.save(commit=False)
             new_comment.user_id = request.user.id
