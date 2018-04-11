@@ -1,4 +1,4 @@
-
+{% load thumbnail %}
 {% for item in list %}
 {% load static %}
  <!-- SHOW THE REPORTS title, date, author, context -->
@@ -25,7 +25,10 @@
             <h4>{{ item.zipcode }}</h4>
             <h5>{{ item.location }}</h5>
             {% if item.image %}
-         <img src="{{ item.image.url }}" class="img-responsive" />
+                {% thumbnail item.image "100x100" crop="center" as thumbnail %}
+                    <img src="{{ thumbnail.url }}" width="{{ thumbnail.width }}" height="{{ thumbnail.height }}">
+                {% endthumbnail %}
+         <!--<img src="{{ item.image.url }}" class="img-responsive" /> -->
          {%  endif %}
         </div>
         <div class="panel-title pull-right">
