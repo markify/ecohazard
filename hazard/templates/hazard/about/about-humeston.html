@@ -1,9 +1,37 @@
 {% load static %}
-<!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://csc648team07.herokuapp.com/">EcoHazards</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="http://csc648team07.herokuapp.com/">Home</a></li>
+      <li><a href="http://csc648team07.herokuapp.com/about">About</a></li>
+      <li><a href="http://csc648team07.herokuapp.com/posts/my">My Reports</a></li>
+      <li><a href="http://csc648team07.herokuapp.com/post/add">Add Post</a></li>
+        <li><a href="http://csc648team07.herokuapp.com/map/">Map View</a></li>
+    </ul>
+  </div>
+</nav>
+<style>
+.corey {
+    margin-top: 50px;
+}
+</style>
+
+<body>
+<header class = "corey">
 <h1>Corey Humeston</h1>
+</header>
 <img src="{% static 'humeston-about.jpg'%}" alt="Not available">
 <p>I am a Computer Science enthusiast and want to continue working in this field.</p>
 <p>This is my last semester at San Francisco State Universtiy and plan on graduating in May.</p>
