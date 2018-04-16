@@ -6,7 +6,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
+    <link rel="icon" type="image/png" href="/static/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/static/favicon-16x16.png" sizes="16x16" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117520795-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+     gtag('config', 'UA-117520795-1');
+    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     
     <!-- Latest compiled and minified CSS -->
@@ -21,14 +34,14 @@
     {% endblock %}
 </head>
 <body>
-<script>
-$(document).ready(function(){
+    <script>
+    $(document).ready(function(){
     //Handles menu drop down
     $('.dropdown-menu').find('form').click(function (e) {
         e.stopPropagation();
     });
-});
-</script>
+    });
+    </script>
 
 <!-- nav bar buttons left -->
 <nav class="navbar navbar-default">
@@ -43,6 +56,7 @@ $(document).ready(function(){
             
             <a class="navbar-brand" href="{% url 'ecohazards:index' %}"><span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span>&nbsp;Eco Hazards</a>
             <a class="navbar-brand" href="{% url 'ecohazards:about' %}"><span class="glyphicon glyphicon-apple" aria-hidden="true"></span>&nbsp;About</a>
+            <a class="navbar-brand" href="{% url 'ecohazards:media' %}"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>&nbsp;Media</a>
         </div>
         
         <div class="collapse navbar-collapse"  id="topNavBar">
@@ -128,7 +142,6 @@ $(document).ready(function(){
       {% block content %}
       {% endblock %}
       </div>
-
     </div><!-- /.container -->
 </body>
 </html>
