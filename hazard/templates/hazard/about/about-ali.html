@@ -1,12 +1,36 @@
 {% load static %}
-
-<html>
-
+<html lang="en">
 <head>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://csc648team07.herokuapp.com/">EcoHazards</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="http://csc648team07.herokuapp.com/">Home</a></li>
+      <li><a href="http://csc648team07.herokuapp.com/about">About</a></li>
+      <li><a href="http://csc648team07.herokuapp.com/posts/my">My Reports</a></li>
+      <li><a href="http://csc648team07.herokuapp.com/post/add">Add Post</a></li>
+        <li><a href="http://csc648team07.herokuapp.com/map/">Map View</a></li>
+    </ul>
+  </div>
+</nav>
+<style>
+.ali {
+    margin-top: 50px;
+}
+</style>
 <body>
+<header class = "ali">
 <h1 align="center">Ali Alavi</h1>
+</header>
 <div align="center"><img src="{% static 'ali-about.png' %}" alt="Not availabe"></div>
 <p>Born and raised in Pakistan, migrated to the US in 2014. Have been wprking as a software engineer since March 2015 at a 3D person scanning startup Twindom in Berkeley. In addition to that, currently pursuing a Graduate Degree in Computer Sceince at San Francisco State University.</p>
 
