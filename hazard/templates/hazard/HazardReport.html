@@ -20,6 +20,7 @@
   <p>{{ hazardreport.pub_date }}</p>
   <div class='map' id="map-canvas" style="width: 320px; height: 320px"></div>
 </div>
+  <p>Author: <a href="#">{{ hazardreport.user.username }}</a></p>
   <span>{{ hazardreport.content_text }}</span>
   <br /><br /><br />
   <b>Comments:</b>
@@ -32,6 +33,8 @@
   {% else %}
     <p>There are no comments yet</p>
   {% endif %}
+  <!-- Show view for authenthicated users -->
+  {% if request.user.is_authenticated %}
     <form class="form-horizontal" action="" method="POST" encrypt="multipart/from-data">
         {% csrf_token %}
         {% include "hazard/form-template.html" %}
@@ -41,5 +44,6 @@
             </div>
         </div>
     </form>
+  {% endif %}
 
 {% endblock content %}

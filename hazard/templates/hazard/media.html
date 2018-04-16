@@ -1,0 +1,18 @@
+{% extends 'hazard/base.html' %} 
+
+{% load static %} 
+{% block title %}
+
+<title> Twitter </title>
+{% endblock %} 
+
+{% block content %} 
+
+     <!--   Twitter Widget   -->
+     <div class="text-center">
+        <a class="twitter-timeline" data-width="371" data-height="466"
+        href="https://twitter.com/SFEnvironment?ref_src=twsrc%5Etfw"></a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+{% endblock %}

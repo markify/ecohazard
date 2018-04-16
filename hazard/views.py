@@ -19,7 +19,8 @@ from .serializers import HazardReportSerializer, UserWithPostListSerializer
 
 from django.utils.timezone import now 
 from django.db import models
-
+from django.contrib import messages
+from django.contrib.auth.forms import AuthenticationForm
 # ---- ABOUT PAGES ----
 
 def about(request, extra=None):
@@ -40,6 +41,10 @@ def about(request, extra=None):
 def map(request):
     data = HazardReport.objects.all()
     return render(request, 'hazard/map.html', { 'data' : data })
+
+# ---- MEDIA VIEW ----
+def media(request):
+    return render(request, 'hazard/media.html')
 
 # --- Separate Map Report --
 def post_report(request):
@@ -115,16 +120,24 @@ def index(request):
     return render(request, "hazard/index.html", context)
 
 # USER HAS LOGIN WITH USER AUTHENTHICATION REDIRECT TO INDEX
-def login_process(request):
-    username = request.POST['username']
-    password = request.POST['password']
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        if user.is_active:
-            login(request, user)
-            return redirect('ecohazards:index')
 
-    return redirect('ecohazards:index')
+def login_process(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request.POST)
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect('ecohazards:index')
+        else:
+            messages.error(request,'Login Failed : User name or password incorrect')
+            return redirect('ecohazards:index')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'ecohazards:index', {'form': form})
 
 # RENDERS THE HOME PAGE WHEN USER HAS LOGGED OUT
 # THEN REDIRECTS TO INDEX PAGE
