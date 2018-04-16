@@ -17,6 +17,7 @@ urlpatterns = [
         path("post/<int:hazardreport_id>", views.hazardreport, name="post"),
         path("search/", views.search_process, name="search_results"),
         path('map/', views.map, name="map"),
+        path('media/', views.media, name="media"),
         path('report/', views.post_report, name='report'),
         path('process_new_report/', views.process_new_report, name='process_new_report'),
         re_path(r"^about(-\w*)?/?$", views.about, name="about"),  
