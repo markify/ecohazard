@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     '***REMOVED***',
     'hazard',
+    'storages',
     'sorl.thumbnail'
 ]
 
@@ -131,6 +132,32 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# Storage of images to Amazon S3 Bucket instead of Heroku system
+
+AWS_ACCESS_KEY_ID = os.environ.get('***REMOVED***')
+AWS_SECRET_ACCESS_KEY = os.environ.get('***REMOVED***')
+AWS_STORAGE_BUCKET_NAME = 'ecohazardsteam7-bucket'
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+
+AWS_S3_CUSTOM_DOMAIN = AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com'
+
+STATIC_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+
+MEDIA_URL = STATIC_URL + 'media/'
+
+STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'), )
+STATIC_ROOT = 'staticfiles'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+STATICFILES_FINDERS = (
+'django.contrib.staticfiles.finders.FileSystemFinder',
+'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 
 
 # Static files (CSS, JavaScript, Images)
