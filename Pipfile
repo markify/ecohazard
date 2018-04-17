@@ -17,6 +17,8 @@ pillow = "==5.0.0"
 pytz = "==2017.3"
 mysqlclient = "*"
 sorl-thumbnail = "*"
+django-storages = "*"
+boto3="*"
 
 
 [requires]

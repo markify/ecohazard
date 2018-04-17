@@ -34,7 +34,8 @@ urlpatterns = [
     path('hazardreport/<int:hazardreport_id>', hazard_views.hazardreportAPI,
          name="hazardreportapi"),
     path('userpostlist/<int:user_id>', hazard_views.userHazardPostListAPI, name="userpostlist"),
-]
+    
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns = format_suffix_patterns(urlpatterns)
 
