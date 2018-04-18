@@ -11,15 +11,18 @@
 </div>
 {% endfor %}
 <div class="img-circle text-center">
-    <div class="container">
-      <a href="/" class="logo">
-        <img src="http://i66.tinypic.com/eki4w8.jpg">
-      </a>
-    </div>
+    <img src="http://i66.tinypic.com/eki4w8.jpg" align="left">
     <h1>Eco Hazards</h1>
     <h5>Eco Hazards is an SFSU startup company that plans to help clean up the environment through our web-based
       application.</h5>
     <h5>SFSU Software Engineering Project, Spring 2018.  For Demonstration Only.</h5>
+        <form class="navbar-form navbar-right"  role="search" method="get" action="{% url 'ecohazards:search_results' %}" >
+                <div class="form-group">
+                    <!-- resized search bar style width -->
+                    <input type="text" style="width: 280px;" class="form-control" name="q" value="" placeholder="Search for hazard reports....">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
 </div>
   <h1> Latest Hazard reports: </h1>
   {% if list %}
