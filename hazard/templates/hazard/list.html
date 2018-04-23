@@ -1,13 +1,13 @@
 {% load thumbnail %}
-{% for item in list %}
+
 {% load static %}
  <!-- SHOW THE REPORTS title, date, author, context -->
  <!-- prevent text overflow on panel <span style="word-wrap: break-word;"> -->
 
  <div class="row">
-
+{% for item in list %}
         <!-- Hazard Reports Entries -->
-
+<div class="col-md-6">
 <div class="panel panel-info">
     <div class="panel-heading">
         <div class="panel-title pull-left">
@@ -36,11 +36,12 @@
         </div>
     </div>
 </div>
-
-    </div>
+</div>
+{% endfor %}
+ </div>
 
     <!-- Pagination Section -->
-{% endfor %}
+
 <div class="text-center">
     <ul class="pagination">
         {% if list.has_previous %}
