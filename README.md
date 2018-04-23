@@ -28,7 +28,6 @@
 - ask Anthony questions about Heroku
 
 ## Windows Users
-
 0) add to collaborators
 1) Download Heroku CLI and type "heroku login" from terminal/cmd in your desktop directory. 
    login with your heroku account.
@@ -43,11 +42,6 @@
 10) python manage.py collectstatic (if it asks question, type ‘yes’)
 11) heroku local web -f Procfile.windows
 
-## Requirements.txt 
 
-Installing Prerequisite Python Packages:
-1) cd to the directory where requirements.txt is located
-2) activate your virtualenv
-3) run: pip install -r requirements.txt in your shell
 
-https://pip.readthedocs.io/en/1.1/requirements.html
+
