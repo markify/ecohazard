@@ -1,5 +1,4 @@
 {% load thumbnail %}
-
 {% load static %}
  <!-- SHOW THE REPORTS title, date, author, context -->
  <!-- prevent text overflow on panel <span style="word-wrap: break-word;"> -->
@@ -19,26 +18,30 @@
         <div class="clearfix"></div>
     </div>
     <div class="panel-body">
-        <p><span style="word-wrap: break-word;" > {{ item.content_text}} </span></p>
-        <div class="panel-title pull-left">
+            <div class="col-md-4">
+            {% if item.image %}
+            {% thumbnail item.image "100x100" crop="center" as thumbnail %}
+                <img src="{{ thumbnail.url }}" width="{{ thumbnail.width }}" height="{{ thumbnail.height }}">
+            {% endthumbnail %}
+            {% else %}
+            <img src="/static/golden.jpg" class="img-responsive">
+     {%  endif %}
+    </div>
+    <div class="col-md-8">
+        <p><span style="word-wrap: break-word;" > {{ item.content_text |truncatechars:50}} </span></p>
             <p><a href="{% url 'ecohazards:userposts' item.user.username %}">author : {{ item.user.username }}</a></p>
             <h4>{{ item.zipcode }}</h4>
             <h5>{{ item.location }}</h5>
-            {% if item.image %}
-                {% thumbnail item.image "100x100" crop="center" as thumbnail %}
-                    <img src="{{ thumbnail.url }}" width="{{ thumbnail.width }}" height="{{ thumbnail.height }}">
-                {% endthumbnail %}
-         <!--<img src="{{ item.image.url }}" class="img-responsive" /> -->
-         {%  endif %}
         </div>
         <div class="panel-title pull-right">
                 <button type="button" class="btn btn-success">Status</button>
         </div>
+        
     </div>
-</div>
-</div>
-{% endfor %}
+  </div>
  </div>
+{% endfor %}
+</div>
 
     <!-- Pagination Section -->
 
