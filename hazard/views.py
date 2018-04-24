@@ -158,7 +158,8 @@ def search_process(request):
     current_post_list, num_pages = get_paginator(request, search_list, 6)
     context = {
             'list': current_post_list,
-            'num_pages': num_pages
+            'num_pages': num_pages,
+            'search': search
     }
     return render(request, 'hazard/search_results.html', context)
 
