@@ -1,7 +1,7 @@
 
 <!-- https://docs.djangoproject.com/en/2.0/topics/forms/ - Django forms field-->
 {% for field in form %}
-    <div class="form-group" id="form-group-{{ field.label_tag }}">
+    <div class="form-group" id="form-group-{{ field.label }}">
         <div class="col-sm-offset-2">
             <span class="text-danger small">{{ field.errors }}</span>
         </div>
