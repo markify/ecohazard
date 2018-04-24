@@ -49,7 +49,7 @@
     <ul class="pagination">
         {% if list.has_previous %}
         <li>
-            <a href="?page={{ list.previous_page_number }}">previous</a>
+            <a href="?q={{ search }}$page={{ list.previous_page_number }}">previous</a>
         </li>
         {% endif %} {% for item in num_pages %} {% if list.number == item %}
         <li class="active">
@@ -57,11 +57,11 @@
         </li>
         {% else %}
         <li>
-            <a href="?page={{ item }}">{{ item }}</a>
+            <a href="?q={{ search }}&page={{ item }}">{{ item }}</a>
         </li>
         {% endif %} {% endfor %} {% if list.has_next %}
         <li>
-            <a href="?page={{ list.next_page_number }}">next</a>
+            <a href="?q={{ search }}&page={{ list.next_page_number }}">next</a>
         </li>
         {% endif %}
     </ul>
