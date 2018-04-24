@@ -5,8 +5,13 @@
 
 <script src="{% static 'js/autocompletegeo.js' %}"></script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxLy54-WVhd-fI3KE_DAAPpZzJNkr8vAc&libraries=places&callback=initAutocomplete">
+        src="https://maps.geoogleapis.com/maps/api/js?key=AIzaSyAxLy54-WVhd-fI3KE_DAAPpZzJNkr8vAc&libraries=places&callback=initAutocomplete">
 </script>
+    <style>
+    #map {
+        width: 60vh;
+    }
+    </style>
 
 {% endblock %}
 {% block content %}
@@ -16,7 +21,7 @@
             {% include "hazard/form-template.html" %}
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success"/>
+                    <button type="submit" class="btn btn-success">
                     Save</button>
                 </div>
             </div>
@@ -28,7 +33,7 @@
 </div>
 
 <script>
-    $('<br><input style="width:250px;" id="autocomplete" placeholder="Enter the address" type="text" required>').insertAfter( "#id_image" );
+    $('<br><input style="width:100%;" id="autocomplete" placeholder="Enter the address" type="text" required>').insertAfter( "#id_image" );
     initAutocomplete()
     //fillInAddress()
 
