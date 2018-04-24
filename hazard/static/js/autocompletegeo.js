@@ -40,4 +40,31 @@ function fillInAddress() {
   }
   $("#id_zipcode").val(zip);
   $("#id_location").val(address);
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+  });
+
+  var geocoder = new google.maps.Geocoder();
+
+  geocodeAddress(geocoder, map);
+}
+
+function geocodeAddress(geocoder, resultsMap) {
+  var address = document.getElementById('autocomplete').value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === 'OK') {
+
+      console.log(results[0]);
+      resultsMap.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location
+      });
+      if (results[0].geometry.viewport)
+          resultsMap.fitBounds(results[0].geometry.viewport);
+      } else {
+        console.log('Geocode was not successful for the following reason: ' + status);
+      }
+    });
 }
