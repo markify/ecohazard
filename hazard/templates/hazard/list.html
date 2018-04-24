@@ -49,7 +49,7 @@
     <ul class="pagination">
         {% if list.has_previous %}
         <li>
-            <a href="?q={{ search }}$page={{ list.previous_page_number }}">previous</a>
+            <a href="q={{ search }}$page={{ list.previous_page_number }}">previous</a>
         </li>
         {% endif %} {% for item in num_pages %} {% if list.number == item %}
         <li class="active">

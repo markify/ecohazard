@@ -159,7 +159,7 @@ def search_process(request):
     context = {
             'list': current_post_list,
             'num_pages': num_pages,
-            'search': search
+            'search': search,
     }
     return render(request, 'hazard/search_results.html', context)
 
