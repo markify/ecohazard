@@ -1,28 +1,37 @@
 {% extends "hazard/base.html" %}
-{% load static %} 
+{% load static %}
 {% block title %}
-  <title>Add new post</title>
+<title>Add new post</title>
 
-  <script src="{% static 'js/autocompletegeo.js' %}"></script>
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxLy54-WVhd-fI3KE_DAAPpZzJNkr8vAc&libraries=places&callback=initAutocomplete">
-  </script>
+<script src="{% static 'js/autocompletegeo.js' %}"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxLy54-WVhd-fI3KE_DAAPpZzJNkr8vAc&libraries=places&callback=initAutocomplete">
+</script>
 
 {% endblock %}
 {% block content %}
-<form class='form-horizontal' method='POST' action='' enctype='multipart/form-data'> {% csrf_token %}
-  {% include "hazard/form-template.html" %}
-  <div class="form-group"> 
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-success" />Save</button>
+<div class="row">
+    <div class="col-md-6">
+        <form class='form-horizontal' method='POST' action='' enctype='multipart/form-data'> {% csrf_token %}
+            {% include "hazard/form-template.html" %}
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-success"/>
+                    Save</button>
+                </div>
+            </div>
+        </form>
     </div>
-  </div>
-</form>
+    <div class="col-md-6">
+        <div id="map"></div>
+    </div>
+</div>
 
 <script>
     $('<br><input style="width:250px;" id="autocomplete" placeholder="Enter the address" type="text" required>').insertAfter( "#id_image" );
     initAutocomplete()
-    fillInAddress()
+    //fillInAddress()
+
 </script>
 
 {% endblock %}
