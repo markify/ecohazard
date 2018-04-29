@@ -28,7 +28,7 @@
      {%  endif %}
     </div>
     <div class="col-md-8">
-        <p><span style="word-wrap: break-word;" > {{ item.content_text |truncatechars:50}} </span></p>
+        <p><span style="word-wrap: break-word;" > {{ item.content_text |truncatechars:40}} </span></p>
             <p><a href="{% url 'ecohazards:userposts' item.user.username %}">author : {{ item.user.username }}</a></p>
             <h4>{{ item.zipcode }}</h4>
             <h5>{{ item.location }}</h5>
