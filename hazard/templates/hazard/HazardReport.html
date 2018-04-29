@@ -11,6 +11,9 @@
 
 {% block content %}
 <div id='view-review' class='col-lg-12 review-nodule'>
+    <a href="http://csc648team07.herokuapp.com/search/?q="
+    <button type="submit" class="btn btn-success" align="left">Back to Search</button>
+    </a>
 {% if hazardreport.image %}
     <img src="{{ hazardreport.image.url }}" class="img-responsive" />
     {% endif %}

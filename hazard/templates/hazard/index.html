@@ -11,20 +11,23 @@
 </div>
 {% endfor %}
 <div class="img-circle text-center">
-    <img src="http://i66.tinypic.com/eki4w8.jpg" align="left">
+    <a href="http://csc648team07.herokuapp.com/">
+    <img border="0" src="http://i66.tinypic.com/eki4w8.jpg" align="left">
+    </a>
     <h1>Eco Hazards</h1>
     <h5>Eco Hazards is an SFSU startup company that plans to help clean up the environment through our web-based
       application.</h5>
     <h5>SFSU Software Engineering Project, Spring 2018.  For Demonstration Only.</h5>
-        <form class="navbar-form navbar-right"  role="search" method="get" action="{% url 'ecohazards:search_results' %}" >
+       <form class="navbar-form navbar-right"  role="search" method="get" action="{% url 'ecohazards:search_results' %}" >
                 <div class="form-group">
                     <!-- resized search bar style width -->
-                    <input type="text" style="width: 280px;" class="form-control" name="q" value="" placeholder="Search for hazard reports....">
+                    <input type="text" style="width: 480px;" class="form-control" name="q" value="" placeholder="Enter Keyword or Zip Code">
                 </div>
                 <button type="submit" class="btn btn-default">Search</button>
             </form>
 </div>
-  <h2> Latest Hazard reports: </h2>
+  <h2>Latest Hazard reports: <a href="http://csc648team07.herokuapp.com/map/">
+        <button style="font-size:14px;height:25px;width:80px" type="button">Map View</button></a></h2>
   {% if list %}
     {% include 'hazard/list.html' %}
   {% else %}
