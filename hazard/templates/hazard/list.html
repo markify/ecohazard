@@ -1,68 +1,70 @@
 {% load thumbnail %}
 {% load static %}
- <!-- SHOW THE REPORTS title, date, author, context -->
- <!-- prevent text overflow on panel <span style="word-wrap: break-word;"> -->
+<!-- SHOW THE REPORTS title, date, author, context -->
+<!-- prevent text overflow on panel <span style="word-wrap: break-word;"> -->
 
- <div class="row">
-{% for item in list %}
-        <!-- Hazard Reports Entries -->
-<div class="col-md-6">
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <div class="panel-title pull-left">
-            <p> <a href="{% url 'ecohazards:post' item.id %}">{{ item.title_text }}</a></p>
-        </div>
-        <div class="panel-title pull-right">
+<div class="row">
+  {% for item in list %}
+    <!-- Hazard Reports Entries -->
+    <div class="col-md-6">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="panel-title pull-left">
+            <p><a href="{% url 'ecohazards:post' item.id %}">{{ item.title_text }}</a></p>
+          </div>
+          <div class="panel-title pull-right">
             <p>{{ item.pub_date }}</p>
+          </div>
+          <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="panel-body">
-            <div class="col-md-4">
-            {% if item.image %}
-            {% thumbnail item.image "100x100" crop="center" as thumbnail %}
-                <img src="{{ thumbnail.url }}" width="{{ thumbnail.width }}" height="{{ thumbnail.height }}">
-            {% endthumbnail %}
-            {% else %}
-            <img src="/static/golden.jpg" class="img-responsive">
-     {%  endif %}
-    </div>
-    <div class="col-md-8">
-        <p><span style="word-wrap: break-word;" > {{ item.content_text |truncatechars:40}} </span></p>
+        <div class="panel-body">
+          <div class="col-xs-4">
+            <a href="{% url 'ecohazards:post' item.id %}">
+              {% if item.image %}
+                {% thumbnail item.image "100x100" crop="center" as thumbnail %}
+                  <img src="{{ thumbnail.url }}" width="{{ thumbnail.width }}" height="{{ thumbnail.height }}">
+                {% endthumbnail %}
+              {% else %}
+                <img src="/static/golden.jpg" class="img-responsive">
+              {% endif %}
+            </a>
+          </div>
+          <div class="col-xs-8">
+            <p><span style="word-wrap: break-word;"> {{ item.content_text |truncatechars:40}} </span></p>
             <p><a href="{% url 'ecohazards:userposts' item.user.username %}">author : {{ item.user.username }}</a></p>
             <h4>{{ item.zipcode }}</h4>
             <h5>{{ item.location }}</h5>
+          </div>
+          <div class="panel-title pull-right">
+            <button type="button" class="btn btn-success">Status</button>
+          </div>
+
         </div>
-        <div class="panel-title pull-right">
-                <button type="button" class="btn btn-success">Status</button>
-        </div>
-        
+      </div>
     </div>
-  </div>
- </div>
-{% endfor %}
+  {% endfor %}
 </div>
 
-    <!-- Pagination Section -->
+<!-- Pagination Section -->
 
 <div class="text-center">
-    <ul class="pagination">
-        {% if list.has_previous %}
-        <li>
-            <a href="?q={{ search }}$page={{ list.previous_page_number }}">previous</a>
-        </li>
-        {% endif %} {% for item in num_pages %} {% if list.number == item %}
-        <li class="active">
-            <a href="#">{{ item }}</a>
-        </li>
-        {% else %}
-        <li>
-            <a href="?q={{ search }}&page={{ item }}">{{ item }}</a>
-        </li>
-        {% endif %} {% endfor %} {% if list.has_next %}
-        <li>
-            <a href="?q={{ search }}&page={{ list.next_page_number }}">next</a>
-        </li>
-        {% endif %}
-    </ul>
+  <ul class="pagination">
+    {% if list.has_previous %}
+      <li>
+        <a href="?q={{ search }}$page={{ list.previous_page_number }}">previous</a>
+      </li>
+    {% endif %} {% for item in num_pages %} {% if list.number == item %}
+    <li class="active">
+      <a href="#">{{ item }}</a>
+    </li>
+  {% else %}
+    <li>
+      <a href="?q={{ search }}&page={{ item }}">{{ item }}</a>
+    </li>
+  {% endif %} {% endfor %} {% if list.has_next %}
+    <li>
+      <a href="?q={{ search }}&page={{ list.next_page_number }}">next</a>
+    </li>
+  {% endif %}
+  </ul>
 </div>
