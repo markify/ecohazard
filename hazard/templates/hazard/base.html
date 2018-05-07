@@ -1,140 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
-  <head>
-      <Title>Eco Hazards Team 07</Title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <Title>Eco Hazards Team 07</Title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" type="image/png" href="/static/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/static/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="/static/favicon-32x32.png" sizes="32x32"/>
+  <link rel="icon" type="image/png" href="/static/favicon-16x16.png" sizes="16x16"/>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117520795-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117520795-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
 
-     gtag('config', 'UA-117520795-1');
-    </script>
+      function gtag() {
+          dataLayer.push(arguments);
+      }
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      gtag('js', new Date());
 
-    {% block title %}
-      <title>Eco Hazards</title>
-    {% endblock %}
+      gtag('config', 'UA-117520795-1');
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+          crossorigin="anonymous"></script>
+
+  {% block title %}
+    <title>Eco Hazards</title>
+  {% endblock %}
 </head>
 <body>
-    <script>
-    $(document).ready(function(){
-    //Handles menu drop down
-    $('.dropdown-menu').find('form').click(function (e) {
-        e.stopPropagation();
+<script>
+    $(document).ready(function () {
+        //Handles menu drop down
+        $('.dropdown-menu').find('form').click(function (e) {
+            e.stopPropagation();
+        });
     });
-    });
-    </script>
+</script>
 
 <!-- nav bar buttons left -->
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <!-- responsive navbar toggle when resized -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            
-            <a class="navbar-brand" href="{% url 'ecohazards:index' %}"><span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span>&nbsp;Eco Hazards</a>
-            <a class="navbar-brand" href="{% url 'ecohazards:about' %}"><span class="glyphicon glyphicon-apple" aria-hidden="true"></span>&nbsp;About</a>
-            <a class="navbar-brand" href="{% url 'ecohazards:media' %}"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>&nbsp;Media</a>
-        </div>
-        
-        <div class="collapse navbar-collapse"  id="topNavBar">
-            <ul class="nav navbar-nav">
-                <!-- Show view for authenthicated users -->
-                {% if request.user.is_authenticated %}
-                    <li>
-                      <a href="{% url 'ecohazards:userposts' 'my' %}">
-                            My Reports
-                        </a>
-                    </li>
-                    <li>
-                      <a href="{% url 'ecohazards:add-post' %}">
-                        <span class="glyphicon glyphicon-plus"></span>&nbsp; Add post
-                      </a>
-                    </li>
-                {% endif %}
-            </ul>
-        
-    <!-- nav buttons right -->
-        <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-               <ul class="nav navbar-nav navbar-right">
-                   <!-- Show view for authenthicated users  if/else-->
-                  {% if request.user.is_authenticated %}
-                  <!-- <li><a href="{% url 'ecohazards:report' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Report</a></li> -->
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!-- responsive navbar toggle when resized -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
-                  <li><a href="{% url 'ecohazards:map' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Map View</a></li>
-                    <li><a href="{% url 'ecohazards:userposts' user.username %}"><span class="glyphicon glyphicon-user"></span>&nbsp;{{ request.user.username }}</a></li>
-                      <li><a href="{% url 'ecohazards:logout_process' %}"><span class="glyphicon glyphicon-off"></span>&nbsp;Sign Out</a></li>
-                   <!-- Show view for users -->  
-                  {% else %}
-
-                     <li><a href="{% url 'ecohazards:map' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Map View</a></li>
-                      <li><a href="{% url 'ecohazards:register' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Sign Up</a></li>
-                      <li class="dropdown">
-                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Sign in <b class="caret"></b></a>
-                         <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
-                            <li>
-                               <div class="row">
-                                  <div class="col-md-12">
-                                     <form class="form" role="form" method="post" action="{% url 'ecohazards:login_process' %}" accept-charset="UTF-8" id="login-nav">
-                                        {% csrf_token %}
-                                        <div class="form-group">
-                                           <label class="sr-only" for="loginInput">Login</label>
-                                           <input type="text" class="form-control" id="username" name="username" placeholder="Login" required>
-                                        </div>
-                                        <div class="form-group">
-                                           <label class="sr-only" for="password">Password</label>
-                                           <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
-                                        </div>
-                                        <div class="checkbox">
-                                           <label>
-                                           <input type="checkbox"> Remember me
-                                           </label>
-                                        </div>
-                                        <div class="form-group">
-                                           <button type="submit" class="btn btn-success btn-block">Sign in</button>
-                                        </div>
-                                     </form>
-                                  </div>
-                               </div>
-                            </li>
-                            <!-- end if -->
-                    {% endif %}
-                     </ul>
-                  </li>
-               </ul>
-            </div>
-        </div>
+      <a class="navbar-brand" href="{% url 'ecohazards:index' %}"><span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span>&nbsp;Eco Hazards</a>
     </div>
-</nav>  
 
-    <div class="container">
+    <div class="collapse navbar-collapse" id="topNavBar">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="{% url 'ecohazards:about' %}"><span class="glyphicon glyphicon-apple"></span>&nbsp;About</a>
+        </li>
+        <!-- Show view for authenthicated users -->
+        {% if request.user.is_authenticated %}
+          <li>
+            <a href="{% url 'ecohazards:userposts' 'my' %}">My Reports</a>
+          </li>
+          <li>
+            <a href="{% url 'ecohazards:add-post' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add post</a>
+          </li>
+        {% else %}
+          <!-- If not logged in, show add post but redirect to login -->
+          <li>
+            <a href="{% url 'ecohazards:register' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add post</a>
+          </li>
+        {% endif %}
+      </ul>
 
-      <div class="starter-template">
-      {% block content %}
-      {% endblock %}
+      <!-- nav buttons right -->
+      <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <!-- Show view for authenthicated users  if/else-->
+          {% if request.user.is_authenticated %}
+            <!-- <li><a href="{% url 'ecohazards:report' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Report</a></li> -->
+
+            <li><a href="{% url 'ecohazards:map' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Map View</a>
+            </li>
+            <li><a href="{% url 'ecohazards:userposts' user.username %}"><span class="glyphicon glyphicon-user"></span>&nbsp;{{ request.user.username }}
+            </a></li>
+            <li><a href="{% url 'ecohazards:logout_process' %}"><span class="glyphicon glyphicon-off"></span>&nbsp;Sign
+              Out</a></li>
+            <!-- Show view for users -->
+          {% else %}
+
+            <li><a href="{% url 'ecohazards:map' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Map View</a>
+            </li>
+            <li><a href="{% url 'ecohazards:register' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Sign
+              Up</a></li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Sign
+              in <b class="caret"></b></a>
+            <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+            <li>
+              <div class="row">
+                <div class="col-md-12">
+                  <form class="form" role="form" method="post" action="{% url 'ecohazards:login_process' %}"
+                        accept-charset="UTF-8" id="login-nav">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label class="sr-only" for="loginInput">Login</label>
+                      <input type="text" class="form-control" id="username" name="username" placeholder="Login"
+                             required>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="password">Password</label>
+                      <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                             required>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> Remember me
+                      </label>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-success btn-block">Sign in</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </li>
+            <!-- end if -->
+          {% endif %}
+          </ul>
+          </li>
+        </ul>
       </div>
-    </div><!-- /.container -->
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="starter-template">
+    {% block content %}
+    {% endblock %}
+  </div>
+</div><!-- /.container -->
 </body>
 </html>
