@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 from django.views.generic import View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # ---- forms.py, models.py import ----
-from .forms import UserForm, HazardReportForm, HazardReportCommentForm
-from .models import HazardReport, HazardReportComment
+from .forms import UserForm, HazardReportForm, HazardReportCommentForm, CategoryForm
+from .models import HazardReport, HazardReportComment, Category
 from django.db.models import Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
@@ -200,10 +200,13 @@ class HazardReportCreate(CreateView):
     """Creates new post """
     form_class = HazardReportForm
     template_name = "hazard/hazardreport_form.html"
+    categories = Category.objects.all()
+
+    print(categories)
 
     def get(self, request):
         form = self.form_class(None)
-        return render(request, self.template_name, {'form': form})
+        return render(request, self.template_name, {'form': form, 'categories': self.categories})
 
     def post(self, request):
         form = self.form_class(request.POST or None, request.FILES or None)

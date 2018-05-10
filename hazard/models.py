@@ -4,6 +4,12 @@ from django.contrib.auth.models import User
 # Create your models here.
 # These are items for our database; Hazard Reports
 
+
+class Category(models.Model):
+    id = models.IntegerField()
+    description = models.TextField()
+    title = models.CharField(max_length=45)
+
 # hazard post Content and text lengths limit
 class HazardReport(models.Model):
     pub_date = models.DateTimeField(auto_now_add = True)
@@ -13,6 +19,8 @@ class HazardReport(models.Model):
     location = models.CharField(max_length=50)
     image = models.FileField(null=True, blank=True)
     user = models.ForeignKey(User, related_name="hazardposts",
+                             on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,
                              on_delete=models.CASCADE)
 
     def __str__(self):
@@ -26,4 +34,3 @@ class HazardReportComment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     hazardreport = models.ForeignKey(HazardReport, related_name='comments',
                                  on_delete=models.CASCADE)
-
