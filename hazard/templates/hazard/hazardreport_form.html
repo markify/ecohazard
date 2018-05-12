@@ -18,6 +18,16 @@
 <div class="row">
     <div class="col-md-6">
         <form class='form-horizontal' method='POST' action='' enctype='multipart/form-data'> {% csrf_token %}
+            <div class="form-group" id="form-group-category">
+                <label class="control  col-sm-2">Hazard Category</label>
+                <div class="col-sm-10">
+                    <select name="category" required>
+                    {%for category in categories%}
+                        <option value="{{category.id}}">{{ category.title }}</option>
+                    {%endfor%}
+                    </select>
+                </div>
+            </div>
             {% include "hazard/form-template.html" %}
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
@@ -34,7 +44,8 @@
 </div>
 
 <script>
-    $('<br><input style="width:100%;" id="autocomplete" placeholder="Enter the address" type="text" required>').insertAfter( "#id_image" );
+    $("#form-group-Category").remove(); //Default dropdown showing objects instead of actual values
+    $('<br><input style="width:100%;" id="autocomplete" placeholder="Enter the address" type="text" required>').insertAfter( "#id_content_text" );
     initAutocomplete()
     //fillInAddress()
 
