@@ -10,6 +10,10 @@ class Category(models.Model):
     description = models.TextField()
     title = models.CharField(max_length=45)
 
+class Status(models.Model):
+    id = models.IntegerField()
+    description = models.CharField(max_length=100)
+
 # hazard post Content and text lengths limit
 class HazardReport(models.Model):
     pub_date = models.DateTimeField(auto_now_add = True)
@@ -22,6 +26,8 @@ class HazardReport(models.Model):
                              on_delete=models.CASCADE)
     category = models.ForeignKey(Category,
                              on_delete=models.CASCADE)
+    status = models.ForeignKey(Status,
+                                 on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title_text
