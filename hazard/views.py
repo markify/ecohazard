@@ -214,6 +214,7 @@ class HazardReportCreate(CreateView):
         if form.is_valid():
             new_post = form.save(commit=False)
             new_post.user_id = request.user.id
+            new_post.status_id = 1
             new_post.save()
         return redirect('ecohazards:post', hazardreport_id=new_post.id)
 
