@@ -1,3 +1,6 @@
+#Name: CSC Team 07
+#Description: to serialize database data
+#Usage: serialize data
 from rest_framework import serializers
 # Add import models for serialization
 from .models import HazardReport, HazardReportComment

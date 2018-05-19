@@ -1,3 +1,6 @@
+#Name: CSC Team 07
+#Description: admin
+#Usage: access administrator webpage
 from django.contrib import admin
 from .models import HazardReport, HazardReportComment
 

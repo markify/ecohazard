@@ -13,6 +13,9 @@ Examples:
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('hazard/', include('hazard.urls'))
 """
+#Name: CSC Team 07
+#Description: global urls
+#Usage: access routes and links to web pages of hazard reports ,admin,etc..
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings

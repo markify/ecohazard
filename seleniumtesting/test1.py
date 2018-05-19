@@ -1,3 +1,6 @@
+#Name: Lance
+#Description: testing hazard report view, buttons
+#Usage: testing hazard report gui for view results
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
