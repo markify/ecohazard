@@ -17,7 +17,7 @@ function getCookie(name)
 }
 
 
-$("#status").change(function () {
+$(".status_dropdown").change(function () {
   console.log( $(this).val() );
   $.ajax({
     beforeSend: function(xhr, settings) {

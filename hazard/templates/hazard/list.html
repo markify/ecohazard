@@ -1,5 +1,6 @@
 {% load thumbnail %}
 {% load static %}
+{% load user_permissions %}
 <!-- SHOW THE REPORTS title, date, author, context -->
 <!-- prevent text overflow on panel <span style="word-wrap: break-word;"> -->
 
@@ -36,7 +37,17 @@
             <h5>{{ item.location }}</h5>
           </div>
           <div class="panel-title pull-right">
-            <button type="button" class="btn btn-success">Status</button>
+            {% if is_manager == 1%}
+            <h3>Status:
+                  <select name="status" class="status_dropdown" data-hazard_report_id="{{ item.id }}">
+                      {%for status in statuses%}
+                      <option value="{{status.id}}" {% if status.id == item.status.id %}selected="selected"{% endif %}> {{ status.description }} </option>
+                      {%endfor%}
+                  </select>
+            </h3>
+            {% else %}
+            <h3>Status: {{item.status.description}}</h3>
+            {% endif %}
           </div>
 
         </div>
