@@ -1,3 +1,6 @@
+#Name: CSC Team 07
+#Description: this is where the views are created 
+#Usage: acts as a view for rendering the web
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 # ---- login/logout import ----
 from django.contrib.auth import authenticate, login, logout

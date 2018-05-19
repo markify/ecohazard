@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-
+#Name: Lance
+#Description: testing view my reports and page
+#Usage: GUI testing webpage
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys

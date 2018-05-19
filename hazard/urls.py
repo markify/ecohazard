@@ -1,3 +1,6 @@
+#Name: CSC Team 07
+#Description: url and routes
+#Usage: the website address and link
 from django.urls import path, re_path
 from . import views
 
