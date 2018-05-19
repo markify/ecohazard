@@ -17,9 +17,10 @@
 {% if hazardreport.image %}
     <img src="{{ hazardreport.image.url }}" class="img-responsive" />
     {% endif %}
-  <h2>{{ hazardreport.title_text }}</h2>
-  <h3>{{ hazardreport.zipcode }}</h3>
+  <h2>Title: {{ hazardreport.title_text }}</h2>
+  <h3>Zip Code: {{ hazardreport.zipcode }}</h3>
   <h3>Hazard Category: {{ hazardreport.category.title }}</h3>
+  <h3>Status: {{ hazardreport.status.description }}</h3>
   <p>Location: <span class='location'>{{ hazardreport.location }}</span></p>
   <p>{{ hazardreport.pub_date }}</p>
   <div class='map' id="map-canvas" style="width: 320px; height: 320px"></div>
