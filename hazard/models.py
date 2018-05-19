@@ -6,12 +6,12 @@ from django.contrib.auth.models import User
 
 
 class Category(models.Model):
-    id = models.IntegerField()
+    id = models.IntegerField(primary_key=True)
     description = models.TextField()
     title = models.CharField(max_length=45)
 
 class Status(models.Model):
-    id = models.IntegerField()
+    id = models.IntegerField(primary_key=True)
     description = models.CharField(max_length=100)
 
 # hazard post Content and text lengths limit

@@ -1,59 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+{% extends 'hazard/base.html' %}
+<!-- commented out because it doesn't show about page properly when extended with navbar -->
+{% load static %}
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="http://csc648team07.herokuapp.com/">EcoHazards</a>
+{% block head %}
+<link rel="stylesheet" type="text/css" href="main.css"></link>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <title>About</title>
+
+
+
+
+
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div style="width:100%; font-family: 'Abyssinica SIL';
+
+    padding: 2em 1em;">
+
+  <div class="container" style="width: 100%">
+
+    <div class="row">
+
+      <div style="padding-top: 0px; box-sizing: border-box; display: block font-family: 'Open Sans', sans-serif; line-height: 20px;">
+
+        <div class="col" style="max-height: 600px">
+
+          <img src="https://puu.sh/znohh/55f8af08b4.jpg" align="center"  style="height: 60%; width: 40%; border:2px solid #fff;display: block; margin: auto; border-radius: 50%; vertical-align: middle; max-width: 100%">
+<h1 align="center">
+Lance  Larsen  </h1>
+          <h2 align="center">
+            Front-End
+          </h2>
+
+        </div>
+
+        <div class="text-center">
+
+        </div>
+
+      </div>
+
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="http://csc648team07.herokuapp.com/">Home</a></li>
-      <li><a href="http://csc648team07.herokuapp.com/about">About</a></li>
-      <li><a href="http://csc648team07.herokuapp.com/posts/my">My Reports</a></li>
-      <li><a href="http://csc648team07.herokuapp.com/post/add">Add Post</a></li>
-        <li><a href="http://csc648team07.herokuapp.com/map/">Map View</a></li>
-    </ul>
+
   </div>
-</nav>
-<style>
-.lance {
-    margin-top: 50px;
-}
-</style>
-<head>
-  <meta charset="UTF-8">
-  <title>A Pen by  Lance  Larsen</title>
-</head>
 
-<body>
-<header class = "lance">
-  <h1>Lance Larsen</h1>
-</header>
- <p style="text-indent: 15em;">
-<img src="https://puu.sh/znohh/55f8af08b4.jpg" alt="Flowers in Chania">
+</div>
 
-<body>
- <p style="text-indent: 15em;">
+<div class="text-center" style="font-family: 'Abyssinica SIL';">
+
+  <!--<div style="width: 60%">-->
+
+  <h4><p >
    Summary: I am 22 years old. I like to eat good food and breath fresh air.
  </p>
-  <p style="text-indent: 15em;">
+  <p >
    Hobbies: Video Games, Comics, Guitar, Video editing
  </p>
-  <p style="text-indent: 15em;">
+  <p >
    Goals: Make a game, Make $$$$
  </p>
-</body>
-    </>
-  
-  
+  </h4>
+  <!--</div>-->
+</div>
 
-</body>
+{% endblock %}
 
-</html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+  <!--<meta charset="utf-8">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<!--</head>-->
+
+<!--<nav class="navbar navbar-inverse navbar-fixed-top">-->
+  <!--<div class="container-fluid">-->
+    <!--<div class="navbar-header">-->
+      <!--<a class="navbar-brand" href="http://csc648team07.herokuapp.com/">EcoHazards</a>-->
+    <!--</div>-->
+    <!--<ul class="nav navbar-nav">-->
+      <!--<li class="active"><a href="http://csc648team07.herokuapp.com/">Home</a></li>-->
+      <!--<li><a href="http://csc648team07.herokuapp.com/about">About</a></li>-->
+      <!--<li><a href="http://csc648team07.herokuapp.com/posts/my">My Reports</a></li>-->
+      <!--<li><a href="http://csc648team07.herokuapp.com/post/add">Add Post</a></li>-->
+        <!--<li><a href="http://csc648team07.herokuapp.com/map/">Map View</a></li>-->
+    <!--</ul>-->
+  <!--</div>-->
+<!--</nav>-->
+<!--<style>-->
+<!--.lance {-->
+    <!--margin-top: 50px;-->
+<!--}-->
+<!--</style>-->
+<!--<head>-->
+  <!--<meta charset="UTF-8">-->
+  <!--<title>A Pen by  Lance  Larsen</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<header class = "lance">-->
+  <!--<h1>Lance Larsen</h1>-->
+<!--</header>-->
+ <!--<p style="text-indent: 15em;">-->
+<!--<img src="https://puu.sh/znohh/55f8af08b4.jpg" alt="Flowers in Chania">-->
+
+<!--<body>-->
+ <!--<p style="text-indent: 15em;">-->
+   <!--Summary: I am 22 years old. I like to eat good food and breath fresh air.-->
+ <!--</p>-->
+  <!--<p style="text-indent: 15em;">-->
+   <!--Hobbies: Video Games, Comics, Guitar, Video editing-->
+ <!--</p>-->
+  <!--<p style="text-indent: 15em;">-->
+   <!--Goals: Make a game, Make $$$$-->
+ <!--</p>-->
+<!--</body>-->
+    <!--</>-->
+  <!---->
+  <!---->
+
+<!--</body>-->
+
+<!--</html>-->
