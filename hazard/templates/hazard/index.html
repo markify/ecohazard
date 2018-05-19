@@ -20,16 +20,53 @@
     <h5>Eco Hazards is an SFSU startup company that plans to help clean up the environment through our web-based
       application.</h5>
     <h5>SFSU Software Engineering Project, Spring 2018.  For Demonstration Only.</h5>
-       <form class="navbar-form navbar-right"  role="search" method="get" action="{% url 'ecohazards:search_results' %}" >
-                <div class="form-group">
-                    <!-- resized search bar style width -->
-                    <input type="text" style="width: 480px;" class="form-control" name="q" value="" placeholder="Enter Keyword or Zip Code">
-                </div>
-                <button type="submit" class="btn btn-default">Search</button>
-            </form>
+       <!--<form class="navbar-form navbar-right"  role="search" method="get" action="{% url 'ecohazards:search_results' %}" >-->
+                <!--<div class="form-group">-->
+                    <!--&lt;!&ndash; resized search bar style width &ndash;&gt;-->
+                    <!--<input type="text" style="width: 480px;" class="form-control" name="q" value="" placeholder="Enter Keyword or Zip Code">-->
+                <!--</div>-->
+                <!--<button type="submit" class="btn btn-default">Search</button>-->
+            <!--</form>-->
 </div>
+
+
+
+<div height="25vh">
+    <h2 class="text-center">
+
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'ecohazards:add-post' %}">
+                <button class="btn btn-primary btn-lg" type="button"><span class="glyphicon glyphicon-plus"></span>&nbsp;ADD POST</button></a>
+      {% else %}
+          <!-- If not logged in, show add post but redirect to login -->
+            <a href="{% url 'ecohazards:register' %}">
+                <button class="btn btn-primary btn-lg" type="button"><span class="glyphicon glyphicon-plus"></span>&nbsp;ADD POST</button></a>
+      {% endif %}
+
+    </h2>
+</div>
+<br>
+<div style="width: 100%;">
+
+    <form class="text-center" style="width: 100%" role="search" method="get" action="{% url 'ecohazards:search_results' %}" >
+                    <!-- resized search bar style width -->
+                    <!--<input type="text" style="width: 80%;" class="text-center form-control" name="q" value="" placeholder="Enter Keyword or Zip Code">-->
+                <!--<button type="submit" style="width: 10%;" class="btn btn-default">Search</button>-->
+    <!--<input type="submit" class="btn btn-default" name="search" value="Go" style="width: 10%;" />-->
+
+        <input type="submit" name="search" class="btn btn-primary" value="Go" style="float: right;width: 10%" />
+  <div style="overflow: hidden; padding-right: .5em;">
+    <input type="text" class="text-center form-control" name="q" value="" placeholder="Enter Keyword or Zip Code" style="width: 100%;" />
+   </div>
+
+    </form>
+
+</div>
+
+
+
   <h2>Latest Hazard reports: <a href="http://csc648team07.herokuapp.com/map/">
-        <button style="font-size:14px;height:25px;width:80px" type="button">Map View</button></a></h2>
+      <button class="btn btn-primary" type="button" style="width: 10%"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Map View</button></a></h2>
   {% if list %}
     {% include 'hazard/list.html' %}
   {% else %}
