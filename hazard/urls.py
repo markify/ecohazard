@@ -19,6 +19,7 @@ urlpatterns = [
         path('map/', views.map, name="map"),
         path('media/', views.media, name="media"),
         path('report/', views.post_report, name='report'),
+        path('update_status/', views.update_status, name='update_status'),
         path('process_new_report/', views.process_new_report, name='process_new_report'),
         re_path(r"^about(-\w*)?/?$", views.about, name="about"),  
 ]
