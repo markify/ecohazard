@@ -21,9 +21,9 @@
   <h2>Title: {{ hazardreport.title_text }}</h2>
   <h3>Zip Code: {{ hazardreport.zipcode }}</h3>
   <h3>Hazard Category: {{ hazardreport.category.title }}</h3>
-  {% if request.user|has_group:"EnvironmentalManager"%}
+  {% if is_manager == 1%}
   <h3>Status:
-        <select name="status" id="status" data-hazard_report_id="{{ hazardreport.id }}">
+        <select name="status" class="status_dropdown" data-hazard_report_id="{{ hazardreport.id }}">
             {%for status in statuses%}
             <option value="{{status.id}}" {% if status.id == hazardreport.status.id %}selected="selected"{% endif %}> {{ status.description }} </option>
             {%endfor%}

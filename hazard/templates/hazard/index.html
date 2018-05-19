@@ -1,4 +1,6 @@
 {% extends 'hazard/base.html' %}
+{% load user_permissions %}
+{% load static %}
 <!-- Index latest hazard reports -->
 {% block title %}
 {% endblock %}
@@ -33,5 +35,7 @@
   {% else %}
     <h3>There are no posts yet</h3>
   {% endif %}
+
+<script src="{% static 'js/hazard_report.js' %}"></script>
 
 {% endblock %}

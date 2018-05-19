@@ -117,12 +117,20 @@ def get_paginator(request, list_of_items, count_per_page):
 
 # RENDERS THE INDEX HOME PAGE
 def index(request):
+    groups = request.user.groups.all().values_list('name', flat=True)
+    if "EnvironmentalManager" in groups:
+        is_manager = 1
+    else:
+        is_manager = 0
+    statuses = Status.objects.all()
     last_post_list = HazardReport.objects.order_by("-pub_date")[::0]
     # render number of current post in the index page ie home page <-
     current_post_list, num_pages = get_paginator(request, last_post_list, 6)
     context = {
         'list': current_post_list,
-        'num_pages': num_pages
+        'num_pages': num_pages,
+        'statuses': statuses,
+        'is_manager': is_manager
     }
     return render(request, "hazard/index.html", context)
 
@@ -214,8 +222,6 @@ class HazardReportCreate(CreateView):
     template_name = "hazard/hazardreport_form.html"
     categories = Category.objects.all()
 
-    print(categories)
-
     def get(self, request):
         form = self.form_class(None)
         return render(request, self.template_name, {'form': form, 'categories': self.categories})
@@ -256,6 +262,11 @@ def userPostList(request, user_name):
 def hazardreport(request, hazardreport_id):
     form_class = HazardReportCommentForm
     statuses = Status.objects.all()
+    groups = request.user.groups.all().values_list('name', flat=True)
+    if "EnvironmentalManager" in groups:
+        is_manager = 1
+    else:
+        is_manager = 0
 
     if request.method == 'POST':
         form = form_class(request.POST or None, request.FILES or None)
@@ -271,7 +282,7 @@ def hazardreport(request, hazardreport_id):
     hazardreport = get_object_or_404(HazardReport, pk=hazardreport_id)
     comments = HazardReportComment.objects.filter(hazardreport__id__exact= \
                                                       hazardreport_id).order_by('-pub_date')
-    context = {'hazardreport': hazardreport, 'comments': comments, 'form': form, 'statuses': statuses}
+    context = {'hazardreport': hazardreport, 'comments': comments, 'form': form, 'statuses': statuses, 'is_manager': is_manager}
     return render(request, template_name, context)
 
 
