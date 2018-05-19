@@ -36,7 +36,7 @@
             <h5>{{ item.location }}</h5>
           </div>
           <div class="panel-title pull-right">
-            <button type="button" class="btn btn-success">Status</button>
+            <a href="{% url 'ecohazards:post' item.id %}"><button type="button" class="btn btn-success">Status</button></a>
           </div>
 
         </div>
