@@ -1,6 +1,7 @@
 {% extends 'hazard/base.html' %}
 {% load static %}
 {% load thumbnail %}
+{% load user_permissions %}
 {% block title %}
 
   <script src="{% static 'js/google_maps.js' %}"></script>
@@ -20,6 +21,7 @@
   <h2>Title: {{ hazardreport.title_text }}</h2>
   <h3>Zip Code: {{ hazardreport.zipcode }}</h3>
   <h3>Hazard Category: {{ hazardreport.category.title }}</h3>
+  {% if request.user|has_group:"EnvironmentalManager"%}
   <h3>Status:
         <select name="status" id="status" data-hazard_report_id="{{ hazardreport.id }}">
             {%for status in statuses%}
@@ -27,6 +29,9 @@
             {%endfor%}
         </select>
   </h3>
+  {% else %}
+  <h3>Status: {{hazardreport.status.description}}</h3>
+  {% endif %}
   <p>Location: <span class='location'>{{ hazardreport.location }}</span></p>
   <p>{{ hazardreport.pub_date }}</p>
   <div class='map' id="map-canvas" style="width: 320px; height: 320px"></div>
