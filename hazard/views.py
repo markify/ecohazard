@@ -6,7 +6,7 @@ from django.views.generic import View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # ---- forms.py, models.py import ----
 from .forms import UserForm, HazardReportForm, HazardReportCommentForm, CategoryForm
-from .models import HazardReport, HazardReportComment, Category
+from .models import HazardReport, HazardReportComment, Category, Status
 from django.db.models import Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
@@ -17,10 +17,13 @@ from rest_framework.decorators import api_view
 # ---- serializer import ----
 from .serializers import HazardReportSerializer, UserWithPostListSerializer
 
-from django.utils.timezone import now 
+from django.utils.timezone import now
 from django.db import models
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+from django.http import JsonResponse
+
+
 # ---- ABOUT PAGES ----
 
 def about(request, extra=None):
@@ -37,14 +40,17 @@ def about(request, extra=None):
         return render(request, switcher.get(extra, 'hazard/about.html'))
     return render(request, 'hazard/about.html')
 
+
 # ---- MAP VIEW ----
 def map(request):
     data = HazardReport.objects.all()
-    return render(request, 'hazard/map.html', { 'data' : data })
+    return render(request, 'hazard/map.html', {'data': data})
+
 
 # ---- MEDIA VIEW ----
 def media(request):
     return render(request, 'hazard/media.html')
+
 
 # --- Separate Map Report --
 def post_report(request):
@@ -88,9 +94,9 @@ class HazardTypes(models.Model):
         db_table = 'hazard_types'
 
 
-#------------------------------------------------
-    
-# RENDERS THE POST THAT IS CURRENT AND CREATE PAGINATION 
+# ------------------------------------------------
+
+# RENDERS THE POST THAT IS CURRENT AND CREATE PAGINATION
 def get_paginator(request, list_of_items, count_per_page):
     """ Takes request, list of items and count of items per page.
 
@@ -105,19 +111,29 @@ def get_paginator(request, list_of_items, count_per_page):
         current_post_list = paginator.page(1)
     except EmptyPage:
         current_post_list = paginator.page(paginator.num_pages)
-    num_pages = range(1, paginator.num_pages+1)
+    num_pages = range(1, paginator.num_pages + 1)
     return current_post_list, num_pages
+
 
 # RENDERS THE INDEX HOME PAGE
 def index(request):
+    groups = request.user.groups.all().values_list('name', flat=True)
+    if "EnvironmentalManager" in groups:
+        is_manager = 1
+    else:
+        is_manager = 0
+    statuses = Status.objects.all()
     last_post_list = HazardReport.objects.order_by("-pub_date")[::0]
     # render number of current post in the index page ie home page <-
     current_post_list, num_pages = get_paginator(request, last_post_list, 6)
     context = {
-            'list': current_post_list,
-            'num_pages': num_pages
+        'list': current_post_list,
+        'num_pages': num_pages,
+        'statuses': statuses,
+        'is_manager': is_manager
     }
     return render(request, "hazard/index.html", context)
+
 
 # USER HAS LOGIN WITH USER AUTHENTHICATION REDIRECT TO INDEX
 
@@ -133,11 +149,12 @@ def login_process(request):
                 login(request, user)
                 return redirect('ecohazards:index')
         else:
-            messages.error(request,'Login Failed : User name or password incorrect')
+            messages.error(request, 'Login Failed : User name or password incorrect')
             return redirect('ecohazards:index')
     else:
         form = AuthenticationForm()
     return render(request, 'ecohazards:index', {'form': form})
+
 
 # RENDERS THE HOME PAGE WHEN USER HAS LOGGED OUT
 # THEN REDIRECTS TO INDEX PAGE
@@ -146,22 +163,24 @@ def logout_process(request):
         logout(request)
     return redirect('ecohazards:index')
 
+
 # ---- RENDERS ALL THE SEARCH REQUEST , SEARCH QUERY ----
 def search_process(request):
     search = request.GET['q']
     search_list = HazardReport.objects. \
         filter(Q(title_text__icontains=search)
-        | Q(content_text__icontains=search)
-        | Q(pub_date__contains=search)
-        | Q(zipcode__contains=search))
+               | Q(content_text__icontains=search)
+               | Q(pub_date__contains=search)
+               | Q(zipcode__contains=search))
     # number of search results 6
     current_post_list, num_pages = get_paginator(request, search_list, 6)
     context = {
-            'list': current_post_list,
-            'num_pages': num_pages,
-            'search': search
+        'list': current_post_list,
+        'num_pages': num_pages,
+        'search': search
     }
     return render(request, 'hazard/search_results.html', context)
+
 
 # ---- RENDERS THE SIGNUP/REGISTRATION FORM ----
 class UserFormView(View):
@@ -195,14 +214,13 @@ class UserFormView(View):
 
         return render(request, self.template_name, {'form': form})
 
+
 # ---- CREATE NEW HAZARD REPORT VIEW ----
 class HazardReportCreate(CreateView):
     """Creates new post """
     form_class = HazardReportForm
     template_name = "hazard/hazardreport_form.html"
     categories = Category.objects.all()
-
-    print(categories)
 
     def get(self, request):
         form = self.form_class(None)
@@ -218,6 +236,7 @@ class HazardReportCreate(CreateView):
             new_post.save()
         return redirect('ecohazards:post', hazardreport_id=new_post.id)
 
+
 #  ---- RENDERS THE POST OF THE USER LOGGED IN ----
 def userPostList(request, user_name):
     """Returns render of all posts of a specific user"""
@@ -227,20 +246,28 @@ def userPostList(request, user_name):
         user_of_post = get_object_or_404(User, username=user_name)
         user_id = user_of_post.id
 
-    post_list = HazardReport.objects.filter(user__id__exact=\
-            user_id).order_by('-pub_date')[::0]
+    post_list = HazardReport.objects.filter(user__id__exact= \
+                                                user_id).order_by('-pub_date')[::0]
     # render the number of views of my post 5
     current_post_list, num_pages = get_paginator(request, post_list, 5)
     context = {
-            'list': current_post_list,
-            'num_pages': num_pages,
-            'user_name': user_name
+        'list': current_post_list,
+        'num_pages': num_pages,
+        'user_name': user_name
     }
     return render(request, "hazard/user_post_list.html", context)
+
 
 # ---- Renders hazard CONTEXT of the post inside the report ----
 def hazardreport(request, hazardreport_id):
     form_class = HazardReportCommentForm
+    statuses = Status.objects.all()
+    groups = request.user.groups.all().values_list('name', flat=True)
+    if "EnvironmentalManager" in groups:
+        is_manager = 1
+    else:
+        is_manager = 0
+
     if request.method == 'POST':
         form = form_class(request.POST or None, request.FILES or None)
         if form.is_valid():
@@ -253,10 +280,25 @@ def hazardreport(request, hazardreport_id):
     template_name = "hazard/HazardReport.html"
     hazardreport_id = hazardreport_id
     hazardreport = get_object_or_404(HazardReport, pk=hazardreport_id)
-    comments = HazardReportComment.objects.filter(hazardreport__id__exact=\
-            hazardreport_id).order_by('-pub_date')
-    context = {'hazardreport': hazardreport, 'comments': comments, 'form': form}
+    comments = HazardReportComment.objects.filter(hazardreport__id__exact= \
+                                                      hazardreport_id).order_by('-pub_date')
+    context = {'hazardreport': hazardreport, 'comments': comments, 'form': form, 'statuses': statuses, 'is_manager': is_manager}
     return render(request, template_name, context)
+
+
+# --- Updates hazard status via AJAX ----
+def update_status(request):
+    if request.method == 'POST' and request.is_ajax():
+        try:
+            obj = HazardReport.objects.get(pk=request.POST['hazard_report_id'])
+            obj.status_id = request.POST['status_id']
+            obj.save()
+            return JsonResponse({'status': 'Success', 'msg': 'Status updated successfully'});
+        except MyModel.DoesNotExist:
+            return JsonResponse({'status': 'Fail', 'msg': 'Object does not exist'});
+    else:
+        return JsonResponse({'status': 'Fail', 'msg': 'Not a valid request'});
+
 
 # ---- hazard Post API ----
 
