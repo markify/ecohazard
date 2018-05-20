@@ -271,7 +271,6 @@ def CityManagerDashboard(request):
 def hazardreport(request, hazardreport_id):
     form_class = HazardReportCommentForm
     statuses = Status.objects.all()
-    dashboard = CityManagerDashboard.objects.all()
     groups = request.user.groups.all().values_list('name', flat=True)
     if "EnvironmentalManager" in groups:
         is_manager = 1
