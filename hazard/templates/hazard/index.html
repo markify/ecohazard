@@ -13,13 +13,19 @@
 </div>
 {% endfor %}
 <div class="img-circle text-center">
+    <div>
     <a href="http://csc648team07.herokuapp.com/">
     <img border="0" src="http://i66.tinypic.com/eki4w8.jpg" align="left">
     </a>
+    </div>
+    <div>
+
     <h1>Eco Hazards</h1>
     <h5>Eco Hazards is an SFSU startup company that plans to help clean up the environment through our web-based
       application.</h5>
     <h5>SFSU Software Engineering Project, Spring 2018.  For Demonstration Only.</h5>
+    </div>
+
        <!--<form class="navbar-form navbar-right"  role="search" method="get" action="{% url 'ecohazards:search_results' %}" >-->
                 <!--<div class="form-group">-->
                     <!--&lt;!&ndash; resized search bar style width &ndash;&gt;-->
@@ -36,11 +42,11 @@
 
         {% if request.user.is_authenticated %}
             <a href="{% url 'ecohazards:add-post' %}">
-                <button class="btn btn-primary btn-lg" type="button"><span class="glyphicon glyphicon-plus"></span>&nbsp;ADD POST</button></a>
+                <button class="btn btn-primary btn-lg" type="button"><span  style="position: static" class="glyphicon glyphicon-plus"></span>&nbsp;ADD POST</button></a>
       {% else %}
           <!-- If not logged in, show add post but redirect to login -->
             <a href="{% url 'ecohazards:register' %}">
-                <button class="btn btn-primary btn-lg" type="button"><span class="glyphicon glyphicon-plus"></span>&nbsp;ADD POST</button></a>
+                <button class="btn btn-primary btn-lg" type="button"><span style="position: static" class="glyphicon glyphicon-plus"></span>&nbsp;ADD POST</button></a>
       {% endif %}
 
     </h2>
