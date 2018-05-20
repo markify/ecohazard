@@ -1,8 +1,9 @@
 {% extends 'hazard/base.html' %}
 {% block content %}
+<!--<div style="overflow-x:auto;">-->
 
 <table class="table">
-    <thead class="thead-dark">
+    <thead class="thead-dark text-center">
     <tr>
         <th scope="col">ID</th>
         <th scope="col">Pub Date</th>
@@ -15,18 +16,40 @@
         <th scope="col">Status</th>
     </tr>
     </thead>
+
     {% for item in data %}
-        <tr>
-            <td>{{ item.id }}</td>
-            <td>{{ item.pub_date }}</td>
-            <td>{{ item.title_text}}</td>
-            <td>{{ item.content_text}}</td>
-            <td>{{ item.zipcode }}</td>
-            <td>{{ item.location}}</td>
-            <td>{{ item.user.username}}</td>
-            <td>{{ item.category.title}}</td>
-            <td>{{ item.status.description }}</td>
-        </tr>
+
+        {% if item.status.description == 'Resolved' %}
+            <tr style="background: forestgreen">
+
+                <td>{{ item.id }}</td>
+                <td>{{ item.pub_date }}</td>
+                <td>{{ item.title_text}}</td>
+                <td>{{ item.content_text}}</td>
+                <td>{{ item.zipcode }}</td>
+                <td>{{ item.location}}</td>
+                <td>{{ item.user.username}}</td>
+                <td>{{ item.category.title}}</td>
+                <td>{{ item.status.description }}</td>
+
+            </tr>
+
+        {% else %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.pub_date }}</td>
+                <td>{{ item.title_text}}</td>
+                <td>{{ item.content_text}}</td>
+                <td>{{ item.zipcode }}</td>
+                <td>{{ item.location}}</td>
+                <td>{{ item.user.username}}</td>
+                <td>{{ item.category.title}}</td>
+                <td>{{ item.status.description }}</td>
+            </tr>
+
+        {% endif %}
+
     {% endfor %}
+
 </table>
 {% endblock %}
