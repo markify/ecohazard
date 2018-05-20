@@ -1,3 +1,6 @@
+#Name: Mark
+#Description: database model
+#Usage: storing data to database
 from django.db import models
 from django.contrib.auth.models import User
 

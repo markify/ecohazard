@@ -1,3 +1,6 @@
+#Name: CSC Team 07
+#Description: User forms , hazard forms are created
+#Usage: Create the data process
 from django.contrib.auth.models import User
 from django import forms
 from captcha.fields import CaptchaField
