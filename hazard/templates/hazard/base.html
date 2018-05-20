@@ -67,6 +67,9 @@
         <li>
           <a href="{% url 'ecohazards:about' %}"><span class="glyphicon glyphicon-apple"></span>&nbsp;About</a>
         </li>
+          <li>
+              <a href="{%  url 'ecohazards:dashboard' %}"><span class ="glyphicon glyphicon-leaf"></span>&nbsp;Dashboard</a>
+          </li>
         <!-- Show view for authenthicated users -->
         {% if request.user.is_authenticated %}
           <li>
