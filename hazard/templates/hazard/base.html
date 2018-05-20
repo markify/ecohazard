@@ -67,8 +67,14 @@
         <li>
           <a href="{% url 'ecohazards:about' %}"><span class="glyphicon glyphicon-apple"></span>&nbsp;About</a>
         </li>
+         
         <!-- Show view for authenthicated users -->
         {% if request.user.is_authenticated %}
+        {% if is_manager == 1%}
+          <li>
+          <a href="{%  url 'ecohazards:dashboard' %}"><span class ="glyphicon glyphicon-leaf"></span>&nbsp;Dashboard</a>
+          </li>
+        {% endif %}
           <li>
             <a href="{% url 'ecohazards:userposts' 'my' %}">My Reports</a>
           </li>
@@ -90,7 +96,7 @@
           {% if request.user.is_authenticated %}
             <!-- <li><a href="{% url 'ecohazards:report' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Report</a></li> -->
 
-            <li><a href="{% url 'ecohazards:map' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Map View</a>
+            <li><a href="{% url 'ecohazards:map' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Hazard Map</a>
             </li>
             <li><a href="{% url 'ecohazards:userposts' user.username %}"><span class="glyphicon glyphicon-user"></span>&nbsp;{{ request.user.username }}
             </a></li>
@@ -99,7 +105,7 @@
             <!-- Show view for users -->
           {% else %}
 
-            <li><a href="{% url 'ecohazards:map' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Map View</a>
+            <li><a href="{% url 'ecohazards:map' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Hazard Map</a>
             </li>
             <li><a href="{% url 'ecohazards:register' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Sign
               Up</a></li>

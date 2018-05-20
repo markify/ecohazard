@@ -13,6 +13,7 @@ app_name = "ecohazards"
 urlpatterns = [
         path("", views.index, name="index"),
         path("register/", views.UserFormView.as_view(), name='register'),
+        path("dashboard/", views.CityManagerDashboard, name='dashboard'),
         path("login_process/", views.login_process, name='login_process'),
         path("logout/", views.logout_process, name="logout_process"),
         path("post/add", views.HazardReportCreate.as_view(), name='add-post'),
