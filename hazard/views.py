@@ -1,3 +1,6 @@
+#Name: CSC Team 07
+#Description: this is where the views are created 
+#Usage: acts as a view for rendering the web
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 # ---- login/logout import ----
 from django.contrib.auth import authenticate, login, logout
@@ -171,7 +174,8 @@ def search_process(request):
         filter(Q(title_text__icontains=search)
                | Q(content_text__icontains=search)
                | Q(pub_date__contains=search)
-               | Q(zipcode__contains=search))
+               | Q(zipcode__contains=search)
+               | Q(location__contains=search))
     # number of search results 6
     current_post_list, num_pages = get_paginator(request, search_list, 6)
     context = {
