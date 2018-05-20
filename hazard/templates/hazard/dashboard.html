@@ -1,6 +1,5 @@
 {% extends 'hazard/base.html' %}
 {% block content %}
-{% load static %}
 
 <table class="table">
     <thead class="thead-dark">
@@ -25,10 +24,9 @@
             <td>{{ item.zipcode }}</td>
             <td>{{ item.location}}</td>
             <td>{{ item.user_id}}</td>
-            <td>{{ item.category_id}}</td>
-            <td>{{ item.status_id}}</td>
-
-            </tr>
+            <td>{{ item.category.title}}</td>
+            <td>{{ item.status.description }}</td>
+        </tr>
     {% endfor %}
 </table>
 {% endblock %}
