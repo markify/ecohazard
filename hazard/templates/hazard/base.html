@@ -49,7 +49,7 @@
 </script>
 
 <!-- nav bar buttons left -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style="z-index: 999; position: fixed; width: 100%; font-family: 'Roboto', 'sans-serif'">
   <div class="container-fluid">
     <div class="navbar-header">
       <!-- responsive navbar toggle when resized -->
@@ -79,12 +79,12 @@
             <a href="{% url 'ecohazards:userposts' 'my' %}">My Reports</a>
           </li>
           <li>
-            <a href="{% url 'ecohazards:add-post' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add post</a>
+            <a href="{% url 'ecohazards:add-post' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Report a Hazard</a>
           </li>
         {% else %}
           <!-- If not logged in, show add post but redirect to login -->
           <li>
-            <a href="{% url 'ecohazards:register' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add post</a>
+            <a href="{% url 'ecohazards:register' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Report a Hazard</a>
           </li>
         {% endif %}
       </ul>
@@ -152,7 +152,7 @@
   </div>
 </nav>
 
-<div class="container">
+<div class="container" style="padding-top: 60px;font-family: 'Roboto', 'sans-serif'">
 
   <div class="starter-template">
     {% block content %}
