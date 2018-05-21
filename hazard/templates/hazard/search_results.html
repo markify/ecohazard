@@ -15,6 +15,7 @@
 </form>
   <h1> Search results: </h1>
   {% if list %}
+    <h2>Showing {{list.start_index}} - {{list.end_index}} of {{list.paginator.count}}</h2>
     {% include "hazard/list.html" %}
   {% else %}
     <br>
