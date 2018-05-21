@@ -9,7 +9,7 @@
 {% block content %}
   <h1>{{ user_name }} posts</h1>
   {% if list %}
-  <h2>Showing {{list.start_index}} - {{list.end_index}} of {{list.paginator.count}}</h2>
+  <h5 class="text-center">Showing {{list.start_index}} - {{list.end_index}} of {{list.paginator.count}}</h5>
     {% include 'hazard/list.html' %}
   {% else %}
     <p>There are no posts yet.</p>
