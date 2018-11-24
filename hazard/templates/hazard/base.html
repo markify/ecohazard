@@ -1,166 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
 <head>
-  <Title>Eco Hazards Team 07</Title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="icon" type="image/png" href="/static/favicon-32x32.png" sizes="32x32"/>
-  <link rel="icon" type="image/png" href="/static/favicon-16x16.png" sizes="16x16"/>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117520795-1"></script>
+  <title>Eco Hazard</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="/static/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/static/favicon-16x16.png" sizes="16x16" />
+  <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129729424-1"></script>
   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-          dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-117520795-1');
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "UA-129729424-1");
   </script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <!-- Optional theme -->
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-          crossorigin="anonymous"></script>
+
+
 
   {% block title %}
-    <title>Eco Hazards</title>
+  <title>Eco Hazard</title>
   {% endblock %}
+  <style>
+    .selector-for-some-widget {
+  box-sizing: content-box;
+}
+  </style>
 </head>
+
 <body>
-<script>
+  <script>
     $(document).ready(function () {
-        //Handles menu drop down
-        $('.dropdown-menu').find('form').click(function (e) {
-            e.stopPropagation();
+      //Handles menu drop down
+      $(".dropdown-menu")
+        .find("form")
+        .click(function (e) {
+          e.stopPropagation();
         });
     });
-</script>
 
-<!-- nav bar buttons left -->
-<nav class="navbar navbar-default" style="z-index: 999; position: fixed; width: 100%; font-size: 20px">
-  <div class="row text-center" style="width:100%; background-color: #3073AC ;">
-        <h5 style="color: white">SFSU Software Engineering Project, Spring 2018. For Demonstration Only.</h5>
-</div>
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <!-- responsive navbar toggle when resized -->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
 
-      <a class="navbar-brand" href="{% url 'ecohazards:index' %}"><span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span>&nbsp;Eco Hazards</a>
-    </div>
 
-    <div class="collapse navbar-collapse" id="topNavBar">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="{% url 'ecohazards:about' %}"><span class="glyphicon glyphicon-apple"></span>&nbsp;About</a>
-        </li>
-         
-        <!-- Show view for authenthicated users -->
-        {% if request.user.is_authenticated %}
-        {% if is_manager == 1%}
-          <li>
-          <a href="{%  url 'ecohazards:dashboard' %}"><span class ="glyphicon glyphicon-leaf"></span>&nbsp;Dashboard</a>
-          </li>
-        {% endif %}
-          <li>
-            <a href="{% url 'ecohazards:userposts' 'my' %}">My Reports</a>
-          </li>
-          <li>
-            <a href="{% url 'ecohazards:add-post' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Report a Hazard</a>
-          </li>
-        {% else %}
-          <!-- If not logged in, show add post but redirect to login -->
-          <li>
-            <a href="{% url 'ecohazards:register' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Report a Hazard</a>
-          </li>
-        {% endif %}
-      </ul>
+  </script>
 
-      <!-- nav buttons right -->
-      <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <!-- Show view for authenthicated users  if/else-->
-          {% if request.user.is_authenticated %}
-            <!-- <li><a href="{% url 'ecohazards:report' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Report</a></li> -->
+  <style>
+    
+  * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+*:before, *:after { -webkit-box-sizing: inherit; -moz-box-sizing: inherit; box-sizing: inherit; }
 
-            <li><a href="{% url 'ecohazards:map' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Hazard Map</a>
+html {text-align: center; height: 10%; }
+body { height: 100%; }
+
+#video-viewport { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1; }
+video { display: block; width: 100%; height: auto; }
+
+.fullsize-video-bg { height: 100%; overflow: hidden; }
+
+
+
+.fullsize-video-bg .inner { display: table; width: 100%; max-width: 24em; height: 100%; margin: 0 auto; padding: 0; position: relative; z-index: 2; text-shadow: 0 1px 5px rgba(0,0,0,.5); }
+.fullsize-video-bg .inner > div { text-align: center; display: table-cell; vertical-align: middle; padding: 0 2em; }
+
+
+  </style>
+
+
+   <!-- nav bar buttons left -->
+   <nav class="navbar navbar-light navbar-expand-md" style="border-radius: 0px 0px 10px 10px; z-index: 999; position: 
+   fixed; width: 100%; font-size: 21px; font-weight:400; background-color:rgba(255,255,255,0.93)">
+    <a class="navbar-brand" href="{% url 'ecohazards:index' %}" style="font-size:25px;"><span><i class="fas fa-tree"></i></span>Eco<span style="color:#10ac84; font-weight:900px;"><strong>Hazard</strong></span></a>
+
+
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+            &#9776;
+        </button>
+        <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+      
+            <ul class="nav navbar-nav flex-row  ml-auto" >
+               
+                <ul class="nav navbar-nav justify-content-center " >
+                    {% if request.user.is_authenticated %}  {% if is_manager == 1%}
+                <li class="nav-item"><a href="{%  url 'ecohazards:dashboard' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:21px;">Dashboard</a></li>
+                {% endif %}
+                <li class="nav-item"><a href="{% url 'ecohazards:add-post' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:21px;">Report Hazard</a></li>
+                {% else %}  
+                <li class="nav-item"><a href="{% url 'ecohazards:register' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:21px;">Report Hazard</a></li>
+                {% endif %} 
+                {% if request.user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'ecohazards:userposts' user.username %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:21px;"> {{request.user.username}} </a></li>
+                  </a>
+                </li>
+                  <li class="nav-item"> <a href="{% url 'ecohazards:logout_process' %}" class="nav-link">Sign Out</a>
+                </li>
+                <!-- Show view for users -->{% else %}
+               <li class="nav-item"> <a href="{% url 'ecohazards:register' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:21px;">Sign Up</a>
             </li>
-            <li><a href="{% url 'ecohazards:userposts' user.username %}"><span class="glyphicon glyphicon-user"></span>&nbsp;{{ request.user.username }}
-            </a></li>
-            <li><a href="{% url 'ecohazards:logout_process' %}"><span class="glyphicon glyphicon-off"></span>&nbsp;Sign
-              Out</a></li>
-            <!-- Show view for users -->
-          {% else %}
-
-            <li><a href="{% url 'ecohazards:map' %}"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;Hazard Map</a>
-            </li>
-            <li><a href="{% url 'ecohazards:register' %}"><span class="glyphicon glyphicon-plus"></span>&nbsp;Sign
-              Up</a></li>
-            <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Sign
-              in <b class="caret"></b></a>
-            <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
-            <li>
-              <div class="row">
-                <div class="col-md-12">
-                  <form class="form" role="form" method="post" action="{% url 'ecohazards:login_process' %}"
-                        accept-charset="UTF-8" id="login-nav">
-                    {% csrf_token %}
-                    <div class="form-group">
-                      <label class="sr-only" for="loginInput">Login</label>
-                      <input type="text" class="form-control" id="username" name="username" placeholder="Login"
-                             required>
-                    </div>
-                    <div class="form-group">
-                      <label class="sr-only" for="password">Password</label>
-                      <input type="password" class="form-control" id="password" name="password" placeholder="Password"
-                             required>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> Remember me
-                      </label>
-                    </div>
-                    <div class="form-group" align="center">
-                      <button type="submit" class="btn btn-success btn-block">Sign in</button>
-                      <button type="forgot" style="color:white; background-color:#f44336; border-radius:4px; height:30px; width:140px" onclick="window.location='http://csc648team07.herokuapp.com/register/';return false;">Forgot Password?</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </li>
-            <!-- end if -->
-          {% endif %}
-          </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+                <li class="dropdown order-3  " style="margin-top:1px;">
+                    
+                    <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn dropdown-toggle" style="font-size:20px; background:white; color:#34495e; font-weight:400;">Login <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right mt-3">
+                        <style>
+                            .dropdown-menu {
+                            width:200px  !important;
+                            height: 210px !important;
+      
+          
+                            }
+                           
+      
+      
+      
+      
+      
+      .dropdown-menu:before,
+      .dropdown-menu:after{
+        content: ' ';
+        display: block;
+        border-style: solid;
+        border-width: 0 .5em .8em .5em;
+        border-color: transparent;
+        position: absolute;
+        left: 9em;
+      }
+      
+       .dropdown-menu:before {
+        top: -.8em;
+        border-bottom-color: rgba(0,0,0,0.2);
+      }
+      
+      .dropdown-menu:after {
+        top: -.7em;
+          border-bottom-color: #fff;
+      }
+      
+      @media only screen and (max-width: 767px) {
+          
+      .dropdown-menu:before,
+      .dropdown-menu:after{
+        content: ' ';
+        display: block;
+        border-style: solid;
+        border-width: 0 .5em .8em .5em;
+        border-color: transparent;
+        position: absolute;
+        left: 2em;
+      }
+      
+       .dropdown-menu:before {
+        top: 3em;
+        border-bottom-color: rgba(0,0,0,0.2);
+      }
+      
+      .dropdown-menu:after {
+        top: 3.1em;
+          border-bottom-color: #fff;
+      }
+      }
+                            </style>
+                       <li class="px-3 py-2">
+                           <form class="form" role="form"  method="post" action="{% url 'ecohazards:login_process' %}"   accept-charset="UTF-8" id="login-nav"> {% csrf_token %}
+                                <div class="form-group">
+                                    <input id="username" name="username" placeholder="Username" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input  id="password" name="password" placeholder="Password" class="form-control form-control-sm" type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-block" style="background:#10ac84;color:white;">Login</button>
+                                </div>
+                                <div class="form-group text-center">
+                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
+                                </div>
+                            </form>
+                        </li>
+                      <!-- end if -->{% endif %}  
+                    </ul>
+                    
+                </li>
+                  
+                </ul>
+            </ul>
+        </div>
 </nav>
 
-<div class="container" style="padding-top: 60px;">
 
-  <div class="starter-template">
-    {% block content %}
-    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <div class="container" style="padding-top: 100px;">
+    <div class="starter-template">{% block content %} {% endblock %}</div>
+    <style>
+      .abc li a{
+     
+        text-decoration: none;
+      }
+      .abc li {
+        display:inline-block;
+        text-align: center;
+        margin: 20px;
+        text-decoration: none;
+      }
+      .abc {
+        text-align: center;
+        margin-top:20px;
+        text-decoration: none;
+      }
+    </style>
+    
+<footer style="padding:40px; margin-top: 490px;">
+<div style="border-top:0.5px solid #e1e4e8!important ">
+<ul  class="abc">
+  <li style="color:#576574; "> © 2018 SFSU Team 07 Ecohazards</li>
+  <li><a>Terms</a></li>
+  <li> <a> Privacy</a></li>
+  <li> <a>Status</a></li>
+  <li> <a>Help</a></li>
+  <li> <a>API</a></li>
+  <li><a>Blog</a> </li>
+  <li><a a href="{% url 'ecohazards:about' %}" style="font-weight: 700px;">About</a> </li>
+</ul>
+
+</div>
+
+  </footer>
   </div>
-</div><!-- /.container -->
+  <!-- /.container -->
+
 </body>
+
+
 </html>

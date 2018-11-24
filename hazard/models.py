@@ -20,11 +20,11 @@ class Status(models.Model):
 # hazard post Content and text lengths limit
 class HazardReport(models.Model):
     pub_date = models.DateTimeField(auto_now_add = True)
-    title_text = models.CharField(max_length=26)
-    content_text = models.TextField(max_length=240)
+    title_text = models.CharField(max_length=45)
+    content_text = models.TextField()
     zipcode = models.CharField(max_length=5)
     location = models.CharField(max_length=50)
-    image = models.FileField(null=True, blank=True)
+
     user = models.ForeignKey(User, related_name="hazardposts",
                              on_delete=models.CASCADE)
     category = models.ForeignKey(Category,
