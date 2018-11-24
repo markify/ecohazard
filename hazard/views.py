@@ -26,6 +26,23 @@ from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.http import JsonResponse
 
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+
+
+def handler404(request, exception):
+    context = RequestContext(request)
+    err_code = 404
+    response = render_to_response('hazard/404.html', {"code":err_code}, context)
+    response.status_code = 404
+    return response
+
+def handler500(request, exception):
+    context = RequestContext(request)
+    err_code = 500
+    response = render_to_response('hazard/500.html', {"code":err_code}, context)
+    response.status_code = 500
+    return response
 
 # ---- ABOUT PAGES ----
 
@@ -128,7 +145,7 @@ def index(request):
     statuses = Status.objects.all()
     last_post_list = HazardReport.objects.order_by("-pub_date")[::0]
     # render number of current post in the index page ie home page <-
-    current_post_list, num_pages = get_paginator(request, last_post_list, 6)
+    current_post_list, num_pages = get_paginator(request, last_post_list, 10)
     context = {
         'list': current_post_list,
         'num_pages': num_pages,

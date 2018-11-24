@@ -1,6 +1,9 @@
 {% extends 'hazard/base.html' %}
-{% block head %}
+<!-- commented out because it doesn't show about page properly when extended with navbar -->
+{% load static %}
 
+{% block head %}
+<link rel="stylesheet" type="text/css" href="main.css"></link>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -9,56 +12,58 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <title>About</title>
 
+
+
+
+
+
 {% endblock %}
 
 {% block content %}
 
-<body>
 
-  <div class="midnight-section">
 
-    <div class="container">
-    <h1> About Page</h1>
-    <div class="middle-card">
-      <div class="member-pic" img src="">
-        <img src="https://marketplace.canva.com/MAB7lMgVCCs/1/thumbnail/canva-young-male-profile-icon-vector-illustration-MAB7lMgVCCs.png"
-          width="200" height="100" alt="Computer Hope">
 
-      </div>
-      <h3 class="name">Mark S</h3>
-      <h5 class="name">Team 7</h5>
-      <h5 class="team-job"> Front-End </h5>
+<div style="width:100%; font-family: 'Abyssinica SIL';
 
-      <p> Hi, My name is Mark
+    padding: 2em 1em;">
 
-      </p>
+  <div class="container" style="width: 100%">
 
-      <div class="social-links">
-        <a href="https://github.com/merksmanship">
-          <i class="fab fa-github"></i>
-        </a>
+    <div class="row">
+
+      <div style="padding-top: 0px; box-sizing: border-box; display: block font-family: 'Open Sans', sans-serif; line-height: 20px;">
+
+        <div class="col" style="max-height: 600px">
+
+          <img src="/static/mark-about.jpg" align="center"  style="height: 60%; width: 40%; border:2px solid #fff;display: block; margin: auto; border-radius: 50%; vertical-align: middle; max-width: 100%">
+<h1 align="center">Mark Soriano  </h1>
+          <h2 align="center">
+            Front-End
+          </h2>
+
+        </div>
+
+        <div class="text-center">
+
+        </div>
 
       </div>
 
     </div>
 
   </div>
-  <div class="description">
-    <h6 align="center"> Hello, My name is Mark. I am interested in Mobile and Web Development. I plan to pursue this field in the future. I enjoy
+
+</div>
+
+<div class="text-center" style="font-family: 'Abyssinica SIL'; padding-top:20px;">
+
+  <!--<div style="width: 60%">-->
+
+  <h4> Hello, My name is Mark. I am interested in Mobile and Web Development. I plan to pursue this field in the future. I enjoy
       going to hackathons every year and like to work with friends on mobile and web projects.
-    </h6>
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
-    crossorigin="anonymous"></script>
-</body>
-
-
-</html>
-
+  </h4>
+  <!--</div>-->
+</div>
 
 {% endblock %}

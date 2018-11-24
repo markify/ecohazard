@@ -9,13 +9,27 @@
 {% endblock %}
 
 {% block content %}
-    <form class="form-horizontal" action="" method="POST" encrypt="multipart/from-data">
-        {% csrf_token %}
-        {% include "hazard/form-template.html" %}
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-sucess" />Sign up!</button>
-            </div>
+    <div class="container" style="margin:40px;">
+        <h1 style="padding:20px; font-weight: 700; text-align: center; color:#10ac84" >Register</h1>
+        <div>
+            <form class="form-horizontal" action="" method="POST" encrypt="multipart/from-data">
+                {%csrf_token%}
+                {% for error in form.non_field_errors %}
+                <div class="form-group has-errors text-danger small">
+                    {{error}}
+                </div>
+                {% endfor %}
+                {% for field in form %}
+                <div class="form-group" id="form-group-{{ field.label }}">{{field.label}}</div>
+                <div class="form-group">
+                    {{field}}
+                </div>
+                <div class="form-group has-errors text-danger small">
+                    {{field.errors}}
+                </div>
+                {% endfor %}
+                <button class="btn" style="background:#10ac84; color:white;"><span>Sign up</span></button>
         </div>
-    </form>
+        </form>
+    </div>
 {% endblock %}

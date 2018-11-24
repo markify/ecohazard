@@ -28,6 +28,10 @@ from rest_framework.urlpatterns import format_suffix_patterns
 # path ( website /  ,)   
 # import hazard.views as hazard_views    gets hazard -> views.py  make it called hazard_views
 
+ 
+handler404 = 'hazard.views.handler404' 
+handler500 = 'hazard.views.handler500' 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('hazard.urls')),
@@ -45,4 +49,3 @@ urlpatterns = format_suffix_patterns(urlpatterns)
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
