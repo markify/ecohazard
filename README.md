@@ -1,6 +1,14 @@
 # Ecohazard
 
-Clean up the environment in an easy and task-free way
+Clean up the environment in an easy and task-free way  
+check out the app at https://www.ecohazard.me/
+
+## Support
+
+Contact: https://github.com/markify/  
+This is an ongoing project for me.     
+More changes and features in the future.  
+
 
 ## Windows Users
 - Install python 3
