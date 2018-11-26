@@ -29,6 +29,7 @@ from django.http import JsonResponse
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
+# NO ROUTES FOUND PAGES
 
 def handler404(request, exception):
     context = RequestContext(request)
@@ -44,65 +45,12 @@ def handler500(request, exception):
     response.status_code = 500
     return response
 
-# ---- ABOUT PAGES ----
+# ABOUT PAGE
 
 def about(request, extra=None):
-    switcher = {
-        '-ali': 'hazard/about/about-ali.html',
-        '-cameron': 'hazard/about/about-cameron.html',
-        '-girish': 'hazard/about/about-girish.html',
-        '-humeston': 'hazard/about/about-humeston.html',
-        '-larsen': 'hazard/about/about-larsen.html',
-        '-mark': 'hazard/about/about-mark.html',
-        '-sutherland': 'hazard/about/about-sutherland.html'
-    }
-    if extra:
-        return render(request, switcher.get(extra, 'hazard/about.html'))
     return render(request, 'hazard/about.html')
 
-
-# ---- MAP VIEW ----
-def map(request):
-    data = HazardReport.objects.all()
-    return render(request, 'hazard/map.html', {'data': data})
-
-
-# ---- MEDIA VIEW ----
-def media(request):
-    return render(request, 'hazard/media.html')
-
-
-# --- Separate Map Report --
-def post_report(request):
-    hazard_types = HazardTypes.objects.all()
-
-    return render(request, 'report.html', {'hazard_types': hazard_types})
-
-
-def process_new_report(request):
-    report_data = request.POST
-
-    hazard_report = HazardReports(
-        description=report_data['description'],
-        status=1,
-        priority=1,
-        address_id='NULL',
-        street=report_data['street_number'] + ' ' + report_data['route'],
-        city=report_data['locality'],
-        state=report_data['administrative_area_level_1'],
-        zip_code=report_data['postal_code'],
-        country=report_data['country'])
-
-    hazard_report.creator = User.objects.get(id=report_data['creator'])
-    hazard_report.hazard_type = HazardTypes.objects.get(id=report_data['hazard_type'])
-    hazard_report.assigned_to = User.objects.get(id=report_data['creator'])
-
-    hazard_report.save()
-
-    # hazard_reports = HazardReports.objects.all()
-    return redirect('index')
-    # return render(request, 'index.html', {'hazard_reports': hazard_reports})
-
+# HAZARD TYPES 
 
 class HazardTypes(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -112,9 +60,6 @@ class HazardTypes(models.Model):
     class Meta:
         managed = False
         db_table = 'hazard_types'
-
-
-# ------------------------------------------------
 
 # RENDERS THE POST THAT IS CURRENT AND CREATE PAGINATION
 def get_paginator(request, list_of_items, count_per_page):
