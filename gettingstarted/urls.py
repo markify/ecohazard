@@ -35,7 +35,6 @@ handler500 = 'hazard.views.handler500'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('hazard.urls')),
-    path('captcha/', include('captcha.urls')),
     path('hazardposts/', hazard_views.AllHazardReportAPI.as_view(),
          name="allhazardreportapi"),
     path('hazardreport/<int:hazardreport_id>', hazard_views.hazardreportAPI,

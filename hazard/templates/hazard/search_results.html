@@ -14,7 +14,7 @@
 </form>
   <h1> Search results: </h1>
   {% if list %}
-    <br><h5 class="text-center">Showing {{list.start_index}} - {{list.end_index}} of {{list.paginator.count}}</h5>
+    <br><h6 class="text-center" style="color:#57606f;">Showing {{list.start_index}} - {{list.end_index}} of {{list.paginator.count}}</h6>
     {% include "hazard/list.html" %}
   {% else %}
     <br>
