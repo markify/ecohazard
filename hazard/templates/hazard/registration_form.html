@@ -7,29 +7,60 @@
 {% block title %}
 <title>Create new account</title>
 {% endblock %}
+{% load recaptcha2 %}
 
 {% block content %}
-    <div class="container" style="margin:40px;">
-        <h1 style="padding:20px; font-weight: 700; text-align: center; color:#10ac84" >Register</h1>
-        <div>
-            <form class="form-horizontal" action="" method="POST" encrypt="multipart/from-data">
-                {%csrf_token%}
-                {% for error in form.non_field_errors %}
-                <div class="form-group has-errors text-danger small">
-                    {{error}}
-                </div>
-                {% endfor %}
-                {% for field in form %}
-                <div class="form-group" id="form-group-{{ field.label }}">{{field.label}}</div>
-                <div class="form-group">
-                    {{field}}
-                </div>
-                <div class="form-group has-errors text-danger small">
-                    {{field.errors}}
-                </div>
-                {% endfor %}
-                <button class="btn" style="background:#10ac84; color:white;"><span>Sign up</span></button>
-        </div>
-        </form>
+<div style="padding:3rem; border-radius: 20px; box-shadow: #10ac84;
+    -webkit-box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);
+    -moz-box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);
+    box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);">
+    <h1 style="font-weight: 700; text-align: center; color:#10ac84;" >Create Account</h1>
+    <div>
+        <form class="form-horizontal" action="" method="POST" encrypt="multipart/from-data">
+            {%csrf_token%}
+            {% for error in form.non_field_errors %}
+            <div class="form-group has-errors text-danger small">
+                {{error}}
+            </div>
+            {% endfor %}
+            {% for field in form %}
+            <div class="form-group" id="form-group-{{ field.label }}">{{field.label}}</div>
+            <div class="form-group">
+                {{field}}
+                {% recaptcha_init %}
+            </div>
+            <div class="form-group has-errors text-danger small">
+                {{field.errors}}
+            </div>
+            {% endfor %}
+            <button class="btn " style="color:white; width:80%; display: block; margin: 0 auto;
+            background: #4CB8C4;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #3CD3AD, #4CB8C4);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #3CD3AD, #4CB8C4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">Sign up</button>
     </div>
+    </form>
+</div>
+
+<script>
+function resizeReCaptcha() {
+    var width = $( ".g-recaptcha" ).parent().width();
+    if (width < 302) {
+        var scale = width / 302;
+    } else {
+        var scale = 1;
+    }
+    $( ".g-recaptcha" ).css('transform', 'scale(' + scale + ')');
+    $( ".g-recaptcha" ).css('-webkit-transform', 'scale(' + scale + ')');
+    $( ".g-recaptcha" ).css('transform-origin', '0 0');
+    $( ".g-recaptcha" ).css('-webkit-transform-origin', '0 0');
+};
+$( document ).ready(function() {
+
+    $( window ).on('resize', function() {
+        resizeReCaptcha();
+    });
+
+    resizeReCaptcha();
+});
+</script>
 {% endblock %}

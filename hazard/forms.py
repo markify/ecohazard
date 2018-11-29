@@ -3,18 +3,17 @@
 #Usage: Create the data process
 from django.contrib.auth.models import User
 from django import forms
-from captcha.fields import CaptchaField
+from snowpenguin.django.recaptcha2.fields import ReCaptchaField
+from snowpenguin.django.recaptcha2.widgets import ReCaptchaWidget
 from .models import HazardReport, HazardReportComment, Category
 import sys
 
 # User sign up form ( username , email , password)
 class UserForm(forms.ModelForm):
-    if sys.argv[1] != 'test':
-        captcha = CaptchaField()
     username = forms.CharField(max_length=20, widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Username' }))
     email = forms.CharField(max_length=45, help_text='100 characters max.',widget=forms.EmailInput(attrs={'class':'form-control','placeholder':'Email'}))
     password = forms.CharField(max_length=45,widget=forms.PasswordInput(attrs={'class':'form-control','placeholder':'Password'}))
- 
+    captcha = ReCaptchaField(widget=ReCaptchaWidget())
     class Meta:
         model = User
         fields = ['username', 'email', 'password']

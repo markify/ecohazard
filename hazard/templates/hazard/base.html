@@ -19,7 +19,7 @@
     gtag("js", new Date());
     gtag("config", "UA-129729424-1");
   </script>
-
+<link rel="stylesheet" href="{% static 'css/base.css' %}"></link>
  <!-- Latest compiled and minified CSS -->
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
  <!-- Optional theme -->
@@ -56,32 +56,10 @@
 
   </script>
 
-  <style>
-    
-  * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-*:before, *:after { -webkit-box-sizing: inherit; -moz-box-sizing: inherit; box-sizing: inherit; }
-
-html {text-align: center; height: 10%; }
-body { height: 100%; }
-
-#video-viewport { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1; }
-video { display: block; width: 100%; height: auto; }
-
-.fullsize-video-bg { height: 100%; overflow: hidden; }
-
-
-
-.fullsize-video-bg .inner { display: table; width: 100%; max-width: 24em; height: 100%; margin: 0 auto; padding: 0; position: relative; z-index: 2; text-shadow: 0 1px 5px rgba(0,0,0,.5); }
-.fullsize-video-bg .inner > div { text-align: center; display: table-cell; vertical-align: middle; padding: 0 2em; }
-
-
-  </style>
-
-
    <!-- nav bar buttons left -->
-   <nav class="navbar navbar-light navbar-expand-md" style="border-radius: 0px 0px 10px 10px; z-index: 999; position: 
+   <nav class="navbar navbar-light navbar-expand-md" style="border-bottom: 1px solid #e9ecef; z-index: 999; position: 
    fixed; width: 100%; font-size: 21px; font-weight:400; background-color:rgba(255,255,255,0.93)">
-    <a class="navbar-brand" href="{% url 'ecohazards:index' %}" style="font-size:25px;"><span><i class="fas fa-tree"></i></span>Eco<span style="color:#10ac84; font-weight:900px;"><strong>Hazard</strong></span></a>
+    <a class="navbar-brand" href="{% url 'ecohazards:index' %}" style="font-size:25px; color:#10ac84;"><span><i class="fas fa-tree" style="color:#10ac84;"></i></span>Eco<span style="color:#57606f; font-weight:900px;"><strong>Hazard</strong></span></a>
 
 
         <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
@@ -93,24 +71,35 @@ video { display: block; width: 100%; height: auto; }
                
                 <ul class="nav navbar-nav justify-content-center " >
                     {% if request.user.is_authenticated %}  {% if is_manager == 1%}
-                <li class="nav-item"><a href="{%  url 'ecohazards:dashboard' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:21px;">Dashboard</a></li>
+                <li class="nav-item"><a href="{%  url 'ecohazards:dashboard' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:17px;">Dashboard</a></li>
                 {% endif %}
-                <li class="nav-item"><a href="{% url 'ecohazards:add-post' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:21px;">Report Hazard</a></li>
+                <li class="nav-item"><a href="{% url 'ecohazards:add-post' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:17px;">Report Hazard</a></li>
                 {% else %}  
-                <li class="nav-item"><a href="{% url 'ecohazards:register' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:21px;">Report Hazard</a></li>
+                <li class="nav-item"><a href="{% url 'ecohazards:register' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:17px;">Report Hazard</a></li>
                 {% endif %} 
                 {% if request.user.is_authenticated %}
-                <li class="nav-item"><a href="{% url 'ecohazards:userposts' user.username %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:21px;"> {{request.user.username}} </a></li>
+                <li class="nav-item"><a href="{% url 'ecohazards:userposts' user.username %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:17px;"> {{request.user.username}} </a></li>
                   </a>
                 </li>
-                  <li class="nav-item"> <a href="{% url 'ecohazards:logout_process' %}" class="nav-link">Sign Out</a>
+                  <li class="nav-item" style="border-radius: 20px; border:1px solid #e1e4e8!important;
+                  box-shadow: #10ac84;
+                  -webkit-box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);
+                  -moz-box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);
+                  box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);"> 
+                  <a href="{% url 'ecohazards:logout_process' %}" class="nav-link" style="font-weight:400; font-size:17px;">Sign Out</a>
                 </li>
                 <!-- Show view for users -->{% else %}
-               <li class="nav-item"> <a href="{% url 'ecohazards:register' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:21px;">Sign Up</a>
+               <li class="nav-item"> <a href="{% url 'ecohazards:register' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:17px;">Sign Up</a>
             </li>
                 <li class="dropdown order-3  " style="margin-top:1px;">
                     
-                    <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn dropdown-toggle" style="font-size:20px; background:white; color:#34495e; font-weight:400;">Login <span class="caret"></span></button>
+                    <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn dropdown-toggle" style="font-size:17px; 
+                    box-shadow: #10ac84;
+                    border:1px solid #e1e4e8!important;
+                    -webkit-box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);
+                    -moz-box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);
+                    box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);
+                    background:white; color:#34495e; font-weight:400;">Login <span class="caret"></span></button>
                     <ul class="dropdown-menu dropdown-menu-right mt-3">
                         <style>
                             .dropdown-menu {
@@ -160,12 +149,12 @@ video { display: block; width: 100%; height: auto; }
       }
       
        .dropdown-menu:before {
-        top: 3em;
+        top: 2.69em;
         border-bottom-color: rgba(0,0,0,0.2);
       }
       
       .dropdown-menu:after {
-        top: 3.1em;
+        top: 2.68em;
           border-bottom-color: #fff;
       }
       }
@@ -182,7 +171,7 @@ video { display: block; width: 100%; height: auto; }
                                     <button type="submit" class="btn btn-block" style="background:#10ac84;color:white;">Login</button>
                                 </div>
                                 <div class="form-group text-center">
-                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
+                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword" style="text-decoration: none; color:#576574;">Forgot password?</a></small>
                                 </div>
                             </form>
                         </li>
@@ -195,21 +184,6 @@ video { display: block; width: 100%; height: auto; }
             </ul>
         </div>
 </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
   <div class="container" style="padding-top: 100px;">
     <div class="starter-template">{% block content %} {% endblock %}</div>
