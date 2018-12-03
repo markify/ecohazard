@@ -1,134 +1,101 @@
 {% load thumbnail %}
 {% load static %}
 {% load user_permissions %}
-<!-- SHOW THE REPORTS title, date, author, context -->
-<!-- prevent text overflow on panel <span style="word-wrap: break-word;"> -->
+<!-- show the reports title, date, author, context -->
 {% block content %}
-
-<div class="row">{% for item in list%}
-
+<link rel="stylesheet" href="{% static 'favicon.ico' %}" />
+<link rel="stylesheet" href="{% static 'css/list.css' %}"/>
+  <div class="row">{% for item in list%}
     <!-- Hazard Reports Entries -->
     <div class="col-lg-6">
-      
-            <div class="card card-accent-primary mb-3" style="max-width: 100%; border-color: whitesmoke;">
-                 
-                        <style>
-                         .hovera:hover {
-                             opacity:.8;
-                         }
-                        </style>
-                <span style="position: absolute; top:0px; left:0px; border-radius: 1px 0 9px 0; z-index: 99;
-                                                            background: #10ac84; display: inline-block;color:whitesmoke; 
-                                                            font-size: 13 px; font-weight: 700; padding: 4px 12px 5px; text-align:center; text-transform:uppercase;">
-                    {{ item.category.title }} </span>
-                    <a class="hovera" href="{% url 'ecohazards:post' item.id %}" >
-                {% if item.category.title == "Oil Spill" %}
-                <img class="card-img-top" src="/static/oilspill.png" style="width: 100%;
-                                                                height: 100px;
-                                                                    object-fit: cover;"
-                    alt="Card image cap">
-                {% endif %}
-
-                {% if item.category.title == "Landslide" %}
-
-                <img class="card-img-top" src="/static/landslide.png" style="width: 100%;
-                                                        height: 100px;
-                                                        object-fit: cover;"
-                    alt="Card image cap">
-                {% endif %}
-
-                {% if item.category.title == "Waste" %}
-
-                <img class="card-img-top" src="/static/waste.png" style="width: 100%;
-                                                        height: 100px;
-                                                        object-fit: cover;"
-                    alt="Card image cap">
-                {% endif %}
-
-            </a>
-
-                <div class="card-body" >
-
-                    <h5 class="card-title" style="text-align: center;">{{ item.title_text |truncatechars:38 }}</h5>
-       
-        <p class="card-text" style="text-align: center;">{{ item.content_text |truncatechars:47}} </p>
-        <p style="text-align: center;"><a href="{% url 'ecohazards:userposts' item.user.username %}">reported by {{item.user.username }}</a>
-        </p>
-        <div class=" card-title" style="text-align: center;">
+      <div class="card card-accent-primary mb-3">
+        <span class="hazard-wrap"> {{ item.category.title }} </span>
+          <a class="hovera" href="{% url 'ecohazards:post' item.id %}" >
+            {% if item.category.title == "Oil Spill" %}
+            <img class="card-img-top" src="/static/oilspill.png" style="width: 100%; height: 100px; object-fit: cover;" alt="Card image cap">
+            {% endif %}
+            {% if item.category.title == "Landslide" %}
+            <img class="card-img-top" src="/static/landslide.png" style="width: 100%; height: 100px; object-fit: cover;" alt="Card image cap">
+            {% endif %}
+            {% if item.category.title == "Waste" %}
+            <img class="card-img-top" src="/static/waste.png" style="width: 100%; height: 100px; object-fit: cover;" alt="Card image cap">
+            {% endif %}
+          </a>
+          <a class="hovera" href="{% url 'ecohazards:post' item.id %}" style="text-decoration: none; color:black;"> 
+            <div class="card-body" >
+              <h5 class="card-title" style="text-align: center;">{{ item.title_text |truncatechars:38 }}</h5>
+                <p class="card-text" style="text-align: center;">{{ item.content_text |truncatechars:47}} </p>
+                <p style="text-align: center;">
+                  reported by <span style="color:#10ac84; font-weight: 700;">{{item.user.username }}</span>
+                </p>
+            <div class=" card-title" style="text-align: center;">
             {{ item.pub_date }}
-        </div>
-
-
-
-        <h4 style="text-align: center;">{{ item.zipcode }}</h4>
-        <h5 style="text-align: center;">{{ item.location }}</h5>
-
-
-
-
-        <div class="card-title" style="text-align: center;">{% if is_manager == 1%}
-            Status:
-
+            </div>
+              <h4 style="text-align: center;">{{ item.zipcode }}</h4>
+              <h5 style="text-align: center;">{{ item.location }}</h5>
+          </a>
+          
+          <div class="card-title" style="text-align: center;">
+            {% if is_manager == 1%} Status:
             <select name="status" class="status_dropdown" data-hazard_report_id="{{ item.id }}" >
-                {%for status in statuses%}
-
-                <option style="text-align: center;" value="{{status.id}}" {% if status.id == item.status.id %}selected="selected" {% endif %}> 
-                    {{status.description }} </option>
-
-
-                {%endfor%}
-
+              {%for status in statuses%}
+              <option style="text-align: center;" value="{{status.id}}" {% if status.id == item.status.id %}selected="selected" {% endif %}> 
+              {{status.description }} 
+              </option>
+              {%endfor%}
             </select>
-
-            </h3>
             {% else %}
 
             {% if item.status.description == "Pending" %}
-
             <h3 style="text-align: center; color:lightskyblue;">Status: {{item.status.description}}</h3>
             {% endif %}
 
             {% if item.status.description == "Resolved" %}
-
             <h3 style="text-align: center; color:#10ac84;">Status: {{item.status.description}}</h3>
             {% endif %}
 
             {% if item.status.description == "Assigned" %}
-
             <h3 style="text-align: center; color:gold;">Status: {{item.status.description}}</h3>
             {% endif %}
-            {% if item.status.description == "Under Review" %}
 
+            {% if item.status.description == "Under Review" %}
             <h3 style="text-align: center; color: darkorchid;">Status: {{item.status.description}}</h3>
             {% endif %}
 
-
-
             {% endif %}
-
         </div>
-
-
+      </div>
     </div>
-
-</div>
-
-</div>{% endfor %}
-
+  </div>
+  {% endfor %}
 </div>
 
 <!-- Pagination Section -->
-<div class="text-center" style="margin: 30px;">
-    <ul class="pagination justify-content-center">{% if list.has_previous %}
-        <li class="page-item"> <a href="?q={{ search }}&amp;page={{ list.previous_page_number }}" class="page-link" style="color:#10ac84";>previous</a>
-        </li>{% endif %} {% for item in num_pages %} {% if list.number == item %}
-        <li class="active page-item"> <a href="#" class="page-link" style="background: #10ac84; border-color:#10ac84;">{{ item }}</a>
-        </li>{% else %}
-        <li class="page-item"> <a href="?q={{ search }}&amp;page={{ item }}" class="page-link" style="color:#10ac84";>{{ item }}</a>
-        </li>{% endif %} {% endfor %} {% if list.has_next %}
-        <li class="page-item"> <a href="?q={{ search }}&amp;page={{ list.next_page_number }}" class="page-link" style="color:#10ac84";>next</a>
-        </li>{% endif %}</ul>
-</div>
+  <div class="text-center" style="margin: 30px;">
+    <ul class="pagination justify-content-center">
+      {% if list.has_previous %}
+        <li class="page-item"> 
+          <a href="?q={{ search }}&amp;page={{ list.previous_page_number }}" class="page-link" style="color:#10ac84";>previous</a>
+        </li>
+        {% endif %} 
+        {% for item in num_pages %} 
+        {% if list.number == item %}
+        <li class="active page-item"> 
+          <a href="#" class="page-link" style="background: #10ac84; border-color:#10ac84;">{{ item }}</a>
+        </li>
+        {% else %}
+        <li class="page-item"> 
+          <a href="?q={{ search }}&amp;page={{ item }}" class="page-link" style="color:#10ac84";>{{ item }}</a>
+        </li>
+        {% endif %} 
+        {% endfor %} 
+        {% if list.has_next %}
+        <li class="page-item"> 
+          <a href="?q={{ search }}&amp;page={{ list.next_page_number }}" class="page-link" style="color:#10ac84";>next</a>
+        </li>
+        {% endif %}
+    </ul>
+  </div>
 
 
 

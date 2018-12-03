@@ -1,9 +1,13 @@
-<!-- https://docs.djangoproject.com/en/2.0/topics/forms/ - Django forms field-->
 {% for field in form %}
 <div class="form-group" id="form-group-{{ field.label }}">
-    <div class="offset-sm-2"> <span class="text-danger small">{{ field.errors }}</span>
-    </div>
-    <label class="control  col-md-2" style="font-weight: 700; font-size:20px;" required>{{ field.label_tag }}</label>
-    <div class="col-md-10"  required>{{ field }}</div>
+  <div class="offset-sm-2"> 
+    <span class="text-danger small">{{ field.errors }}</span>
+  </div>
+  <label class="control  col-md-2" style="font-weight: 700; font-size:20px;" required>
+    {{ field.label_tag }}
+  </label>
+  <div class="col-md-10"  required>
+    {{ field }}
+  </div>
 </div>
 {% endfor %}

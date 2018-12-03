@@ -1,20 +1,23 @@
 {% extends "hazard/base.html" %}
 {% block title %}
 
-<!-- show Search query on index page -->
+<!-- show search query on index page -->
   <title>Search results</title>
 {% endblock %}
 
 {% block content %}
-<form class="navbar-form"  role="search" method="get" action="{% url 'ecohazards:search_results' %}" >
-  <div class="form-group" style="display: flex; ">
+  <form class="navbar-form"  role="search" method="get" action="{% url 'ecohazards:search_results' %}" >
+    <div class="form-group" style="display: flex; ">
       <input type="text" style="max-width: 400px; " placeholder="Enter Location or Zip Code" class="form-control" name="q" value="{{ search }}">
-      <button type="submit" class="btn" style="background-color:#10ac84; color:white;" >Search</button>
-  </div>
-</form>
+      <button type="submit" class="btn" style="background-color:#10ac84; color:white;" >
+        Search
+      </button>
+    </div>
+  </form>
   <h1> Search results: </h1>
   {% if list %}
-    <br><h5 class="text-center">Showing {{list.start_index}} - {{list.end_index}} of {{list.paginator.count}}</h5>
+    <br>
+    <h6 class="text-center" style="color:#57606f;">Showing {{list.start_index}} - {{list.end_index}} of {{list.paginator.count}}</h6>
     {% include "hazard/list.html" %}
   {% else %}
     <br>
