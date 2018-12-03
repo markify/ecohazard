@@ -7,14 +7,19 @@
 {% endblock %}
 
 {% block content %}
-  <h4 style="color:#57606f;"><span>
+  <h4 style="color:#57606f;">
+    <span>
       <img src="/static/ecoicon.svg" style="height:34px; width:34px;" alt="eco icon"/>
-      </span> {{ user_name }} hazard report(s) </h4>
+    </span> {{ user_name }} hazard report(s) 
+  </h4>
   {% if list %}
   <h6 class="text-center" style="color:#57606f;">Showing {{list.start_index}} - {{list.end_index}} of {{list.paginator.count}}</h6>
-    {% include 'hazard/list.html' %}
+  
+  {% include 'hazard/list.html' %}
+
   {% else %}
-    <p>There are no posts yet.</p>
+  <p>There are no hazard posts yet.</p>
   {% endif %}
+
 {% endblock %}
 

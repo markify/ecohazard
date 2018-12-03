@@ -1,55 +1,46 @@
 {% extends 'hazard/base.html' %}
 {% block content %}
-<!--<div style="overflow-x:auto;">-->
-
 <table class="table">
-    <thead class="thead-dark text-center">
+  <thead class="thead-dark text-center">
     <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Pub Date</th>
-        <th scope="col">Title</th>
-        <th scope="col">Content</th>
-        <th scope="col">Zipcode</th>
-        <th scope="col">Location</th>
-        <th scope="col">User</th>
-        <th scope="col">Category</th>
-        <th scope="col">Status</th>
+      <th scope="col">ID</th>
+      <th scope="col">Pub Date</th>
+      <th scope="col">Title</th>
+      <th scope="col">Content</th>
+      <th scope="col">Zipcode</th>
+      <th scope="col">Location</th>
+      <th scope="col">User</th>
+      <th scope="col">Category</th>
+      <th scope="col">Status</th>
     </tr>
-    </thead>
+  </thead>
 
-    {% for item in data %}
-
-        {% if item.status.description == 'Resolved' %}
-            <tr style="background: forestgreen">
-
-                <td>{{ item.id }}</td>
-                <td>{{ item.pub_date }}</td>
-                <td>{{ item.title_text}}</td>
-                <td>{{ item.content_text}}</td>
-                <td>{{ item.zipcode }}</td>
-                <td>{{ item.location}}</td>
-                <td>{{ item.user.username}}</td>
-                <td>{{ item.category.title}}</td>
-                <td>{{ item.status.description }}</td>
-
-            </tr>
-
-        {% else %}
-            <tr>
-                <td>{{ item.id }}</td>
-                <td>{{ item.pub_date }}</td>
-                <td>{{ item.title_text}}</td>
-                <td>{{ item.content_text}}</td>
-                <td>{{ item.zipcode }}</td>
-                <td>{{ item.location}}</td>
-                <td>{{ item.user.username}}</td>
-                <td>{{ item.category.title}}</td>
-                <td>{{ item.status.description }}</td>
-            </tr>
-
-        {% endif %}
-
-    {% endfor %}
-
+  {% for item in data %}
+    {% if item.status.description == 'Resolved' %}
+      <tr style="background: forestgreen">
+        <td>{{ item.id }}</td>
+        <td>{{ item.pub_date }}</td>
+        <td>{{ item.title_text}}</td>
+        <td>{{ item.content_text}}</td>
+        <td>{{ item.zipcode }}</td>
+        <td>{{ item.location}}</td>
+        <td>{{ item.user.username}}</td>
+        <td>{{ item.category.title}}</td>
+        <td>{{ item.status.description }}</td>
+      </tr>
+    {% else %}
+      <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.pub_date }}</td>
+        <td>{{ item.title_text}}</td>
+        <td>{{ item.content_text}}</td>
+        <td>{{ item.zipcode }}</td>
+        <td>{{ item.location}}</td>
+        <td>{{ item.user.username}}</td>
+        <td>{{ item.category.title}}</td>
+        <td>{{ item.status.description }}</td>
+      </tr>
+    {% endif %}
+  {% endfor %}
 </table>
 {% endblock %}

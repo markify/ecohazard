@@ -5,183 +5,137 @@
 {% load user_permissions %}
 {% block title %}
 
+  <title>{{ hazardreport.title_text }}</title>
+  <link rel="stylesheet" href="{% static 'css/hazardreport.css' %}"/>
+
   <script src="{% static 'js/google_maps.js' %}"></script>
   <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyCgC7Fs7KvrxE_lcDdC8w-ssIB53a1NL5E"></script>
-
-  <title>{{ hazardreport.title_text }}</title>
 {% endblock %}
 
 {% block content %}
 
-<style>
-.comments {
-  margin:70px 0px;
-}
-</style>
-  
-<div id='view-review' class='review-nodule'>
-  <div style="margin:10px;">
-    <a href="https://www.ecohazard.me/">
-    <button type="submit" class="btn " style="background:#10ac84; color:white;" >Back to Search</button>
-    </a>
-  </div>
-
-  <section class="heroreport" style="padding:40px; margin-top:40px; padding-bottom:200px; border-radius: 10px;">
-  <div>
-      <style>
-          @media screen and (max-width: 400px) {
-          .heroreport .titlereporter {
-              font-size:20px;
-            }
-          }
-          @media screen and (max-width: 218px) {
-          .heroreport .titlereporter {
-              font-size:15px;
-            }
-          }
-      </style>
-      <h1 class="titlereporter" style="text-align: center; color: white; font-weight: 900;  word-wrap: break-word;">{{ hazardreport.title_text }}</h2>
-
+  <div id='view-review' class='review-nodule'>
+    <div style="margin:10px;">
+      <a href="{% url 'ecohazards:index' %}">
+        <button type="submit" class="btn " style="background:#10ac84; color:white;" >
+          Go Back
+        </button>
+      </a>
     </div>
-        
-   
-    
-    </section>
-    {% if hazardreport.category.title %}
-    {% if hazardreport.category.title == "Oil Spill" %}
-  
-  
-    <style>
-      .heroreport {
-         z-index: 2; text-shadow: 0 1px 5px rgba(0,0,0,.4);
-         background:url("/static/oilspill.png");
-         background-size: cover;       /* For flexibility */
-         width: 100%;
-                                                    height: 100px;
-                                                        object-fit: cover;
-        }
-        </style>
-    {% endif %}
-  
-    {% if hazardreport.category.title == "Waste" %}
-  
-    <style>
-      .heroreport {
-                  z-index: 2; text-shadow: 0 1px 5px rgba(0,0,0,.4);
-                  background:url("/static/waste.png");
-                  background-size: cover;       /* For flexibility */
-                  width: 100%;
-                                                        height: 100px;
-                                                            object-fit: cover;
-                }
-            </style>
-    {% endif %}
-  
-    {% if hazardreport.category.title == "Landslide" %}
-  
-    <style>
-      .heroreport {
-                      z-index: 2; text-shadow: 0 1px 5px rgba(0,0,0,.4);
-                      background:url("/static/landslide.png");
-                      background-size: cover;       /* For flexibility */
-                      width: 100%;
-                                                            height: 100px;
-                                                                object-fit: cover;
-                    }
-                </style>
-    {% endif %}
-  
-    {% else %}
-  
-    <style>
-      .heroreport {
-                      z-index: 2; text-shadow: 0 1px 5px rgba(0,0,0,.4);
-                      background:url("/static/green.png");
-                  background-size: cover;       /* For flexibility */
-                  width: 100%;
-                                                            height: 100px;
-                                                                object-fit: cover;
-              }
-                </style>
-    {% endif %}
 
-    <div class='map' id="map-canvas" style="width: 100%; height: 320px; margin-top: 8px; border-radius: 8px;">
-    </div>
-         
-    <h3 style="text-align: center;">Location: <span class='location'>{{ hazardreport.location }}</span></h3>
-    <h5 style="text-align: center;">{{ hazardreport.zipcode }}</h5>
-    <h6 style="text-align: center;">{{ hazardreport.pub_date }}</h6>
-
-    <!-- Status of review -->
-    <div class="card-title" style="text-align: center;">{% if is_manager == 1%}
-      Status:
-
-      <select name="status" class="status_dropdown" data-hazard_report_id="{{ item.id }}" >
-
-          {%for status in statuses%}
-
-          <option value="{{status.id}}" {% if status.id == hazardreport.status.id %}selected="selected" {% endif %}> 
-              {{status.description }} </option>
-
-
-          {%endfor%}
-
-      </select>
-
-      </h3>
-      {% else %}
-
-      {% if hazardreport.status.description == "Pending" %}
-
-      <h3 style="text-align: center; color:lightskyblue;">Status: {{hazardreport.status.description}}</h3>
-      {% endif %}
-
-      {% if hazardreport.status.description == "Resolved" %}
-
-      <h3 style="text-align: center; color:#10ac84;">Status: {{hazardreport.status.description}}</h3>
-      {% endif %}
-
-      {% if hazardreport.status.description == "Assigned" %}
-
-      <h3 style="text-align: center; color:gold;">Status: {{hazardreport.status.description}}</h3>
-      {% endif %}
-      {% if hazardreport.status.description == "Under Review" %}
-
-      <h3 style="text-align: center; color: darkorchid;">Status: {{hazardreport.status.description}}</h3>
-      {% endif %}
-
-
-
-      {% endif %}
-
-  </div>
-      <!-- Status of review end -->
-
-
-
-    
-    <div class="authorcontent" style="margin:20px 0px;">
-        <p style="text-align: center;">reported by <a href="#">{{ hazardreport.user.username }}</a></p>
-        <p style="  word-wrap: break-word;">{{ hazardreport.content_text }}  </p>
+    <section class="heroreport" style="padding:40px; margin-top:40px; padding-bottom:200px; border-radius: 10px;">
+      <div>
+        <h2 class="titlereporter" style="text-align: center; color: white; font-weight: 900;  word-wrap: break-word;">
+          {{ hazardreport.title_text }}
+        </h2>
       </div>
+    </section>
 
-</div>
+      {% if hazardreport.category.title %}
+        {% if hazardreport.category.title == "Oil Spill" %}
+          <style>
+            .heroreport {
+              background:url("/static/oilspill.png");
+            }
+          </style>
+        {% endif %}
+      
+        {% if hazardreport.category.title == "Waste" %}
+          <style>
+            .heroreport {
+              background:url("/static/waste.png");
+            }
+          </style>
+        {% endif %}
+      
+        {% if hazardreport.category.title == "Landslide" %}
+          <style>
+            .heroreport {
+              background:url("/static/landslide.png");
+            }
+          </style>
+        {% endif %}
+      
+        {% else %}
+          <style>
+            .heroreport {
+              background:url("/static/green.png");
+            }
+          </style>
+      {% endif %}
+
+      <div class='map' id="map-canvas" style="width: 100%; height: 320px; margin-top: 8px; border-radius: 8px;"> </div>
+          
+      <h3 style="text-align: center;">Location: 
+        <span class='location'>{{ hazardreport.location }}</span>
+      </h3>
+      <h5 style="text-align: center;">{{ hazardreport.zipcode }}</h5>
+      <h6 style="text-align: center;">{{ hazardreport.pub_date }}</h6>
+
+      <!-- Status of review colored -->
+      <div class="card-title" style="text-align: center;">
+        {% if is_manager == 1%} Status:
+
+        <select name="status" class="status_dropdown" data-hazard_report_id="{{ item.id }}" >
+          {%for status in statuses%}
+          <option value="{{status.id}}" {% if status.id == hazardreport.status.id %} selected="selected" {% endif %}> 
+              {{status.description }} 
+          </option>
+          {%endfor%}
+        </select>
+
+        {% else %}
+
+          {% if hazardreport.status.description == "Pending" %}
+          <h3 style="text-align: center; color:lightskyblue;">Status: {{hazardreport.status.description}}</h3>
+          {% endif %}
+
+          {% if hazardreport.status.description == "Resolved" %}
+          <h3 style="text-align: center; color:#10ac84;">Status: {{hazardreport.status.description}}</h3>
+          {% endif %}
+
+          {% if hazardreport.status.description == "Assigned" %}
+          <h3 style="text-align: center; color:gold;">Status: {{hazardreport.status.description}}</h3>
+          {% endif %}
+          
+          {% if hazardreport.status.description == "Under Review" %}
+          <h3 style="text-align: center; color: darkorchid;">Status: {{hazardreport.status.description}}</h3>
+          {% endif %}
+
+        {% endif %}
+
+      </div>
+      
+      <div class="authorcontent" style="margin:20px 0px;">
+          <p style="text-align: center;"> reported by 
+            <a href="{% url 'ecohazards:userposts' hazardreport.user.username %}" style="text-decoration: none; color:#10ac84; font-weight: 700;">
+              {{ hazardreport.user.username }}
+            </a>
+          </p>
+          <p style="word-wrap: break-word;">{{ hazardreport.content_text }} </p>
+      </div>
+  </div>
 
 
-<div class="comments">
-  <p>Comments:</p>
-  {% if comments %}
-    {% for item in comments %}
-      <p>{{ item.pub_date }}<a href="{% url 'ecohazards:userposts' item.user.username %}"> {{ item.user.username }} </a> wrote:<p>
-      <p style="word-wrap: break-word; max-width: 300px;"> {{ item.content_text }} </p>
-      <br />
-    {% endfor %}
-  {% else %}
-    <p>There are no comments.</p>
-  {% endif %}
-  <!-- Show view for authenthicated users -->
-  {% if request.user.is_authenticated %}
-    <form class="form-horizontal" action="" method="POST" encrypt="multipart/from-data">
+  <div class="comments">
+    <p>Comments</p>
+    {% if comments %}
+      {% for item in comments %}
+        <p style="color:#7f8fa6;">
+          <a class="dotfore" href="{% url 'ecohazards:userposts' item.user.username %}" style="text-decoration: none;"> 
+            {{ item.user.username }} 
+          </a> 
+          on {{ item.pub_date }}
+        </p>
+        <p style="word-wrap: break-word; max-width: 300px;"> {{ item.content_text }} </p>
+        <br />
+      {% endfor %}
+    {% else %}
+      <p>There are no comments.</p>
+    {% endif %}
+    <!-- Show view for authenthicated users -->
+    {% if request.user.is_authenticated %}
+      <form class="form-horizontal" action="" method="POST" encrypt="multipart/from-data">
         {% csrf_token %}
         {% include "hazard/form-template.html" %}
         <div class="form-group">
@@ -189,14 +143,14 @@
                 <button type="submit" class="btn btn-sucess" style="background:#10ac84;color:white;">Comment</button>
             </div>
         </div>
-    </form>
-  {% endif %}
-</div>
-<script>
-$("label[for='id_content_text']").html("Add Comment");
-</script>
+      </form>
+    {% endif %}
+  </div>
+
+  <script>
+    $("label[for='id_content_text']").html("Add Comment");
+  </script>
+
   <script src="{% static 'js/hazard_report.js' %}"></script>
-
-
 
 {% endblock content %}
