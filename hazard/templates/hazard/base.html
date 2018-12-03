@@ -1,7 +1,6 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
-
 <head>
   <title>Eco Hazard</title>
   <meta charset="utf-8" />
@@ -10,6 +9,7 @@
   <link rel="icon" type="image/png" href="/static/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="/static/favicon-16x16.png" sizes="16x16" />
   <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129729424-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -19,212 +19,163 @@
     gtag("js", new Date());
     gtag("config", "UA-129729424-1");
   </script>
-<link rel="stylesheet" href="{% static 'css/base.css' %}"></link>
- <!-- Latest compiled and minified CSS -->
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
- <!-- Optional theme -->
- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-
-
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
   {% block title %}
   <title>Eco Hazard</title>
   {% endblock %}
-  <style>
-    .selector-for-some-widget {
-  box-sizing: content-box;
-}
-  </style>
+
 </head>
-
-<body>
-  <script>
-    $(document).ready(function () {
-      //Handles menu drop down
-      $(".dropdown-menu")
-        .find("form")
-        .click(function (e) {
-          e.stopPropagation();
-        });
-    });
-
-
-
-  </script>
-
+  <body>
    <!-- nav bar buttons left -->
-   <nav class="navbar navbar-light navbar-expand-md" style="border-bottom: 1px solid #e9ecef; z-index: 999; position: 
-   fixed; width: 100%; font-size: 21px; font-weight:400; background-color:rgba(255,255,255,0.93)">
-    <a class="navbar-brand" href="{% url 'ecohazards:index' %}" style="font-size:25px; color:#10ac84;"><span><i class="fas fa-tree" style="color:#10ac84;"></i></span>Eco<span style="color:#57606f; font-weight:900px;"><strong>Hazard</strong></span></a>
+   <nav class="navbar navbar-light navbar-expand-md hazard-nav">
+    <a class="navbar-brand" href="{% url 'ecohazards:index' %}" style="font-size:25px; color:#10ac84;">
+      <span>
+        <i class="fas fa-tree" style="color:#10ac84;"></i>
+      </span>
+      Eco
+      <span style="color:#57606f; font-weight:900px;">
+        <strong>Hazard</strong>
+      </span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+      &#9776;
+    </button>
+      <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+        <ul class="nav navbar-nav flex-row  ml-auto" >
+          <ul class="nav navbar-nav justify-content-center " >
 
-
-        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-            &#9776;
-        </button>
-        <div class="collapse navbar-collapse" id="exCollapsingNavbar">
-      
-            <ul class="nav navbar-nav flex-row  ml-auto" >
-               
-                <ul class="nav navbar-nav justify-content-center " >
-                    {% if request.user.is_authenticated %}  {% if is_manager == 1%}
-                <li class="nav-item"><a href="{%  url 'ecohazards:dashboard' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:17px;">Dashboard</a></li>
-                {% endif %}
-                <li class="nav-item"><a href="{% url 'ecohazards:add-post' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:17px;">Report Hazard</a></li>
-                {% else %}  
-                <li class="nav-item"><a href="{% url 'ecohazards:register' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:17px;">Report Hazard</a></li>
-                {% endif %} 
-                {% if request.user.is_authenticated %}
-                <li class="nav-item"><a href="{% url 'ecohazards:userposts' user.username %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:17px;"> {{request.user.username}} </a></li>
-                  </a>
-                </li>
-                  <li class="nav-item" style="border-radius: 20px; border:1px solid #e1e4e8!important;
-                  box-shadow: #10ac84;
-                  -webkit-box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);
-                  -moz-box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);
-                  box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);"> 
-                  <a href="{% url 'ecohazards:logout_process' %}" class="nav-link" style="font-weight:400; font-size:17px;">Sign Out</a>
-                </li>
-                <!-- Show view for users -->{% else %}
-               <li class="nav-item"> <a href="{% url 'ecohazards:register' %}" class="nav-link" style="color:#34495e; font-weight:400; font-size:17px;">Sign Up</a>
+            {% if request.user.is_authenticated %}  
+              {% if is_manager == 1%}
+            <li class="nav-item hover-item">
+              <a href="{%  url 'ecohazards:dashboard' %}" class="nav-link nav-style">
+                Dashboard
+              </a>
             </li>
-                <li class="dropdown order-3  " style="margin-top:1px;">
-                    
-                    <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn dropdown-toggle" style="font-size:17px; 
-                    box-shadow: #10ac84;
-                    border:1px solid #e1e4e8!important;
-                    -webkit-box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);
-                    -moz-box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);
-                    box-shadow: 0px 0px 31px -13px rgba(0,0,0,0.71);
-                    background:white; color:#34495e; font-weight:400;">Login <span class="caret"></span></button>
-                    <ul class="dropdown-menu dropdown-menu-right mt-3">
-                        <style>
-                            .dropdown-menu {
-                            width:200px  !important;
-                            height: 210px !important;
-      
-          
-                            }
-                           
-      
-      
-      
-      
-      
-      .dropdown-menu:before,
-      .dropdown-menu:after{
-        content: ' ';
-        display: block;
-        border-style: solid;
-        border-width: 0 .5em .8em .5em;
-        border-color: transparent;
-        position: absolute;
-        left: 9em;
-      }
-      
-       .dropdown-menu:before {
-        top: -.8em;
-        border-bottom-color: rgba(0,0,0,0.2);
-      }
-      
-      .dropdown-menu:after {
-        top: -.7em;
-          border-bottom-color: #fff;
-      }
-      
-      @media only screen and (max-width: 767px) {
-          
-      .dropdown-menu:before,
-      .dropdown-menu:after{
-        content: ' ';
-        display: block;
-        border-style: solid;
-        border-width: 0 .5em .8em .5em;
-        border-color: transparent;
-        position: absolute;
-        left: 2em;
-      }
-      
-       .dropdown-menu:before {
-        top: 2.69em;
-        border-bottom-color: rgba(0,0,0,0.2);
-      }
-      
-      .dropdown-menu:after {
-        top: 2.68em;
-          border-bottom-color: #fff;
-      }
-      }
-                            </style>
-                       <li class="px-3 py-2">
-                           <form class="form" role="form"  method="post" action="{% url 'ecohazards:login_process' %}"   accept-charset="UTF-8" id="login-nav"> {% csrf_token %}
-                                <div class="form-group">
-                                    <input id="username" name="username" placeholder="Username" class="form-control form-control-sm" type="text" required="">
-                                </div>
-                                <div class="form-group">
-                                    <input  id="password" name="password" placeholder="Password" class="form-control form-control-sm" type="text" required="">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-block" style="background:#10ac84;color:white;">Login</button>
-                                </div>
-                                <div class="form-group text-center">
-                                    <small><a href="#" data-toggle="modal" data-target="#modalPassword" style="text-decoration: none; color:#576574;">Forgot password?</a></small>
-                                </div>
-                            </form>
-                        </li>
-                      <!-- end if -->{% endif %}  
-                    </ul>
-                    
+            {% endif %}
+            <li class="nav-item hover-item">
+              <a href="{% url 'ecohazards:add-post' %}" class="nav-link nav-style">
+                Report Hazard
+              </a>
+            </li>
+            {% else %}  
+            <li class="nav-item hover-item">
+              <a href="{% url 'ecohazards:register' %}" class="nav-link nav-style">
+                Report Hazard
+              </a>
+            </li>
+            {% endif %} 
+            {% if request.user.is_authenticated %}
+            <li class="nav-item hover-item" style="margin-right:10px;">
+              <a href="{% url 'ecohazards:userposts' user.username %}" class="nav-link nav-style"> 
+                {{request.user.username}} 
+              </a>
+            </li>
+            <li class="nav-item auth-item-out"> 
+              <a href="{% url 'ecohazards:logout_process' %}" class="nav-link nav-style">Sign Out</a>
+            </li>
+            {% else %}
+            <li class="nav-item hover-item" style="margin-right:10px;"> 
+              <a href="{% url 'ecohazards:register' %}" class="nav-link nav-style" >
+                Sign Up
+              </a>
+            </li>
+            <!-- dropdown login -->
+            <li class="dropdown order-3  " style="margin-top:1px;">
+              <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn dropdown-toggle auth-item-login nav-style">
+                Login 
+                <span class="caret">
+                </span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right mt-3">
+                <li class="px-3 py-2">
+                  <form class="form" role="form"  method="post" action="{% url 'ecohazards:login_process' %}"   accept-charset="UTF-8" id="login-nav"> 
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <input id="username" name="username" placeholder="Username" class="form-control form-control-sm" type="text" required="">
+                    </div>
+                    <div class="form-group">
+                      <input  id="password" name="password" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-block" style="background:#10ac84;color:white;">
+                        Login
+                      </button>
+                    </div>
+                    <div class="form-group text-center">
+                      <small>
+                        <a href="#" data-toggle="modal" data-target="#modalPassword" style="text-decoration: none; color:#576574;">
+                          Forgot password?
+                        </a>
+                      </small>
+                    </div>
+                  </form>
                 </li>
-                  
-                </ul>
-            </ul>
+                {% endif %}  
+              </ul>  
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container" style="padding-top: 100px;">
+      <div class="starter-template">
+        {% block content %} 
+        
+        {% endblock %}
+      </div>      
+      <footer style="padding:40px; margin-top: 490px;">
+        <div style="border-top:0.5px solid #e1e4e8!important">
+          <ul class="abc">
+            <li style="color:#576574; "> 
+              &#169; 2018 SFSU Team 07 Ecohazard
+            </li>
+            <li>
+              <a>Terms</a>
+            </li>
+            <li> 
+              <a>Privacy</a>
+            </li>
+            <li> 
+              <a>Status</a>
+            </li>
+            <li> 
+              <a>Help</a>
+            </li>
+            <li> 
+              <a>API</a>
+            </li>
+            <li>
+              <a>Blog</a> 
+            </li>
+            <li>
+              <a href="{% url 'ecohazards:about' %}" style="font-weight: 700px;">About</a> 
+            </li>
+          </ul>
         </div>
-</nav>
+      </footer>
+    </div>
 
-  <div class="container" style="padding-top: 100px;">
-    <div class="starter-template">{% block content %} {% endblock %}</div>
-    <style>
-      .abc li a{
-     
-        text-decoration: none;
-      }
-      .abc li {
-        display:inline-block;
-        text-align: center;
-        margin: 20px;
-        text-decoration: none;
-      }
-      .abc {
-        text-align: center;
-        margin-top:20px;
-        text-decoration: none;
-      }
-    </style>
-    
-<footer style="padding:40px; margin-top: 490px;">
-<div style="border-top:0.5px solid #e1e4e8!important ">
-<ul  class="abc">
-  <li style="color:#576574; "> © 2018 SFSU Team 07 Ecohazards</li>
-  <li><a>Terms</a></li>
-  <li> <a> Privacy</a></li>
-  <li> <a>Status</a></li>
-  <li> <a>Help</a></li>
-  <li> <a>API</a></li>
-  <li><a>Blog</a> </li>
-  <li><a a href="{% url 'ecohazards:about' %}" style="font-weight: 700px;">About</a> </li>
-</ul>
+    <!-- navbar js -->
+    <script>
+      $(document).ready(function () {
+        //Handles menu drop down
+        $(".dropdown-menu")
+          .find("form")
+          .click(function (e) {
+            e.stopPropagation();
+          });
+      });
+    </script>
 
-</div>
-
-  </footer>
-  </div>
-  <!-- /.container -->
-
-</body>
-
-
+  </body>
 </html>

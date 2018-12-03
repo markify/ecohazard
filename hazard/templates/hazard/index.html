@@ -4,84 +4,82 @@
 
 <head>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-    
 </head>
 
 <!-- Index latest hazard reports -->
 {% block title %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/index.css' %}"/>
 {% endblock %}
 
 {% block content %}
 
-<section class="wave bcontain" style="padding:100px;margin-top:-40px;">
-{% for message in messages %}
-<div class="alert alert-danger" style="max-width: 400px; margin:0 auto; margin-bottom: 40px;">
-    <a class="close" href="#" data-dismiss="alert">×</a>
-    {{ message }}
-</div>
-{% endfor %}
-
-<style>
-    .rehover:hover {
-        opacity:0.9;
-    }
-</style>
-
-<div class="maintext"> 
-    <div>
-
-        <h2 style="text-align:center; letter-spacing: 2px; margin-bottom: 30px;  z-index: 2; text-shadow: 0 1px 5px rgba(0,0,0,.2); color:#10ac84;">Eco<span style="color:#57606f;">Hazard</span></h1>
-        <h5 style="text-align:center; ">Clean and save the environment together with the community</h5>
+  <section class="wave bcontain" style="padding:100px;margin-top:-40px; z-index: 99;">
+    {% for message in messages %}
+    <div class="alert alert-danger" style="max-width: 400px; margin:0 auto; margin-bottom: 40px; z-index: 99;">
+        <a class="close" href="#" data-dismiss="alert">×</a>
+        {{ message }}
+    </div>
+    {% endfor %}
+    <div id="clouds">
+      <div class="cloud y1"></div>
+      <div class="cloud y2"></div>
+      <div class="cloud y3"></div>
+      <div class="cloud y4"></div>
     </div>
 
-    
-</div>
-<div height="25vh" style="margin:30px 0px;">
-    <h2 class="text-center">
+    <div class="maintext" style="z-index: 99;"> 
+      <div style="z-index: 99;">
+        <h2 class="eco-style">Eco<span style="color:#57606f;">Hazard</span></h1>
+        <h5 style="text-align:center; z-index: 99;">Clean and save the environment together with the community</h5>
+      </div>  
+    </div>
 
+    <div height="25vh" style="margin:30px 0px; z-index: 99;">
+      <h2 class="text-center" style="z-index: 99;">
         {% if request.user.is_authenticated %}
         <a href="{% url 'ecohazards:add-post' %}">
-            <button class="btn btn-lg rehover" style="background:#10ac84;" type="button"><span style="position: static; color:white; font-weight:700;" >Report a Hazard</span></button></a>
+          <button class="btn btn-lg rehover rep-btn" type="button">
+            <span style="position: static; color:white; font-weight:700;" >Report a Hazard</span>
+          </button>
+        </a>
         {% else %}
         <!-- If not logged in, show add post but redirect to login -->
         <a href="{% url 'ecohazards:register' %}">
-            <button class="btn btn-lg rehover" style="background:#10ac84;"type="button"><span style="position: static; color:white; font-weight:700;">Report a Hazard</span></button></a>
+          <button class="btn btn-lg rehover rep-btn" type="button">
+            <span style="position: static; color:white; font-weight:700;">Report a Hazard</span>
+          </button>
+        </a>
         {% endif %}
+      </h2>
+    </div>
 
-    </h2>
-</div>
+  </section>
 
+  <br>
 
-</section>
-
-<br>
-<div class="text-center" style="margin:0 auto;">
+  <div class="text-center" style="margin:0 auto;">
     <form class="navbar-form"  role="search" method="get" action="{% url 'ecohazards:search_results' %}" >
-        <div class="form-group justify-content-center" style="display: flex; ">
-            <input type="text" style="max-width: 300px; " placeholder="Enter Location or Zip Code" class="form-control" name="q" value="{{ search }}">
-            <button type="submit" class="btn" style="background-color:#10ac84; color:white;" >Search</button>
-        </div>
-      </form>
+      <div class="form-group justify-content-center" style="display: flex; ">
+        <input type="text" style="max-width: 300px; " placeholder="Enter Location or Zip Code" class="form-control" name="q" value="{{ search }}">
+        <button type="submit" class="btn srehover idx-search">Search</button>
+      </div>
+    </form>
+  </div>
 
-</div>
-
-
-
-<h4 style="text-align: center; margin-top:40px; color:#57606f;">
+  <h4 style="text-align: center; margin-top:40px; color:#57606f;">
     <span>
     <img src="/static/ecoicon.svg" style="height:34px; width:34px;" alt="eco icon"/>
-    </span>Latest Hazard reports</h4>
-{% if list %}
-<h6 style="text-align: center; margin:20px 0px; color:#57606f;">Showing {{list.start_index}} - {{list.end_index}} of {{list.paginator.count}}</h6>
-{% include 'hazard/list.html' %}
-{% else %}
-<h5 style="text-align: center;">There are no posts yet</h5>
-{% endif %}
+    </span>Latest Hazard reports
+  </h4>
+  {% if list %}
+  <h6 style="text-align: center; margin:20px 0px; color:#57606f;">Showing {{list.start_index}} - {{list.end_index}} of {{list.paginator.count}}</h6>
+  {% include 'hazard/list.html' %}
+  {% else %}
+  <h5 style="text-align: center;">There are no posts yet</h5>
+  {% endif %}
 
-    
-
-
-<script src="{% static 'js/hazard_report.js' %}"></script>
+  <script src="{% static 'js/hazard_report.js' %}"></script>
 
 {% endblock %}
 
