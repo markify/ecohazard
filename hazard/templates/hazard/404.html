@@ -1,31 +1,36 @@
 {% extends 'hazard/base.html' %}
 {% load static %}
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'self'; connect-src 'self'; form-action 'self'; img-src 'self' data:; script-src 'self'; style-src 'unsafe-inline'">
-    <meta content="origin" name="referrer">
-    {% block title %}
-    <title>Page not found</title>
-    <link rel="stylesheet" href="{% static 'css/404.css' %}"/>
-    {% endblock %}
-  </head>
   {% block content %}
-  <body>
-    <div id="clouds">
-      <div class="cloud y1"></div>
-      <div class="cloud y2"></div>
-      <div class="cloud y3"></div>
-      <div class="cloud y4"></div>
-      <div class="cloud y5"></div>
-    </div>
-    <div class="wrap">
-        <div class="_404-text">404</div>
-        <hr>
-        <div class="page-text">THE PAGE</div>
-        <div class="not-found">WAS NOT FOUND</div>
-        <a class="not-btn" style="text-decoration: none;" href="{% url 'ecohazards:index' %}">BACK TO ECOHAZARD</a>
-    </div>
-  </body>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+  </head>
+  <style> 
+  .not-btn:hover {
+    background: #10ac84;
+    opacity:0.9;
+    transform:scale(1.02);
+  }
+  .not-btn {
+    text-decoration: none; 
+    border:1px solid #10ac84; 
+    transition: ease-in-out 1s all; 
+    padding:20px; 
+    border-radius:10px;
+    background:#10ac84; z-index: 99;
+    -webkit-box-shadow: 0px 0px 8px -2px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 0px 8px -2px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 8px -2px rgba(0,0,0,0.4); 
+    transition: all .2s ease-in-out;
+  }
+  </style>
+
+  <div style="text-align: center;">
+    <h1 style="margin-top:-20px; margin-bottom:20px; font-size:6.8rem; font-family: 'Fredoka One', cursive;">404</h1>
+    <h4 style="margin:20px; font-size:2rem; font-weight:200;"> the page was not found </h4>
+    <a href="{% url 'ecohazards:index' %}">
+      <button class="btn btn-lg not-btn" type="button">
+        <span style="position: static; color:white; font-weight:700;">Back to Ecohazard</span>
+      </button>
+    </a>
+  </div>
   {% endblock content %}
-
-

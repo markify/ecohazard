@@ -146,9 +146,9 @@ def search_process(request):
         search_list = HazardReport.objects. \
             filter(Q(title_text__icontains=search)
                    | Q(content_text__icontains=search)
-                   | Q(pub_date__contains=search)
-                   | Q(zipcode__contains=search)
-                   | Q(location__contains=search))
+                   | Q(pub_date__icontains=search)
+                   | Q(zipcode__icontains=search)
+                   | Q(location__icontains=search))
     # number of search results 6
         current_post_list, num_pages = get_paginator(request, search_list, 6)
     context = {

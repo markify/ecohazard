@@ -21,12 +21,6 @@
         {{ message }}
     </div>
     {% endfor %}
-    <div id="clouds">
-      <div class="cloud y1"></div>
-      <div class="cloud y2"></div>
-      <div class="cloud y3"></div>
-      <div class="cloud y4"></div>
-    </div>
 
     <div class="maintext" style="z-index: 99;"> 
       <div style="z-index: 99;">
@@ -35,8 +29,7 @@
       </div>  
     </div>
 
-    <div height="25vh" style="margin:30px 0px; z-index: 99;">
-      <h2 class="text-center" style="z-index: 99;">
+    <div height="25vh" style="margin:30px 0px; z-index: 99; text-align: center;">
         {% if request.user.is_authenticated %}
         <a href="{% url 'ecohazards:add-post' %}">
           <button class="btn btn-lg rehover rep-btn" type="button">
@@ -51,7 +44,6 @@
           </button>
         </a>
         {% endif %}
-      </h2>
     </div>
 
   </section>

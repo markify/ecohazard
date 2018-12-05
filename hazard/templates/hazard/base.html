@@ -34,7 +34,7 @@
   {% endblock %}
 
 </head>
-  <body>
+  <body style="overflow-x: hidden;">
    <!-- nav bar buttons left -->
    <nav class="navbar navbar-light navbar-expand-md hazard-nav">
     <a class="navbar-brand" href="{% url 'ecohazards:index' %}" style="font-size:25px; color:#10ac84;">
@@ -55,7 +55,7 @@
 
             {% if request.user.is_authenticated %}  
               {% if is_manager == 1%}
-            <li class="nav-item hover-item">
+            <li class="nav-item hover-item user-item">
               <a href="{%  url 'ecohazards:dashboard' %}" class="nav-link nav-style">
                 Dashboard
               </a>
@@ -74,13 +74,13 @@
             </li>
             {% endif %} 
             {% if request.user.is_authenticated %}
-            <li class="nav-item hover-item" style="margin-right:10px;">
+            <li class="nav-item hover-item user-item" style="margin-right:10px;">
               <a href="{% url 'ecohazards:userposts' user.username %}" class="nav-link nav-style"> 
                 {{request.user.username}} 
               </a>
             </li>
             <li class="nav-item auth-item-out"> 
-              <a href="{% url 'ecohazards:logout_process' %}" class="nav-link nav-style">Sign Out</a>
+              <a href="{% url 'ecohazards:logout_process' %}" class="nav-link nav-style" style="text-align: center;">Sign Out</a>
             </li>
             {% else %}
             <li class="nav-item hover-item" style="margin-right:10px;"> 

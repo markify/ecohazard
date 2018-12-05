@@ -3,8 +3,8 @@
 #Usage: Create the data process
 from django.contrib.auth.models import User
 from django import forms
-from ***REMOVED***.fields import ReCaptchaField
-from ***REMOVED***.widgets import ReCaptchaWidget
+from snowpenguin.django.recaptcha2.fields import ReCaptchaField
+from snowpenguin.django.recaptcha2.widgets import ReCaptchaWidget
 from .models import HazardReport, HazardReportComment, Category
 import sys
 
